@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+Plateau model:
+
+\begin{eqnarray}
+\dot{S} &=& -\frac{\beta SI}{\left(1+D/D_c\right)^{a}}\\
+\dot{E} &=& \frac{\beta SI}{\left(1+D/D_c\right)^{a}}-\mu E\\
+\dot{I} &=& \mu E-\gamma I \\
+\dot{H} &=& f_H\gamma I-\gamma_H H \\
+\dot{R} &=& (1-f_H)\gamma I+\gamma_HH(1-f_D) \\
+\dot{D} &=& \gamma_H H f_D
+\end{eqnarray}
+where here are some initial parameters:
+$\beta=0.6$, $\mu=1/2$, $\gamma=1/6$ (or 1/4), $\gamma_H=1/10$
+(or 1/20), $f_H=0.1$, $f_D=0.2$, $D_c=10^{-5}$, and $a=4$.
+
+
+\end{document}
