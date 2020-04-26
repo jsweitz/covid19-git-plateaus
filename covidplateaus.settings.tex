@@ -1,0 +1,49 @@
+\usepackage{amsmath,epsfig,enumerate,graphicx}
+\usepackage{verbatim}
+\usepackage{amstext}
+
+% table adjustments
+\setlength{\tabcolsep}{1.5\tabcolsep}
+
+% hyphenation
+\lefthyphenmin=3
+\righthyphenmin=2
+
+% 1-2 column switching
+\usepackage{ifthen}
+\newboolean{twocolswitch}
+\newboolean{revtexswitch}
+
+\newcommand{\Ai}[1]{#1}
+\newcommand{\yes}{}
+\newcommand{\no}{}
+\newcommand{\tbf}{\textbf}
+\newcommand{\tit}{\textit}
+\newcommand{\halpha}{\hat{\alpha}}
+\newcommand{\hsigma}{\hat{\sigma}}
+
+\newcommand{\partialdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\tpartialdiff}[2]{\partial #1/\partial #2}
+
+\newcommand{\req}[1]{(\ref{#1})}
+\newcommand{\rfig}[1]{Fig. (\ref{#1})}
+
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\eps}{\epsilon}
+\def\d{{\rm d}}
+\def\grad{\nabla}
+
+\usepackage{tcolorbox}
+\usepackage{dsfont}
+\usepackage{multirow}
+\usepackage{boxit}
+
+\newcommand{\bv}{\begin{verbatim}}
+\newcommand{\ev}{\end{verbatim}}
+\def\d{\rm{d}}
+
+\newif\ifmatlab
+\matlabtrue
+\newif\ifinstruct
+\instructtrue
+

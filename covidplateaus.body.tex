@@ -1,0 +1,199 @@
+\section{Introduction}
+The spread of COVID-19 has elevated the importance of epidemiological
+models as a means to forecast both near- and long-term spread. 
+In the United States, the Institute for Health Metrics and Evaluation (IHME)
+model has emerged as a key influencer of state- and national-level
+policy.  The IHME model includes a detailed characterization
+of the variation in
+hospital bed capacity, ICU beds, and ventilators between and within
+states. Predicting the projected strains on underlying
+health resources
+ is critical to supporting planning efforts (and related
+efforts are ongoing at both national~\citep{meyers} and
+state levels~\citep{upenn}).  However such projections require
+an epidemic `forecast'.  The IHME's epidemic forecast
+differs from conventional
+epidemic models in a significant way -- IHME assumes
+that the cumulative deaths in the COVID-19 epidemic
+follow a predefined, Gaussian-like trajectory 
+such that deaths go up, reach a peak,
+and then go back down.  This trajectory is symmetric
+by construction, such that the time it takes to reach the peak 
+must equal the time it takes to go back to normal.  For example, the 
+IHME model predicts that if the peak is 2 weeks away then in 4 weeks
+cases will return to the level of the present, and continue
+to diminish rapidly.  But, there is no epidemiological rule
+that says epidemics must have one peak (the defunct
+Farr's Law of Epidemics notwithstanding, a law posited in 1840 before the
+germ theory of disease and that, like the IHME model, has 
+no mechanistic description of the underlying basis for transmission).
+
+Instead, conventional COVID-19 epidemic
+models represent populations in terms of their `status' vis
+a vis the infectious agent, in this case SARS-CoV-2.  That is, individuals
+in a population are represented in different compartments, e.g.,
+susceptible, exposed, infectious,
+hospitalized, and recovered.  In many cases, epidemic models
+might further categorize individuals by age and disease status, or age, occupation,
+and disease status, and so on.  As a result, increases in cases
+are a result of transmission events between infectious
+and susceptible individuals.  The compounding effects 
+of new transmission can lead to an exponential increases in cases 
+when the basic reproduction number ${\cal{R}}_0>1$.  Subsequent
+spread, if left unchecked, would yield a single peak -- in theory. That 
+peak corresponds to when `herd immunity' is reached, such
+that the effective reproduction number, ${\cal{R}}_{eff}=1$. 
+But, even then, there will still be new cases which then
+diminish over time, until the epidemic concludes.  
+Yet, a single peak paradigm is
+only robust insofar as the disease has spread
+sufficiently in a population to reach and exceed `herd immunity'.
+In this way, the IHME (and other parametric fitting models) make
+a dangerous and unsupported assumption: that second peaks
+or other long-term trajectories are not possible.  Yet, the converse
+is true -- as long as a population remains predominantly immunologically
+naieve, then the risk of further infection has not passed. 
+
+The Imperial College of London model -- one of the earliest and most influential epidemic models -- is an example of a `conventional' epidemic model
+that compares projected epidemic dynamics
+between `baseline' scenarios and the outcomes expected
+given alternative public health interventions. Despite the many
+benefits of public health efforts to reduce transmission: all off their
+models suggest a weakness -- early efforts that diminish a peak can be
+followed by a second peak or wave of cases precisely because
+the disease did not spread early, leaving the majority of the population
+susceptible to infection. Yet, buying time for the introduction
+of new therapeutics and preserving health care resources suggest
+that the benefits of  early intervention steps exceed those of
+a `herd immunity' strategy.  Hence, unlike the IHME model,
+the ICL model suggests that more than one peak is possible,
+precisely because the model integrates latent states of the population
+as part of a representation of epidemiological mechanisms.
+\begin{figure*}[t!]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{figseir_baseplat_a1_noname.pdf}
+\includegraphics[width=0.3\textwidth]{figseir_baseplat_a2_noname.pdf}
+\includegraphics[width=0.3\textwidth]{figseir_baseplat_a4_noname.pdf}
+\caption{Infections and deaths per day in a death-awareness based
+social distancing model. Awareness varies from $a=1$, $a=2$, to $a=4$ 
+in panels (A), (B), and (C).
+\label{fig.ID_day}}
+\end{center}
+\end{figure*}
+
+Yet, even the ICL model has a built-in assumption: that 
+behavior changes because of externalities, like lockdowns,
+school closings, and so on, that reduce infection.  For a disease
+that is already the documented cause of more than 50,000 deaths
+in the United States, we posit that individuals, acting
+out of a sense of self-preservation, may continue to modify
+their behavior.  Hence, here, we use a simple model to
+ask the question: what is the anticipated
+shape of an epidemic if individuals modify their behavior in direct
+response to the impact of a disease at the population level? In doing so,
+we build upon earlier work on awareness based models with a
+simple assumption: individuals reduce interactions when near-term
+death rates are high and increase interactions when near-term death
+rates are low.  As a result, we find that epidemic dynamics
+can be characterized by long, dangerous plateaus -- rather than peaks.
+We suggest that the generic nature of such plateaus should
+be considered in developing models that combine
+public health interventions that limit interactions with
+intrinsic, responses of individuals to the disease state -- and that
+can combine to lead to dynamics that defy the near- and long-term
+predictions of parametric and even conventional epidemic models.
+
+To begin, consider a SEIR like model:
+\begin{eqnarray}
+\dot{S} &=& -\frac{\beta SI}{\left[1+\left(\dot{D}/D_c\right)^{a}\right]}\\
+\dot{E} &=& \frac{\beta SI}{\left[1+\left(\dot{D}/D_c\right)^{a}\right]}-\mu E\\
+\dot{I} &=& \mu E-\gamma I \\
+\dot{R} &=& (1-f_D)\gamma I
+\end{eqnarray}
+where the death rate is $\dot{D}(t)=f_D\gamma I$.  Here, contacts
+are reduced based on current fatality rates relative 
+to a critical level, $D_c$, such that when $\dot{D}\gg D_c$ then
+attack rates goes to 0 with a shape parameter $a$. Note that this
+model converges to the conventional SEIR model as $D_c\rightarrow \infty$.
+Typically, SEIR models have a single case peak, corresponding 
+to the point where $\gamma I = \beta S I $ such that 
+$S=1/{\cal{R}}_0$ or when $1-{\cal{R}}_0^{-1}$ have been infected.
+However, when individuals decrease transmission in relationship
+to awareness of the aggregate severity of the disease, i.e., $\dot{D}$, 
+then the system can `peak' when levels of infected cases are
+far from herd immunity, specifically when
+\begin{equation}
+\gamma I = \frac{\beta SI}{\left[1+\left(\dot{D}/D_c\right)^{a}\right]}.
+\end{equation}
+In the event that $D_c\ll 1$ we anticipate that most of the population
+remains susceptible when individual behavior changes markedly
+due to awareness of disease severity. Hence, we hypothesize that the
+emergence of an
+awareness-based peak can occur early, i.e., $S(t)\approx 1$, consistent
+with a quasi-stationary equilibrium when
+\begin{equation}
+\dot{D}^{(q)} \approx D_c\left({\cal{R}}_0-1\right)^{1/a}
+\end{equation}
+and
+\begin{equation}
+\dot{I}^{(q)} \approx \frac{D_c}{f_D}\left({\cal{R}}_0-1\right)^{1/a}
+\end{equation}
+These early onset peak rates arise not because
+of herd immunity but because of changes in behavior. 
+
+Figure~\ref{fig.ID_day} shows examples for $a=1$, $a=2$, and $a=4$
+given disease dynamics with $\beta=0.5$, $\mu=1/2$, $\gamma=1/6$,
+$f_D=0.01$, and $D_c=10^{-5}$.  In a population of $N=10^7$, the
+critical fatality awareness level is equivalent to 100 fatalities
+per day, but given the duration of illness, with median generation
+time of 8 days, then one can consider this critical awareness
+level as an approximation of weekly averages. 
+As is evident, the rise and decline from peaks are not symmetric. Instead,
+increasing nonlinearity of awareness
+$a$ lead to shoulders and, in the limit of $a\gg 1$, plateaus, such that
+deaths and constants appear constant, declining slowly because of the
+depletion of susceptibles.  For increasing values of $a$, the
+dynamics may laso include significant overshoot in cases -- given
+awareness of fatalities as a modulator of behavior.
+The shoulders and plateaus emerge because relaxation in awareness-based
+distancing leads to increases in deaths, and an increase in awareness.
+
+Next, we extended this model to the case of COVID-19, including 
+detailed information on symptomatic, asymptomatic, hospitalization,
+cases, age structure, and age-dependent risk.  In doing so we
+consider a model of COVID-19 with a ${\cal{R}}_0=2.32$ and an
+incidence fatality rate of $IFR=0.82\%$. Figure~\ref{fig.covid-plat}}
+shows that the insights from the SEIR model generalize to
+the case of COVID-19 dynamics, albeit with some differences.  In particular, we
+find that deaths exceed $D_c$ because of the lag between 
+new infection and fatalities (with a mean of 20 days in the current model).  Further
+delays between infection and fatalities can lead to larger oscillations,
+as individual behavior changes due to local awareness of deaths.  Reduction in 
+contacts when fatality rates exceed the critical awareness level do not translate
+into reductions for a period of 20 days, such that deaths can then be driven
+below this critical value, then contacts increase, and deaths increase (again with
+a lag), and so on.  We note that these oscillations could be amplified 
+in stochastic models. 
+\begin{figure}[t!]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figbaseline_stir_plat_high_noname.pdf}
+\caption{COVID-19 dynamics given awareness-based
+social distancing model. Awareness varies from $a=1$, $a=2$, to $a=4$.
+Epidemiological and age-specific parameters are from previous work (Weitz et al. shield immunity).
+\label{fig.covid-plat}}
+\end{center}
+\end{figure}
+
+Finally, we note that the scenarios studied, the bulk of the population remains
+susceptible throughout the dynamics. Hence, if individuals tire of social
+distancing policies, or begin to tolerate higher death rates, then cases can
+increase. We also note that long-term awareness would lead to a faster
+peak decline (see Eksin et al.). In reality, we expect that individual
+behavior is shaped by short- and long-term awareness of risks.  As detailed here,
+if short-term awareness predominates, then COVID-19 dynamics may result
+in plateau- and shoulder-like behavior, including the possiblity of 
+lag-driven oscillations. As a result, passing a `peak' need not imply
+the rapid decline of risk. Instead, as cumulative data from outbreak epidemics have already
+shown, the asymmetric post-peak dynamics of COVID-19 may be an emergent
+property of awareness-driven epidemiological dynamics.
+
