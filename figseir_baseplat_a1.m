@@ -18,6 +18,8 @@ set(gcf,'PaperPositionMode','auto');
 tmppos= [0.2 0.2 0.7 0.7];
 tmpa = axes('position',tmppos);
 set(gca,'Position',[680 132 630 688]);
+%set(gca,'Position',[454 300 659 655]);
+
 
 % main data goes here
 pars.beta=0.5;

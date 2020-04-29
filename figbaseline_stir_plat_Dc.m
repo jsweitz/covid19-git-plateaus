@@ -100,7 +100,7 @@ outbreak.y0(13)=1;
 outbreak.y0=outbreak.y0/population.N;
 outbreak.pTime=365;
 
-pars.Dc_range=(10:5:100)/population.N;
+pars.Dc_range=(10:10:100)/population.N;
 
 % Sims 
 for i=1:length(pars.Dc_range),
@@ -112,18 +112,13 @@ for i=1:length(pars.Dc_range),
   stats(i).Dday=sum(stats(i).Dday_age');
   i
 end
-return
 for i=1:length(pars.Dc_range),
   tmpi=find(stats(i).Dday*population.N>3);
-  semilogy(t(2:end)-t(tmpi(1)),stats(i).Dday*population.N)
+  semilogy(t(2:end)-t(tmpi(1)),stats(i).Dday*population.N,'k-')
   hold on
   xlim([0 100]);
 end
 ylim([10^0 2000]);
-
-
-
-subplot(3,1,3);
 tmph=plot(t(2:end),statsb.Dday*10000000,'k-');
 set(tmph,'linewidth',3);
 hold on
