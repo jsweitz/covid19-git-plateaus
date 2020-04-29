@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  29 APR 2020 07:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  29 APR 2020 07:59
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -506,26 +506,26 @@ Package natbib Warning: Citation `upenn' on page 1 undefined on input line 13.
 Package natbib Warning: Citation `bregman_1990' on page 1 undefined on input li
 ne 34.
 
-<figseir_baseplat_a1_noname.pdf, id=1, 573.14125pt x 586.19pt>
+<figseir_baseplat_a1_noname.pdf, id=1, 593.21625pt x 562.1pt>
 File: figseir_baseplat_a1_noname.pdf Graphic file (type pdf)
 
 <use figseir_baseplat_a1_noname.pdf>
 Package pdftex.def Info: figseir_baseplat_a1_noname.pdf used on input line 73.
-(pdftex.def)             Requested size: 153.00156pt x 156.4845pt.
+(pdftex.def)             Requested size: 153.00156pt x 144.97609pt.
 
-<figseir_baseplat_a2_noname.pdf, id=2, 573.14125pt x 586.19pt>
+<figseir_baseplat_a2_noname.pdf, id=2, 593.21625pt x 562.1pt>
 File: figseir_baseplat_a2_noname.pdf Graphic file (type pdf)
 
 <use figseir_baseplat_a2_noname.pdf>
 Package pdftex.def Info: figseir_baseplat_a2_noname.pdf used on input line 74.
-(pdftex.def)             Requested size: 153.00156pt x 156.4845pt.
+(pdftex.def)             Requested size: 153.00156pt x 144.97609pt.
 
-<figseir_baseplat_a4_noname.pdf, id=3, 573.14125pt x 586.19pt>
+<figseir_baseplat_a4_noname.pdf, id=3, 593.21625pt x 562.1pt>
 File: figseir_baseplat_a4_noname.pdf Graphic file (type pdf)
 
 <use figseir_baseplat_a4_noname.pdf>
 Package pdftex.def Info: figseir_baseplat_a4_noname.pdf used on input line 75.
-(pdftex.def)             Requested size: 153.00156pt x 156.4845pt.
+(pdftex.def)             Requested size: 153.00156pt x 144.97609pt.
  [1
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -582,12 +582,13 @@ Package pdftex.def Info: figseir_Susc_k4_noname.pdf used on input line 155.
 (pdftex.def)             Requested size: 221.84875pt x 133.56735pt.
  [2 <./covid19-git-plateaus/figseir_baseplat_a1_noname.pdf> <./covid19-git-plat
 eaus/figseir_baseplat_a2_noname.pdf> <./covid19-git-plateaus/figseir_baseplat_a
-4_noname.pdf>] [3 <./scripts/figseir_Speak_k1_noname.pdf> <./scripts/figseir_Su
-sc_k1_noname.pdf> <./scripts/figseir_Speak_k2_noname.pdf> <./scripts/figseir_Su
-sc_k2_noname.pdf> <./scripts/figseir_Speak_k4_noname.pdf> <./scripts/figseir_Su
-sc_k4_noname.pdf>]
+4_noname.pdf>] [3 <./covid19-git-plateaus/figseir_Speak_k1_noname.pdf> <./covid
+19-git-plateaus/figseir_Susc_k1_noname.pdf> <./covid19-git-plateaus/figseir_Spe
+ak_k2_noname.pdf> <./covid19-git-plateaus/figseir_Susc_k2_noname.pdf> <./covid1
+9-git-plateaus/figseir_Speak_k4_noname.pdf> <./covid19-git-plateaus/figseir_Sus
+c_k4_noname.pdf>]
 ! Too many }'s.
-l.240 ...e of 0.82\%. Figure~\ref{fig.covid-plat}}
+l.241 ...e of 0.82\%. Figure~\ref{fig.covid-plat}}
                                                   
 ? 
 <figbaseline_stir_plat_high_noname.pdf, id=92, 594.22pt x 726.715pt>
@@ -595,7 +596,7 @@ File: figbaseline_stir_plat_high_noname.pdf Graphic file (type pdf)
 
 <use figbaseline_stir_plat_high_noname.pdf>
 Package pdftex.def Info: figbaseline_stir_plat_high_noname.pdf used on input li
-ne 253.
+ne 254.
 (pdftex.def)             Requested size: 229.49844pt x 280.6677pt.
 ) (./covidplateaus.acknowledge.tex)
 (./covidplateaus.biblio.tex
@@ -605,12 +606,7 @@ No file covidplateaus.bbl.
 Package natbib Warning: There were undefined citations.
 
 [4] [5 <./covid19-git-plateaus/figbaseline_stir_plat_high_noname.pdf>]
-(./covidplateaus.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
- ) 
+(./covidplateaus.aux) ) 
 Here is how much of TeX's memory you used:
  11216 strings out of 493117
  195289 string characters out of 6135433
@@ -619,27 +615,27 @@ Here is how much of TeX's memory you used:
  9587 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,10n,73p,538b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on covidplateaus.pdf (5 pages, 921965 bytes).
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.p
+fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on covidplateaus.pdf (5 pages, 920790 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  115 compressed objects within 2 object streams
