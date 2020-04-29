@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  29 APR 2020 07:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  29 APR 2020 13:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -502,30 +502,26 @@ Package natbib Warning: Citation `meyers' on page 1 undefined on input line 12.
 
 Package natbib Warning: Citation `upenn' on page 1 undefined on input line 13.
 
+<figseir_baseplat_k1_noname.pdf, id=1, 1036.87375pt x 425.59pt>
+File: figseir_baseplat_k1_noname.pdf Graphic file (type pdf)
 
-Package natbib Warning: Citation `bregman_1990' on page 1 undefined on input li
-ne 34.
+<use figseir_baseplat_k1_noname.pdf>
+Package pdftex.def Info: figseir_baseplat_k1_noname.pdf used on input line 64.
+(pdftex.def)             Requested size: 408.00156pt x 167.46654pt.
 
-<figseir_baseplat_a1_noname.pdf, id=1, 593.21625pt x 562.1pt>
-File: figseir_baseplat_a1_noname.pdf Graphic file (type pdf)
+<figseir_baseplat_k2_noname.pdf, id=2, 1036.87375pt x 425.59pt>
+File: figseir_baseplat_k2_noname.pdf Graphic file (type pdf)
 
-<use figseir_baseplat_a1_noname.pdf>
-Package pdftex.def Info: figseir_baseplat_a1_noname.pdf used on input line 73.
-(pdftex.def)             Requested size: 153.00156pt x 144.97609pt.
+<use figseir_baseplat_k2_noname.pdf>
+Package pdftex.def Info: figseir_baseplat_k2_noname.pdf used on input line 65.
+(pdftex.def)             Requested size: 408.00156pt x 167.46654pt.
 
-<figseir_baseplat_a2_noname.pdf, id=2, 593.21625pt x 562.1pt>
-File: figseir_baseplat_a2_noname.pdf Graphic file (type pdf)
+<figseir_baseplat_k4_noname.pdf, id=3, 1036.87375pt x 425.59pt>
+File: figseir_baseplat_k4_noname.pdf Graphic file (type pdf)
 
-<use figseir_baseplat_a2_noname.pdf>
-Package pdftex.def Info: figseir_baseplat_a2_noname.pdf used on input line 74.
-(pdftex.def)             Requested size: 153.00156pt x 144.97609pt.
-
-<figseir_baseplat_a4_noname.pdf, id=3, 593.21625pt x 562.1pt>
-File: figseir_baseplat_a4_noname.pdf Graphic file (type pdf)
-
-<use figseir_baseplat_a4_noname.pdf>
-Package pdftex.def Info: figseir_baseplat_a4_noname.pdf used on input line 75.
-(pdftex.def)             Requested size: 153.00156pt x 144.97609pt.
+<use figseir_baseplat_k4_noname.pdf>
+Package pdftex.def Info: figseir_baseplat_k4_noname.pdf used on input line 66.
+(pdftex.def)             Requested size: 408.00156pt x 167.46654pt.
  [1
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -534,111 +530,145 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/upd
-map/pdftex.map}]
+map/pdftex.map}] [2 <./scripts/figseir_baseplat_k1_noname.pdf> <./scripts/figse
+ir_baseplat_k2_noname.pdf> <./scripts/figseir_baseplat_k4_noname.pdf>]
 
-Package natbib Warning: Citation `eksin_2019' on page 2 undefined on input line
- 145.
+Package natbib Warning: Citation `eksin_2019' on page 3 undefined on input line
+ 136.
 
-<figseir_Speak_k1_noname.pdf, id=24, 708.6475pt x 408.52625pt>
+<figseir_Speak_k1_noname.pdf, id=49, 708.6475pt x 408.52625pt>
 File: figseir_Speak_k1_noname.pdf Graphic file (type pdf)
 
 <use figseir_Speak_k1_noname.pdf>
-Package pdftex.def Info: figseir_Speak_k1_noname.pdf used on input line 150.
+Package pdftex.def Info: figseir_Speak_k1_noname.pdf used on input line 141.
 (pdftex.def)             Requested size: 229.49844pt x 132.30193pt.
 
-<figseir_Susc_k1_noname.pdf, id=25, 678.535pt x 408.52625pt>
+<figseir_Susc_k1_noname.pdf, id=50, 678.535pt x 408.52625pt>
 File: figseir_Susc_k1_noname.pdf Graphic file (type pdf)
 
 <use figseir_Susc_k1_noname.pdf>
-Package pdftex.def Info: figseir_Susc_k1_noname.pdf used on input line 151.
+Package pdftex.def Info: figseir_Susc_k1_noname.pdf used on input line 142.
 (pdftex.def)             Requested size: 221.84875pt x 133.56735pt.
 
-<figseir_Speak_k2_noname.pdf, id=26, 708.6475pt x 408.52625pt>
+<figseir_Speak_k2_noname.pdf, id=51, 708.6475pt x 408.52625pt>
 File: figseir_Speak_k2_noname.pdf Graphic file (type pdf)
 
 <use figseir_Speak_k2_noname.pdf>
-Package pdftex.def Info: figseir_Speak_k2_noname.pdf used on input line 152.
+Package pdftex.def Info: figseir_Speak_k2_noname.pdf used on input line 143.
 (pdftex.def)             Requested size: 229.49844pt x 132.30193pt.
 
-<figseir_Susc_k2_noname.pdf, id=27, 678.535pt x 408.52625pt>
+<figseir_Susc_k2_noname.pdf, id=52, 678.535pt x 408.52625pt>
 File: figseir_Susc_k2_noname.pdf Graphic file (type pdf)
 
 <use figseir_Susc_k2_noname.pdf>
-Package pdftex.def Info: figseir_Susc_k2_noname.pdf used on input line 153.
+Package pdftex.def Info: figseir_Susc_k2_noname.pdf used on input line 144.
 (pdftex.def)             Requested size: 221.84875pt x 133.56735pt.
 
-<figseir_Speak_k4_noname.pdf, id=28, 708.6475pt x 406.51875pt>
+<figseir_Speak_k4_noname.pdf, id=53, 708.6475pt x 406.51875pt>
 File: figseir_Speak_k4_noname.pdf Graphic file (type pdf)
 
 <use figseir_Speak_k4_noname.pdf>
-Package pdftex.def Info: figseir_Speak_k4_noname.pdf used on input line 154.
+Package pdftex.def Info: figseir_Speak_k4_noname.pdf used on input line 145.
 (pdftex.def)             Requested size: 229.49844pt x 131.6518pt.
 
-<figseir_Susc_k4_noname.pdf, id=29, 678.535pt x 408.52625pt>
+<figseir_Susc_k4_noname.pdf, id=54, 678.535pt x 408.52625pt>
 File: figseir_Susc_k4_noname.pdf Graphic file (type pdf)
 
 <use figseir_Susc_k4_noname.pdf>
-Package pdftex.def Info: figseir_Susc_k4_noname.pdf used on input line 155.
+Package pdftex.def Info: figseir_Susc_k4_noname.pdf used on input line 146.
 (pdftex.def)             Requested size: 221.84875pt x 133.56735pt.
- [2 <./covid19-git-plateaus/figseir_baseplat_a1_noname.pdf> <./covid19-git-plat
-eaus/figseir_baseplat_a2_noname.pdf> <./covid19-git-plateaus/figseir_baseplat_a
-4_noname.pdf>] [3 <./covid19-git-plateaus/figseir_Speak_k1_noname.pdf> <./covid
-19-git-plateaus/figseir_Susc_k1_noname.pdf> <./covid19-git-plateaus/figseir_Spe
-ak_k2_noname.pdf> <./covid19-git-plateaus/figseir_Susc_k2_noname.pdf> <./covid1
-9-git-plateaus/figseir_Speak_k4_noname.pdf> <./covid19-git-plateaus/figseir_Sus
-c_k4_noname.pdf>]
-! Too many }'s.
-l.241 ...e of 0.82\%. Figure~\ref{fig.covid-plat}}
-                                                  
-? 
-<figbaseline_stir_plat_high_noname.pdf, id=92, 594.22pt x 726.715pt>
-File: figbaseline_stir_plat_high_noname.pdf Graphic file (type pdf)
+ [3]
+<figseir_Hdel_k1_noname.pdf, id=59, 690.58pt x 408.52625pt>
+File: figseir_Hdel_k1_noname.pdf Graphic file (type pdf)
 
-<use figbaseline_stir_plat_high_noname.pdf>
-Package pdftex.def Info: figbaseline_stir_plat_high_noname.pdf used on input li
-ne 254.
-(pdftex.def)             Requested size: 229.49844pt x 280.6677pt.
-) (./covidplateaus.acknowledge.tex)
-(./covidplateaus.biblio.tex
+<use figseir_Hdel_k1_noname.pdf>
+Package pdftex.def Info: figseir_Hdel_k1_noname.pdf used on input line 260.
+(pdftex.def)             Requested size: 229.49844pt x 135.76158pt.
+
+<figseir_Hdel_k1D_noname.pdf, id=60, 697.60625pt x 408.52625pt>
+File: figseir_Hdel_k1D_noname.pdf Graphic file (type pdf)
+
+<use figseir_Hdel_k1D_noname.pdf>
+Package pdftex.def Info: figseir_Hdel_k1D_noname.pdf used on input line 261.
+(pdftex.def)             Requested size: 229.49844pt x 134.39642pt.
+
+<figseir_Hdel_k2_noname.pdf, id=61, 690.58pt x 408.52625pt>
+File: figseir_Hdel_k2_noname.pdf Graphic file (type pdf)
+
+<use figseir_Hdel_k2_noname.pdf>
+Package pdftex.def Info: figseir_Hdel_k2_noname.pdf used on input line 262.
+(pdftex.def)             Requested size: 229.49844pt x 135.76158pt.
+
+<figseir_Hdel_k2D_noname.pdf, id=62, 697.60625pt x 408.52625pt>
+File: figseir_Hdel_k2D_noname.pdf Graphic file (type pdf)
+
+<use figseir_Hdel_k2D_noname.pdf>
+Package pdftex.def Info: figseir_Hdel_k2D_noname.pdf used on input line 263.
+(pdftex.def)             Requested size: 229.49844pt x 134.39642pt.
+
+<figseir_Hdel_k4_noname.pdf, id=63, 690.58pt x 408.52625pt>
+File: figseir_Hdel_k4_noname.pdf Graphic file (type pdf)
+
+<use figseir_Hdel_k4_noname.pdf>
+Package pdftex.def Info: figseir_Hdel_k4_noname.pdf used on input line 264.
+(pdftex.def)             Requested size: 229.49844pt x 135.76158pt.
+
+<figseir_Hdel_k4D_noname.pdf, id=64, 697.60625pt x 408.52625pt>
+File: figseir_Hdel_k4D_noname.pdf Graphic file (type pdf)
+
+<use figseir_Hdel_k4D_noname.pdf>
+Package pdftex.def Info: figseir_Hdel_k4D_noname.pdf used on input line 265.
+(pdftex.def)             Requested size: 229.49844pt x 134.39642pt.
+
+
+Package natbib Warning: Citation `bregman_1990' on page 4 undefined on input li
+ne 319.
+
+) [4 <./scripts/figseir_Speak_k1_noname.pdf> <./scripts/figseir_Susc_k1_noname.
+pdf> <./scripts/figseir_Speak_k2_noname.pdf> <./scripts/figseir_Susc_k2_noname.
+pdf> <./scripts/figseir_Speak_k4_noname.pdf> <./scripts/figseir_Susc_k4_noname.
+pdf>] (./covidplateaus.acknowledge.tex) (./covidplateaus.biblio.tex
 No file covidplateaus.bbl.
 )
 
 Package natbib Warning: There were undefined citations.
 
-[4] [5 <./covid19-git-plateaus/figbaseline_stir_plat_high_noname.pdf>]
-(./covidplateaus.aux) ) 
+[5 <./scripts/figseir_Hdel_k1_noname.pdf> <./scripts/figseir_Hdel_k1D_noname.pd
+f> <./scripts/figseir_Hdel_k2_noname.pdf> <./scripts/figseir_Hdel_k2D_noname.pd
+f> <./scripts/figseir_Hdel_k4_noname.pdf> <./scripts/figseir_Hdel_k4D_noname.pd
+f>] (./covidplateaus.aux) ) 
 Here is how much of TeX's memory you used:
- 11216 strings out of 493117
- 195289 string characters out of 6135433
- 270847 words of memory out of 5000000
- 14433 multiletter control sequences out of 15000+600000
+ 11241 strings out of 493117
+ 195993 string characters out of 6135433
+ 274848 words of memory out of 5000000
+ 14453 multiletter control sequences out of 15000+600000
  9587 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,10n,73p,538b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.p
-fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on covidplateaus.pdf (5 pages, 920790 bytes).
+</usr/local/texlive/2014/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on covidplateaus.pdf (5 pages, 1200570 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 197 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

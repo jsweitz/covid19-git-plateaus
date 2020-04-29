@@ -25,15 +25,6 @@ cases will return to the level of the present, and continue
 to diminish rapidly.  But, there is no epidemiological rule
 that says epidemics must have one symmetric peak, 
 the defunct Farr's Law of Epidemics notwithstanding. 
-Farr's law was posited in 1840 before the
-germ theory of disease and, like the IHME model, has 
-no mechanistic description of the underlying basis for transmission. 
-Reserachers revived Farr's Law, in part, to predict the scope of the HIV 
-epidemic, e.g., in 1990
-the law was used to extrapolate to a peak HIV epidemic size of 200,000 cases by the 
-mid-1990s\citep{bregman_1990};
-in contrast
-there were nearly 2 million new AIDS cases reported last year alone.
 
 Instead, conventional COVID-19 epidemic
 models represent populations in terms of their `status' vis
@@ -70,9 +61,9 @@ is true -- as long as a population remains predominantly immunologically
 naive, then the risk of further infection has not passed. 
 \begin{figure*}[t!]
 \begin{center}
-\includegraphics[width=0.3\textwidth]{figseir_baseplat_a1_noname.pdf}
-\includegraphics[width=0.3\textwidth]{figseir_baseplat_a2_noname.pdf}
-\includegraphics[width=0.3\textwidth]{figseir_baseplat_a4_noname.pdf}
+\includegraphics[width=0.8\textwidth]{figseir_baseplat_k1_noname.pdf}\\
+\includegraphics[width=0.8\textwidth]{figseir_baseplat_k2_noname.pdf}\\
+\includegraphics[width=0.8\textwidth]{figseir_baseplat_k4_noname.pdf}
 \caption{Infections and deaths per day in a death-awareness based
 social distancing model. Awareness varies from $k=1$, $k=2$, to $k=4$ 
 in panels (A), (B), and (C).
@@ -233,31 +224,79 @@ when there are larger lags between new cases and fatalities
 etiology and treatment).
 
 To explore the impacts of oscillations
-in a realistic model, we incorporated fatality-based awareness
-to the case of COVID-19, including 
-detailed information on symptomatic, asymptomatic, hospitalization,
-cases, age structure, and age-dependent risk.  In doing so we
-consider a model of COVID-19 with a ${\cal{R}}_0=2.32$ and an
-incidence fatality rate of 0.82\%. Figure~\ref{fig.covid-plat}}
-shows that the insights from the SEIR model generalize to
-the case of COVID-19 dynamics, albeit with some differences.  In particular, we
-find that deaths exceed $D_c$ because of the lag between 
-new infection and fatalities (with a mean of 20 days in the current model).  Further
-delays between infection and fatalities can lead to larger oscillations,
+we incorporated an additional class $H$,
+assuming that fatalities follow potentially prolonged
+hospital stays.  We do not include explicit
+detailed information on symptomatic transmission, asymptomatic
+transmission, hospitalization outcome,
+age structure, and age-dependent risk. Instead, 
+consider the extended SEIR model:
+\begin{eqnarray}
+\dot{S} &=& -\frac{\beta SI}{\left[1+\left(\dot{D}/D_c\right)^{k}\right]}\\
+\dot{E} &=& \frac{\beta SI}{\left[1+\left(\dot{D}/D_c\right)^{k}\right]}-\mu E\\
+\dot{I} &=& \mu E-\gamma I \\
+\dot{R} &=& (1-f_D)\gamma I\\
+\dot{H} &=& f_D\gamma a I - \gamma_H H\\
+\dot{D} &=& \gamma_H H
+\end{eqnarray}
+where $T_H=1/\gamma_H$ defines the average time in a hospital
+stay before a fatality. The earlier analysis of
+the quasi-stationary equilibrium in fatalities holds; hence
+we anticipate that dynamics shold converge to $\dot{D}=\dot{D}^{(q)}$
+at early times. However, increased delays between cases and
+fatalities could lead to oscillations in both.  Indeed, this
+is what we find via examination of models in which
+$T_H$ ranges from 7 to 35 days, with increasing magnitude of
+oscillations as $T_H$ increases (see Figure~\ref{fig.oscillate}).
+In essence, delays between infection and fatalities can lead to larger oscillations,
 as individual behavior changes due to local awareness of deaths.  Reduction in 
 contacts when fatality rates exceed the critical awareness level do not translate
-into reductions for a period of 20 days, such that deaths can then be driven
+into reductions for a period similar to that of $T_H$ , such that deaths can then be driven
 below this critical value, then contacts increase, and deaths increase (again with
 a lag), and so on.  
-\begin{figure}[t!]
+
+\begin{figure*}[t!]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{figbaseline_stir_plat_high_noname.pdf}
-\caption{COVID-19 dynamics given awareness-based
-social distancing model. Awareness varies from $k=1$, $k=2$, to $k=4$.
-Epidemiological and age-specific parameters are from previous work (Weitz et al. shield immunity).
-\label{fig.covid-plat}}
+\includegraphics[width=0.45\textwidth]{figseir_Hdel_k1_noname.pdf}
+\includegraphics[width=0.45\textwidth]{figseir_Hdel_k1D_noname.pdf}\\
+\includegraphics[width=0.45\textwidth]{figseir_Hdel_k2_noname.pdf}
+\includegraphics[width=0.45\textwidth]{figseir_Hdel_k2D_noname.pdf}\\
+\includegraphics[width=0.45\textwidth]{figseir_Hdel_k4_noname.pdf}
+\includegraphics[width=0.45\textwidth]{figseir_Hdel_k4D_noname.pdf}\\
+\caption{Emergence of oscillatory dynamics in a death-driven awareness
+model of social distancing given lags between infection and fatality.
+Awareness varies from $k=1$, $k=2$, to $k=4$.  The dashed
+lines in panels (B), (D), and (F), denote the
+expected quasi-stationary value $\dot{D}^{(q)}$.
+\label{fig.oscillate}}
 \end{center}
-\end{figure}
+\end{figure*}
+
+%fatality-based awareness
+%to the case of COVID-19, including 
+%detailed information on symptomatic, asymptomatic, hospitalization,
+%cases, age structure, and age-dependent risk.  In doing so we
+%consider a model of COVID-19 with a ${\cal{R}}_0=2.32$ and an
+%incidence fatality rate of 0.82\%. Figure~\ref{fig.covid-plat}}
+%shows that the insights from the SEIR model generalize to
+%the case of COVID-19 dynamics, albeit with some differences.  In particular, we
+%find that deaths exceed $D_c$ because of the lag between 
+%new infection and fatalities (with a mean of 20 days in the current model).  Further
+%delays between infection and fatalities can lead to larger oscillations,
+%as individual behavior changes due to local awareness of deaths.  Reduction in 
+%contacts when fatality rates exceed the critical awareness level do not translate
+%into reductions for a period of 20 days, such that deaths can then be driven
+%below this critical value, then contacts increase, and deaths increase (again with
+%a lag), and so on.  
+%\begin{figure}[t!]
+%\begin{center}
+%\includegraphics[width=0.45\textwidth]{figbaseline_stir_plat_high_noname.pdf}
+%\caption{COVID-19 dynamics given awareness-based
+%social distancing model. Awareness varies from $k=1$, $k=2$, to $k=4$.
+%Epidemiological and age-specific parameters are from previous work (Weitz et al. shield immunity).
+%\label{fig.covid-plat}}
+%\end{center}
+%\end{figure}
 
 Finally, we note that the scenarios studied, the bulk of the population remains
 susceptible throughout the dynamics. Hence, if individuals tire of social
@@ -269,7 +308,20 @@ if short-term awareness predominates, then COVID-19 dynamics may result
 in plateau- and shoulder-like behavior, including the possiblity of 
 lag-driven oscillations.  We note that these oscillations could be amplified 
 in stochastic models.  As a result, passing a `peak' need not imply
-the rapid decline of risk. Instead, as cumulative data from outbreak epidemics have already
-shown, the asymmetric post-peak dynamics of COVID-19, including
+the rapid decline of risk. This simple message has gone unheeded
+in models that now form the basis for public policy
+and strategic planning, e.g., like the IHME 
+model. The IHME model predicts peaks and rapid declines, building upon 
+the curve-fitting approach of Farr's law posited in 1840 before the
+germ theory of disease.  Thirty years ago reserachers revived Farr's Law, in part, 
+to predict the scope of the HIV epidemic, e.g., in 1990
+the law was used to extrapolate to a peak HIV epidemic size of 200,000 cases by the 
+mid-1990s\citep{bregman_1990};
+in contrast
+there were nearly 2 million new AIDS cases reported last year alone. Relying
+on curve fits to early cases to forecast
+early declines in the absence of population-wide immunity can be exponentially wrong.
+Instead we contend that as cumulative data from COVID19 outbreaks already
+indicate, the asymmetric post-peak dynamics of COVID-19, including
 slow declines and plateau-like behavior, may be an emergent
 property of awareness-driven epidemiological dynamics.
