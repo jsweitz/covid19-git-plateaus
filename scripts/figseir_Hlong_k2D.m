@@ -1,4 +1,4 @@
-clf
+%cl2
 % automatically create postscript whenever
 % figure is drawn
 tmpfilename = 'figseir_Hlong_k2D';
@@ -100,7 +100,7 @@ set(gca,'fontsize',20);
 
 % legend
 % tmplh = legend('stuff',...);
-tmplh = legend('$ND_{c}=2,500$ deaths' ,'$ND_{c}=5,000$','$ND_{c}=10,000$ deaths','No long-term awareness');
+tmplh = legend('$ND_{c}=2,500$ deaths' ,'$ND_{c}=5,000$ deaths','$ND_{c}=10,000$ deaths','No long-term awareness');
 set(tmplh,'interpreter','latex','fontsize',16,'location','NorthEast');
 % remove box
 % set(tmplh,'visible','off')
