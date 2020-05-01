@@ -57,8 +57,8 @@ tmph=semilogy(t,ones(size(t))*(1/pars.R0),'k--');
 set(tmph,'linewidth',3);
 % ylim([10^0 10^3]);
 xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
-ylabel('Susceptible fraction','fontsize',20,'verticalalignment','bottom','interpreter','latex');
-title('(D) Awareness, $k=2$','fontsize',20,'interpreter','latex');
+ylabel({'Susceptible';'fraction'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
+%title('(D) Awareness, $k=2$','fontsize',20,'interpreter','latex');
 set(gca,'fontsize',20);
 % loglog(,, '');
 %

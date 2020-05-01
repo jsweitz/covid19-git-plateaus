@@ -27,7 +27,7 @@ pars.mu=1/2;
 pars.gamma=1/6;
 pars.frac_D=0.01;
 pars.R0=pars.beta/pars.gamma;
-pars.Dcrit = 10^-5;
+pars.Dcrit = 0.5*10^-5;
 pars.awareness = 1;
 pars.N = 10^7;
 y0 = [pars.N-1 1 0 0 0]/pars.N;
@@ -47,7 +47,7 @@ Iday = pars.beta*S.*I./(1+(Dday/pars.Dcrit).^(pars.awareness));
 % Switch
 %Iday= pars.beta*S.*I.*(Dday<pars.Dcrit);
 
-tmppos= [0.2 0.5 0.7 0.35];
+tmppos= [0.15 0.15 0.35 0.7];
 tmpa = axes('position',tmppos);
 tmph=plot(t,Iday*pars.N,'k-');
 set(tmph,'linewidth',3,'color',[0.2 0.2 0.8]);
@@ -59,18 +59,19 @@ tmph=plot(t,pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness)*ones(size(t))/pars.
 set(tmph,'linewidth',3,'color',[0.2 0.2 0.8]);
 tmpt=text(200,1.075*pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness)/pars.frac_D,'Infection rate peak, $\dot{I}^{(q)}$');
 set(tmpt,'interpreter','latex','fontsize',18);
-title({'(A) SEIR Model with Death-Awareness';'$N=10^7$, $D_c=100$ deaths/day, $a=1$'}','fontsize',20,'interpreter','latex');
-set(gca,'xticklabel',[]);
-ylim([0 2.4*10^4]);
-set(gca,'ytick',[0 2500 5000 10000 15000 20000]);
-set(gca,'yticklabel',{'0';'2,500';'5,000';'10,000';'15,000';'20,000'});
+% set(gca,'xticklabel',[]);
+ylim([0 1.4*10^4]);
+xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
+%set(gca,'ytick',[0 2500 5000 10000 15000 20000]);
+%set(gca,'yticklabel',{'0';'2,500';'5,000';'10,000';'15,000';'20,000'});
 
-tmppos= [0.2 0.15 0.7 0.35];
+tmppos= [0.55 0.15 0.35 0.7];
 tmpa = axes('position',tmppos);
 tmph=plot(t,Dday*pars.N,'k-');
 set(tmph,'linewidth',3);
 xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
-ylabel({'Deaths/day';'out of 10,000,000'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
+ylabel({'Deaths/day';'out of 10,000,000'},'fontsize',20,'verticalalignment','top','interpreter','latex');
+set(gca,'yaxislocation','right');
 set(gca,'fontsize',20);
 hold on
 tmph=plot(t,pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness)*ones(size(t)),'k--');
@@ -79,8 +80,10 @@ tmpt=text(200,1.075*pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness),'Fatality r
 set(tmpt,'interpreter','latex','fontsize',18);
 %set(gca,'ytick',[0:20:100]);
 set(gca,'fontsize',20);
-set(gca,'ytick',[0:50:250]);
-set(gca,'ylim',[0 240]);
+set(gca,'ytick',[0:25:250]);
+set(gca,'ylim',[0 140]);
+tmpt=text(-20,155,{'(A) SEIR Model with Death-Awareness';'$N D_c=50$ deaths/day, $k=1$'}');
+set(tmpt,'fontsize',20,'interpreter','latex','horizontalalignment','center');
 % loglog(,, '');
 %
 %

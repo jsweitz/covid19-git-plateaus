@@ -56,7 +56,7 @@ for i=length(pars.Dcrit_range):-1:1,
   set(tmpt,'interpreter','latex','fontsize',16);
 end
 ylim([10^0 10^3]);
-title('(C) Awareness, $k=2$','fontsize',20,'interpreter','latex');
+%title('(C) Awareness, $k=2$','fontsize',20,'interpreter','latex');
 xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
 ylabel({'Deaths/day';'out of 10,000,000'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
 set(gca,'fontsize',20);
