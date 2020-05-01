@@ -1,3 +1,7 @@
+\newcommand{\Reff}{\ensuremath}
+
+JD: The current version of Reff looks really bad.
+
 \section{Introduction}
 The spread of COVID-19 has elevated the importance of epidemiological
 models as a means to forecast both near- and long-term spread. 
@@ -17,7 +21,7 @@ an epidemic `forecast'.  The IHME's epidemic forecast
 differs from conventional
 epidemic models in a significant way -- IHME assumes
 that the cumulative deaths in the COVID-19 epidemic
-follow a predefined, Gaussian-like trajectory.
+follow a symmetric, Gaussian-like trajectory. (JD: Predefined not clear, maybe wrong)
 %Vsuch that deaths go up, reach a peak,
 %and then go back down.  This trajectory is symmetric
 %by construction, such that the time it takes to reach the peak 
@@ -25,13 +29,15 @@ follow a predefined, Gaussian-like trajectory.
 For example, the 
 IHME model predicts that if the peak is 2 weeks away then in 4 weeks
 cases will return to the level of the present, and continue
-to diminish rapidly.  But, there is no epidemiological rule
-that says epidemics must have one symmetric peak, 
-the defunct Farr's Law of Epidemics notwithstanding
+to diminish rapidly.  But, it is not the case
+that epidemics must have one symmetric peak -- 
+the archaic Farr's Law of Epidemics notwithstanding
 (see~\citep{bregman1990farr} for a cautionary tale of the 
 misapplication of Farr's law to the HIV epidemic). 
 
-Instead, conventional COVID-19 epidemic
+(JD: I would love to have the chance to simplify discussion of R below)
+
+Conventional epidemic
 models represent populations in terms of their `status' vis
 a vis the infectious agent, in this case 
 SARS-CoV-2 (e.g.,~\citep{ferguson2020report,kucharski2020early,kissler_medrxiv2020,park_medrxiv2020,kraemer_2020sci,li_science2020,wu2020estimating}),
@@ -56,6 +62,8 @@ infectious cases caused by a single infectious individual
 in a population with pre-existing circulation; this number varies with
 time depending on population state, disease characteristics, and 
 social behavior.
+(JD: mentioning social behaviour here created a weird conflation for me. The point of this \P\ is that we are assuming susceptible depletion is the main thing going on.)
+
 But, even when herd immunity is reached, there will still be new cases which then
 diminish over time, until the epidemic concludes.  
 A single peak paradigm is
@@ -65,8 +73,8 @@ sufficiently in a population to reach and exceed `herd immunity'.
 %that social distancing will be sustained such that
 %second peaks or other long-term trajectories are outside the bounds
 %of forecasting uncertainty.
-Yet, the converse
-is true in the case of COVID-19 -- as long as 
+The converse
+is also true in the case of COVID-19 -- as long as 
 a population remains predominantly immunologically
 naive, then the risk of further infection has not passed. 
 
@@ -78,9 +86,7 @@ example of a `conventional' epidemic model
 that shows the benefits of  early intervention steps in reducing
 transmission and preserving health system resources vs.~ 
 a `herd immunity' strategy.  Unlike the IHME model,
-the ICL model suggests that more than one peak is possible,
-precisely because the model integrates latent states of the population
-as part of a representation of epidemiological mechanisms.
+the ICL model suggests that more than one peak is possible.
 The ICL model assumes that
 transmission is reduced because of externalities, like lockdowns,
 school closings, and so on.  For a disease
@@ -119,9 +125,7 @@ The awareness-based distancing is controlled by
 the death rate $\delta\equiv \dot{D}$,
 the half-saturation constant ($\delta_c>0$), and
 the sharpness of change in the force of infection ($k\geq 1$).
-As a result of the proportionality
-between $\delta$ and $I$, this model is a variant of a recently proposed
-local awareness based distancing model~\citep{eksin2019systematic}.
+Since $\delta$ is proportional to $I$, this model is closely related to a recently proposed awareness-based distancing model~\citep{eksin2019systematic}.
 Note that the present
 model converges to the conventional SEIR model as $\delta_c\rightarrow \infty$.
 \begin{figure}[t!]
@@ -169,9 +173,8 @@ far from herd immunity, specifically when
 \begin{equation}
 \gamma I = \frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}.
 \end{equation}
-In the event that $\delta_c/(\gamma f_D) \ll 1$ we anticipate that most of the population
-remains susceptible when individual behavior changes markedly
-due to awareness of disease severity. Hence, we hypothesize that the
+When $\delta_c$ is small compared to the death rate of infectious individuals $(\gamma f_D)$ we anticipate that individual behavior will respond quickly to the disease outbreak.
+Hence, we hypothesize that the
 emergence of an
 awareness-based peak can occur early, i.e., $S(t)\approx 1$, consistent
 with a quasi-stationary equilibrium when the death rate is
@@ -197,7 +200,9 @@ $f_D=0.01$, $N=10^7$, and $N\delta_c=50$ /day.
 %level as an approximation of daily fatality rates over week-long periods.
 As is evident, the rise and decline from peaks are not symmetric. Instead,
 increasing nonlinearity of awareness
-$a$ lead to shoulders and, in the limit of $k\gg 1$, plateaus, such that
+$a$ leads to shoulders where incidence decreases very slowly after a peak.
+(JD: maybe we should make shoulders instead of plateaus our brand; this text seems a digression.)
+and, in the limit of $k\gg 1$, plateaus, such that
 deaths and cases appear nearly constant and close to the quasi-stationary
 equilibrium, declining slowly because of the
 depletion of susceptibles.  
