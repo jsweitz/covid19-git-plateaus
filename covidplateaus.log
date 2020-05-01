@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 MAY 2020 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 MAY 2020 15:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -503,82 +503,87 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/upd
 map/pdftex.map}]
-<figseir_baseplat_k2_D_noname.pdf, id=19, 568.1225pt x 514.92375pt>
-File: figseir_baseplat_k2_D_noname.pdf Graphic file (type pdf)
+<scripts/figseir_baseplat_k2_D_noname.pdf, id=18, 568.1225pt x 514.92375pt>
+File: scripts/figseir_baseplat_k2_D_noname.pdf Graphic file (type pdf)
 
-<use figseir_baseplat_k2_D_noname.pdf>
-Package pdftex.def Info: figseir_baseplat_k2_D_noname.pdf used on input line 12
-5.
+<use scripts/figseir_baseplat_k2_D_noname.pdf>
+Package pdftex.def Info: scripts/figseir_baseplat_k2_D_noname.pdf used on input
+ line 124.
 (pdftex.def)             Requested size: 203.99689pt x 184.89311pt.
 
-<figseir_baseplat_k2_I_noname.pdf, id=20, 588.1975pt x 520.94624pt>
-File: figseir_baseplat_k2_I_noname.pdf Graphic file (type pdf)
+<scripts/figseir_baseplat_k2_I_noname.pdf, id=19, 588.1975pt x 520.94624pt>
+File: scripts/figseir_baseplat_k2_I_noname.pdf Graphic file (type pdf)
 
-<use figseir_baseplat_k2_I_noname.pdf>
-Package pdftex.def Info: figseir_baseplat_k2_I_noname.pdf used on input line 12
-6.
+<use scripts/figseir_baseplat_k2_I_noname.pdf>
+Package pdftex.def Info: scripts/figseir_baseplat_k2_I_noname.pdf used on input
+ line 125.
 (pdftex.def)             Requested size: 203.99689pt x 180.67258pt.
 
-<figseir_Speak_k2_noname.pdf, id=21, 708.6475pt x 391.4625pt>
-File: figseir_Speak_k2_noname.pdf Graphic file (type pdf)
+<scripts/figseir_Speak_k2_noname.pdf, id=20, 566.115pt x 523.9575pt>
+File: scripts/figseir_Speak_k2_noname.pdf Graphic file (type pdf)
 
-<use figseir_Speak_k2_noname.pdf>
-Package pdftex.def Info: figseir_Speak_k2_noname.pdf used on input line 140.
-(pdftex.def)             Requested size: 229.49844pt x 126.7758pt.
+<use scripts/figseir_Speak_k2_noname.pdf>
+Package pdftex.def Info: scripts/figseir_Speak_k2_noname.pdf used on input line
+ 139.
+(pdftex.def)             Requested size: 203.99689pt x 188.80045pt.
 
-<figseir_Susc_k2_noname.pdf, id=22, 704.6325pt x 388.45125pt>
-File: figseir_Susc_k2_noname.pdf Graphic file (type pdf)
+<scripts/figseir_Susc_k2_noname.pdf, id=21, 562.1pt x 520.94624pt>
+File: scripts/figseir_Susc_k2_noname.pdf Graphic file (type pdf)
 
-<use figseir_Susc_k2_noname.pdf>
-Package pdftex.def Info: figseir_Susc_k2_noname.pdf used on input line 141.
-(pdftex.def)             Requested size: 229.49844pt x 126.5178pt.
+<use scripts/figseir_Susc_k2_noname.pdf>
+Package pdftex.def Info: scripts/figseir_Susc_k2_noname.pdf used on input line 
+140.
+(pdftex.def)             Requested size: 203.99689pt x 189.05876pt.
  [2 <./scripts/figseir_baseplat_k2_D_noname.pdf> <./scripts/figseir_baseplat_k2
 _I_noname.pdf>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 226.
+ on input line 225.
 
-<figseir_Hdel_k2_noname.pdf, id=40, 690.58pt x 406.51875pt>
-File: figseir_Hdel_k2_noname.pdf Graphic file (type pdf)
+<scripts/figseir_Hdel_k2_noname.pdf, id=39, 690.58pt x 406.51875pt>
+File: scripts/figseir_Hdel_k2_noname.pdf Graphic file (type pdf)
 
-<use figseir_Hdel_k2_noname.pdf>
-Package pdftex.def Info: figseir_Hdel_k2_noname.pdf used on input line 267.
+<use scripts/figseir_Hdel_k2_noname.pdf>
+Package pdftex.def Info: scripts/figseir_Hdel_k2_noname.pdf used on input line 
+266.
 (pdftex.def)             Requested size: 229.49844pt x 135.09444pt.
 
-<figseir_Hdel_k2D_noname.pdf, id=41, 710.655pt x 388.45125pt>
-File: figseir_Hdel_k2D_noname.pdf Graphic file (type pdf)
+<scripts/figseir_Hdel_k2D_noname.pdf, id=40, 710.655pt x 388.45125pt>
+File: scripts/figseir_Hdel_k2D_noname.pdf Graphic file (type pdf)
 
-<use figseir_Hdel_k2D_noname.pdf>
-Package pdftex.def Info: figseir_Hdel_k2D_noname.pdf used on input line 268.
+<use scripts/figseir_Hdel_k2D_noname.pdf>
+Package pdftex.def Info: scripts/figseir_Hdel_k2D_noname.pdf used on input line
+ 267.
 (pdftex.def)             Requested size: 229.49844pt x 125.44496pt.
  [3 <./scripts/figseir_Speak_k2_noname.pdf> <./scripts/figseir_Susc_k2_noname.p
 df>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 341.
+ on input line 340.
 
-<figseir_Hlong_k2D_noname.pdf, id=58, 556.0775pt x 376.40625pt>
-File: figseir_Hlong_k2D_noname.pdf Graphic file (type pdf)
+<scripts/figseir_Hlong_k2D_noname.pdf, id=55, 556.0775pt x 376.40625pt>
+File: scripts/figseir_Hlong_k2D_noname.pdf Graphic file (type pdf)
 
-<use figseir_Hlong_k2D_noname.pdf>
-Package pdftex.def Info: figseir_Hlong_k2D_noname.pdf used on input line 344.
+<use scripts/figseir_Hlong_k2D_noname.pdf>
+Package pdftex.def Info: scripts/figseir_Hlong_k2D_noname.pdf used on input lin
+e 343.
 (pdftex.def)             Requested size: 229.49844pt x 155.3499pt.
 
-<figseir_Hlong_k2Dtot_noname.pdf, id=59, 553.06625pt x 385.44pt>
-File: figseir_Hlong_k2Dtot_noname.pdf Graphic file (type pdf)
+<scripts/figseir_Hlong_k2Dtot_noname.pdf, id=56, 553.06625pt x 385.44pt>
+File: scripts/figseir_Hlong_k2Dtot_noname.pdf Graphic file (type pdf)
 
-<use figseir_Hlong_k2Dtot_noname.pdf>
-Package pdftex.def Info: figseir_Hlong_k2Dtot_noname.pdf used on input line 345
-.
+<use scripts/figseir_Hlong_k2Dtot_noname.pdf>
+Package pdftex.def Info: scripts/figseir_Hlong_k2Dtot_noname.pdf used on input 
+line 344.
 (pdftex.def)             Requested size: 229.49844pt x 159.93697pt.
 ) (./covidplateaus.acknowledge.tex)
 Underfull \hbox (badness 1033) in paragraph at lines 6--33
 \OT1/cmr/m/n/10 (1R01AI46592-01), and Nation-al Sci-ence Foun-da-tion
  []
 
-(./covidplateaus.biblio.tex (./covidplateaus.bbl [4 <./scripts/figseir_Hdel_k2_
-noname.pdf> <./scripts/figseir_Hdel_k2D_noname.pdf> <./covid19-git-plateaus/scr
-ipts/figseir_Hlong_k2D_noname.pdf> <./scripts/figseir_Hlong_k2Dtot_noname.pdf>]
+[4 <./scripts/figseir_Hdel_k2_noname.pdf> <./scripts/figseir_Hdel_k2D_noname.pd
+f> <./covid19-git-plateaus/scripts/figseir_Hlong_k2D_noname.pdf> <./scripts/fig
+seir_Hlong_k2Dtot_noname.pdf>] (./covidplateaus.biblio.tex (./covidplateaus.bbl
 
 Underfull \hbox (badness 1394) in paragraph at lines 4--8
  \OT1/cmr/m/n/9 on hos-pi-tal bed-days, ICU-days, ventilator-days and
@@ -604,12 +609,12 @@ n/9 . Accessed
 )) [5] (./covidplateaus.aux) ) 
 Here is how much of TeX's memory you used:
  11254 strings out of 493117
- 196091 string characters out of 6135433
- 274859 words of memory out of 5000000
- 14469 multiletter control sequences out of 15000+600000
+ 196346 string characters out of 6135433
+ 272859 words of memory out of 5000000
+ 14468 multiletter control sequences out of 15000+600000
  9922 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,73p,509b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,8n,73p,510b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
@@ -632,9 +637,9 @@ sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr
 ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/lo
 cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/loca
 l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on covidplateaus.pdf (5 pages, 803538 bytes).
+Output written on covidplateaus.pdf (5 pages, 1035605 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
+ 154 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
