@@ -95,7 +95,7 @@ set(gca,'xtick',[0:50:400]);
 
 % legend
 % tmplh = legend('stuff',...);
-tmplh = legend('$ND_{c}=2,500$ deaths' ,'$ND_{c}=5,000$','$ND_{c}=10,000$ deaths','No long-term awareness');
+tmplh = legend('$ND_{c}=2,500$ deaths' ,'$ND_{c}=5,000$ deaths','$ND_{c}=10,000$ deaths','No long-term awareness');
 set(tmplh,'interpreter','latex','fontsize',16,'location','SouthEast');
 % remove box
 % set(tmplh,'visible','off')
