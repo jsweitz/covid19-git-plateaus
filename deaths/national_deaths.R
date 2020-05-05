@@ -21,6 +21,7 @@ national_deaths <- read.csv("national_deaths.csv") %>%
   mutate(
     dateRep=as.Date(dateRep, format="%d/%m/%Y"),
     countriesAndTerritories=factor(countriesAndTerritories, 
+                                   levels=c("China", "Iran", "Italy", "United_Kingdom", "United_States_of_America"),
                                    labels=c("China", "Iran", "Italy", "UK", "USA")),
     deaths=ifelse(deaths <= 0, NA, deaths)
   ) %>%
