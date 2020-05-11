@@ -15,7 +15,7 @@ g1 <- ggplot(death) +
   geom_point(aes(date, deathIncrease)) +
   geom_line(aes(date, deathIncrease)) +
   geom_smooth(aes(date, deathIncrease), se=FALSE, col="red", lwd=1.5) +
-  scale_x_date("Date", expand=c(0, 0), limits=c(as.Date("2020-03-02"), as.Date("2020-05-04"))) +
+  scale_x_date("Date", expand=c(0, 0), limits=c(as.Date("2020-03-02"), as.Date("2020-05-11"))) +
   scale_y_log10("Daily number of reported deaths", limits=c(1,NA), expand=c(0, 0)) +
   facet_wrap(~state, scale="free_y", nrow=10) +
   theme(
