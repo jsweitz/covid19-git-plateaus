@@ -1,3 +1,4 @@
+\section{Introduction}
 The spread of COVID-19 has elevated the importance of epidemiological
 models as a means to forecast both near- and long-term spread. 
 In the United States, the Institute for Health Metrics and Evaluation (IHME)
@@ -21,6 +22,17 @@ to diminish rapidly.  But, epidemics need not have one symmetric peak --
 the archaic Farr's Law of Epidemics notwithstanding
 (see~\citep{bregman1990farr} for a cautionary tale of using
 Farr's law as applied to the HIV epidemic). 
+\begin{figure*}[t!]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{deaths/national_death.pdf}\\
+\includegraphics[width=0.8\textwidth]{deaths/deaths.pdf}
+\caption{Weekly averages of case fatality rates for COVID-19.
+Fatality rates are averaged in log space, only including days with
+one or more reported fatalities. (Top) Selected national
+and state level averages; (Bottom) State level averages.
+\label{fig.plateaus_cases}}
+\end{center}
+\end{figure*}
 
 Conventional epidemic
 models represent populations in terms of their `status' vis
@@ -61,19 +73,35 @@ school closings, and so on.
 As a result, the ICL model suggests that lifting of large-scale
 public health interventions could be followed by a second wave of cases.
 Yet, for a disease
-that is already the documented cause of more than 50,000 deaths
-in the United States, we posit that individuals
+that is already the documented cause of more than 70,000 deaths
+in the United States alone, we posit that individuals
 are likely to continue to modify
 their behavior even after lockdowns are lifted.  
-Hence, here, we use a simple model to
+Indeed, the peak death rates in the United States and globally
+are not as high as potential maximums in the event that
+COVID-19 had spread unhindered in the population~\citep{ferguson2020report}. 
+Moreover, rather than a peak and decline, there is evidence at both national
+and within-US state scales of plateaus and shoulder like
+behavior for daily fatality rates (Figure~\ref{fig.plateaus_cases}).   
+
+Hence, here, we use a nonlinear model of epidemiological dynamics to
 ask the question: what is the anticipated
 shape of an epidemic if individuals modify their behavior in direct
 response to the impact of a disease at the population level? In doing so,
-we build upon earlier work on awareness based models (e.g.~\citep{funk2009spread,funk2010modelling,eksin2017disease, eksin2019systematic}) with a
-simple, initial assumption: individuals reduce interactions when 
+we build upon earlier work on awareness based models (e.g.~\citep{funk2009spread,funk2010modelling,eksin2017disease, eksin2019systematic}) with an
+initial assumption: individuals reduce interactions when 
 death rates are high and increase interactions when death rates are low.  
+As we show, short-term awareness can lead to dramatic reductions
+in death rates compared to models without accounting for behavior,
+leading to plateaus, shoulders,
+and lag-driven oscillations in death rates. We also show that dynamics
+can be driven from persistent dynamics to elimination when
+awareness shifts from short- to long-term.
 
-To begin, consider a SEIR like model
+
+\section{Results and Discussion}
+\subsection{SEIR Model with Short-Term Awareness of Risk}
+Consider a SEIR like model
 \begin{eqnarray}
 \dot{S} &=& -\frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}\\
 \dot{E} &=& \frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}-\mu E\\
@@ -96,7 +124,8 @@ The awareness-based distancing is controlled by
 the death rate $\delta\equiv \dot{D}$,
 the half-saturation constant ($\delta_c>0$), and
 the sharpness of change in the force of infection ($k\geq 1$).
-Since $\delta$ is proportional to $I$, this model is closely related to a recently proposed awareness-based distancing model~\citep{eksin2019systematic}.
+Since $\delta$ is proportional to $I$, this model is closely related to a recently proposed awareness-based distancing model~\citep{eksin2019systematic}
+and to an independently derived feedback SIR model~\citep{franco2020feedback}.
 Note that the present
 model converges to the conventional SEIR model as $\delta_c\rightarrow \infty$.
 \begin{figure}[t!]
@@ -176,7 +205,9 @@ between relaxation of awareness-based
 distancing (which leads to increases in cases and deaths) and an 
 increase in awareness in response to increases in cases and deaths.  
 
-These results suggest a generic outcome: first fatalities will grow
+\subsection{Short-term awareness and long-term plateaus}
+Initial analysis of a SEIR model with short-term 
+awareness of population-level severity suggest sa generic outcome: first fatalities will grow
 exponential before plateauing near to the fatality awareness level $\delta_c$.
 In the event that $\delta_c/(\gamma f_D)$ is sufficiently high then susceptible
 depletion will lead to the decline of cases and fatalities.
@@ -190,10 +221,11 @@ for low vallues of $\delta_c$ (top)
 even as the population remains susceptible at levels far above herd immunity (bottom).
 We also observe that as $k$ increases, then fatalities may overshoot
 the plateau. Overshoots arise because individuals initiate protective measures
-closer to when a critical fatality rate has been reached.
+closer to the critical fatality rate.
 These overshoots may lead to oscillatory dynamics
 when there are larger lags between new cases and fatalities.
 
+\subsection{Emergent oscillations given lags between cases and fatalities}
 To explore the impacts of lags on dynamics,
 we incorporated an additional class $H$,
 assuming that fatalities follow potentially prolonged
@@ -226,8 +258,8 @@ $k=4$ on the \verb|github|).
 \begin{center}
 %\includegraphics[width=0.45\textwidth]{figseir_Hdel_k1_noname.pdf}
 %\includegraphics[width=0.45\textwidth]{figseir_Hdel_k1D_noname.pdf}\\
-\includegraphics[width=0.485\textwidth]{scripts/figseir_Hdel_k2_noname.pdf}\\
-\includegraphics[width=0.485\textwidth]{scripts/figseir_Hdel_k2D_noname.pdf}
+\includegraphics[width=0.47\textwidth]{scripts/figseir_Hdel_k2_noname.pdf}\\
+\includegraphics[width=0.47\textwidth]{scripts/figseir_Hdel_k2D_noname.pdf}
 %\includegraphics[width=0.45\textwidth]{figseir_Hdel_k4_noname.pdf}
 %\includegraphics[width=0.45\textwidth]{figseir_Hdel_k4D_noname.pdf}\\
 \caption{Emergence of oscillatory dynamics in a death-driven awareness
@@ -253,7 +285,8 @@ distancing alone.
 \end{center}
 \end{figure}
 
-Finally, we recognize that awareness can vary in duration.  In previous
+\subsection{Dynamical consequences of short-term and long-erm awareness}
+Awareness can vary in duration.  In previous
 work, long-term awareness of cumulative incidence
 was shown to lead to substantial decreases
 in final size of epidemics compared
@@ -289,6 +322,7 @@ In reality, we expect that individual
 behavior is shaped by short- and long-term awareness of risks, including
 the potential for `decay' of long-term awareness~\citep{funk2009spread,funk2010modelling}.
 
+\section{Conclusions}
 In summary, we have shown how awareness of disease-induced death can reduce
 transmission and also lead
 to highly asymmetric epidemic curves, where the epidemic declines slowly 
@@ -296,7 +330,7 @@ even as the majority of the population remains susceptible.
 In these conditions, if individuals are unable
 to sustain social
 distancing policies, or begin to tolerate higher death rates, then cases 
-could increase. 
+could increase (similar results have also been proposed in a recent, independently derived feedback SIR model~\citep{franco2020feedback}). 
 Hence: passing a `peak' need not imply
 the rapid decline of risk.  These types of impacts of awareness-driven
 endogenous changes in ${\cal{R}}_{\mathrm{eff}}$ are typically

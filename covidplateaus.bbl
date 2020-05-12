@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{covid2020forecasting}
-{IHME COVID-19 health servies utilization forecasting team}, Murray CJ
+{IHME COVID-19 health services utilization forecasting team}, Murray CJ
 \newblock (2020) {Forecasting COVID-19 impact on hospital bed-days, ICU-days,
   ventilator-days and deaths by US state in the next 4 months}.
 \newblock \emph{medRxiv}.
@@ -21,7 +21,7 @@ Ferguson NM, {et~al.}
 
 \bibitem{kucharski2020early}
 Kucharski AJ, {et~al.}
-\newblock (2020) Early dynamics of transmission and control of covid-19: a
+\newblock (2020) Early dynamics of transmission and control of {COVID-19}: a
   mathematical modelling study.
 \newblock \emph{The lancet infectious diseases}.
 
@@ -29,7 +29,7 @@ Kucharski AJ, {et~al.}
 Kissler SM, Tedijanto C, Goldstein E, Grad YH, Lipsitch M
 \newblock (2020) Projecting the transmission dynamics of {SARS-CoV-2} through
   the post-pandemic period.
-\newblock \emph{medRxiv}.
+\newblock \emph{Science} p eabb5793.
 
 \bibitem{park_medrxiv2020}
 Park SW, {et~al.}
@@ -84,5 +84,11 @@ Eksin C, Paarporn K, Weitz JS
 \newblock (2019) Systematic biases in disease forecasting--{The} role of
   behavior change.
 \newblock \emph{Epidemics} 27:96--105.
+
+\bibitem{franco2020feedback}
+Franco E
+\newblock (2020) {A feedback SIR (fSIR) model highlights advantages and
+  limitations of infection-based social distancing}.
+\newblock \emph{arXiv preprint arXiv:2004.13216}.
 
 \end{thebibliography}
