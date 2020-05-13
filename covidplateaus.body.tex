@@ -24,12 +24,12 @@ the archaic Farr's Law of Epidemics notwithstanding
 Farr's law as applied to the HIV epidemic). 
 \begin{figure*}[t!]
 \begin{center}
-\includegraphics[width=0.75\textwidth]{deaths/national_death.pdf}\\
-\includegraphics[width=0.8\textwidth]{deaths/deaths.pdf}
+\includegraphics[width=0.9\textwidth]{deaths/national_death.pdf}\\
+%\includegraphics[width=0.8\textwidth]{deaths/deaths.pdf}
 \caption{Locally estimated scatterplot smoothing (LOESS) of daily number of deaths for COVID-19.
 Daily number of deaths is averaged in log space, only including days with
 one or more reported deaths. (Top) Selected national
-and state level averages; (Bottom) State level averages.
+level averages; (Bottom) US state level averages.
 \label{fig.plateaus_cases}}
 \end{center}
 \end{figure*}
@@ -84,7 +84,7 @@ Moreover, rather than a peak and decline, there is evidence at both national
 and within-US state scales of plateaus and shoulder like
 behavior for daily fatality rates (Figure~\ref{fig.plateaus_cases}).   
 
-Hence, here, we use a nonlinear model of epidemiological dynamics to
+In this manuscript we use a nonlinear model of epidemiological dynamics to
 ask the question: what is the anticipated
 shape of an epidemic if individuals modify their behavior in direct
 response to the impact of a disease at the population level? In doing so,
@@ -123,11 +123,22 @@ susceptible, exposed, infectious, recovered, and deaths, respectively.
 The awareness-based distancing is controlled by 
 the death rate $\delta\equiv \dot{D}$,
 the half-saturation constant ($\delta_c>0$), and
-the sharpness of change in the force of infection ($k\geq 1$).
+the sharpness of change in the force of infection ($k\geq 1$)
+(see Figure~\ref{fig.schematic} for a schematic).
 Since $\delta$ is proportional to $I$, this model is closely related to a recently proposed awareness-based distancing model~\citep{eksin2019systematic}
 and to an independently derived feedback SIR model~\citep{franco2020feedback}.
 Note that the present
 model converges to the conventional SEIR model as $\delta_c\rightarrow \infty$.
+\begin{figure}[t!]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{schematics/plateau_schematic.pdf}
+\caption{Schematic of a SEIR model with awareness-driven social distancing.
+Transmission is reduced based on short- and/or long-term awareness
+of population-level disease severity (i.e., fatalities).
+\label{fig.schematic}}
+\end{center}
+
+\end{figure}
 \begin{figure}[t!]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{scripts/figseir_baseplat_k2_D_noname.pdf}\\
@@ -207,7 +218,7 @@ increase in awareness in response to increases in cases and deaths.
 
 \subsection{Short-term awareness and long-term plateaus}
 Initial analysis of a SEIR model with short-term 
-awareness of population-level severity suggest sa generic outcome: first fatalities will grow
+awareness of population-level severity suggests a generic outcome: first fatalities will grow
 exponential before plateauing near to the fatality awareness level $\delta_c$.
 In the event that $\delta_c/(\gamma f_D)$ is sufficiently high then susceptible
 depletion will lead to the decline of cases and fatalities.
