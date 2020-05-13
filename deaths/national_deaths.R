@@ -9,7 +9,6 @@ us_death <- read.csv("daily.csv") %>%
     date=as.Date(date),
     deathIncrease=ifelse(deathIncrease<=0, NA, deathIncrease)
   ) %>%
-  filter(state %in% c("CA", "WA", "NY", "GA", "LA")) %>%
   rename(
     region=state,
     date=date,
@@ -33,7 +32,8 @@ national_deaths <- read.csv("national_deaths.csv") %>%
 deathall <- bind_rows(national_deaths, us_death) %>%
   mutate(
     region=factor(region, levels=c("China", "Iran", "Italy", "UK", "USA", 
-                                   "CA", "WA", "NY", "GA", "LA"))
+                                   as.character(unique(us_death$region)))),
+    type=ifelse(region %in% c("China", "Iran", "Italy", "UK", "USA"), "1", "2")
   ) %>%
   group_by(region) %>%
   filter(
@@ -49,12 +49,12 @@ g1 <- ggplot(deathall) +
   geom_text(data=deathmin, aes(x=date, y=Inf, label=region), hjust=-0.2, vjust=1.3) +
   geom_point(aes(date, deaths)) +
   geom_line(aes(date, deaths)) +
-  geom_smooth(aes(date, deaths), se=FALSE, col="red", lwd=1.5) +
+  geom_smooth(aes(date, deaths, col=type), se=FALSE, lwd=1.5) +
   scale_x_date(expand=c(0, 0), breaks=c(as.Date("2020-02-01"), as.Date("2020-03-01"), as.Date("2020-04-01"), as.Date("2020-05-01")),
                labels=c("Feb", "Mar", "Apr", "May")) +
-  scale_y_log10("Daily number of reported deaths",
-                sec.axis=sec_axis(~., "Countries\\quad\\quad\\quad\\quad\\quad\\quad US States")) +
-  facet_wrap(~region, scale="free", nrow=2) +
+  scale_y_log10("Daily number of reported deaths") +
+  facet_wrap(~region, scale="free", ncol=5) +
+  scale_color_manual(values=c("red", "blue")) +
   theme(
     panel.grid = element_blank(),
     axis.title.x = element_blank(),
@@ -62,10 +62,11 @@ g1 <- ggplot(deathall) +
     strip.placement = "none",
     strip.text = element_blank(),
     axis.text.y.right = element_blank(),
-    axis.ticks.y.right = element_blank()
+    axis.ticks.y.right = element_blank(),
+    legend.position="none"
   )
 
-tikz(file = "national_death.tex", width = 9, height = 3, standAlone = T)
+tikz(file = "national_death.tex", width = 12, height = 12, standAlone = T)
 plot(g1)
 dev.off()
 tools::texi2dvi('national_death.tex', pdf = T, clean = T)
