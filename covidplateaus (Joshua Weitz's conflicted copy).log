@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 MAY 2020 23:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 MAY 2020 23:12
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **covidplateaus
 (./covidplateaus.tex
@@ -631,8 +631,8 @@ n/9 . Accessed
 [6])) [7] (./covidplateaus.aux) ) 
 Here is how much of TeX's memory you used:
  11287 strings out of 493117
- 197070 string characters out of 6135433
- 272859 words of memory out of 5000000
+ 197071 string characters out of 6135433
+ 271859 words of memory out of 5000000
  14497 multiletter control sequences out of 15000+600000
  9922 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -659,7 +659,7 @@ usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
 /local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/l
 ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on covidplateaus.pdf (7 pages, 1339804 bytes).
+Output written on covidplateaus.pdf (7 pages, 1339635 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  134 compressed objects within 2 object streams

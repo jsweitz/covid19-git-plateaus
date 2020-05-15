@@ -91,4 +91,23 @@ Franco E
   limitations of infection-based social distancing}.
 \newblock \emph{arXiv preprint arXiv:2004.13216}.
 
+\bibitem{chen_2020social}
+Chen H, Xu W, Paris C, Reeson A, Li X
+\newblock (2020) Social distance and sars memory: impact on the public
+  awareness of 2019 novel coronavirus (covid-19) outbreak.
+\newblock \emph{medRxiv}.
+
+\bibitem{leung_lancet2020}
+Leung K, Wu JT, Liu D, Leung GM
+\newblock (2020) First-wave covid-19 transmissibility and severity in china
+  outside hubei after control measures, and second-wave scenario planning: a
+  modelling impact assessment.
+\newblock \emph{The Lancet} 395:1382 -- 1393.
+
+\bibitem{west_nat2020}
+West R, Michie S, Rubin GJ, Aml{\^o}t R
+\newblock (2020) {Applying principles of behaviour change to reduce SARS-CoV-2
+  transmission}.
+\newblock \emph{Nature Human Behaviour}.
+
 \end{thebibliography}

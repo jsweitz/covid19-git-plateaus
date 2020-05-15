@@ -28,18 +28,16 @@ Farr's law as applied to the HIV epidemic).
 %\includegraphics[width=0.8\textwidth]{deaths/deaths.pdf}
 \caption{Locally estimated scatterplot smoothing (LOESS) of daily number of deaths for COVID-19.
 Daily number of deaths is averaged in log space, only including days with
-one or more reported deaths. (Top) Selected national
-level averages; (Bottom) US state level averages.
+one or more reported deaths. (Top; points and red lines) Selected national
+level averages; (Bottom; points and blue lines) US state level averages.
 \label{fig.plateaus_cases}}
 \end{center}
 \end{figure*}
 
 Conventional epidemic
-models represent populations in terms of their `status' vis
-a vis the infectious agent, in this case 
-SARS-CoV-2 (e.g.,~\citep{ferguson2020report,kucharski2020early,kissler_medrxiv2020,park_medrxiv2020,kraemer_2020sci,li_science2020,wu2020estimating}), e.g.,
-susceptible, exposed, infectious,
-hospitalized, and recovered.  
+models of COVID-19 represent populations in terms of their `status' vis
+a vis the infectious agent, i.e., susceptible, exposed, infectious,
+hospitalized, and recovered~\citep{ferguson2020report,kucharski2020early,kissler_medrxiv2020,park_medrxiv2020,kraemer_2020sci,li_science2020,wu2020estimating}.
 New transmission can lead to an exponential increases in cases 
 when the basic reproduction number ${\cal{R}}_0>1$ (the
 basic reproduction number denotes the average number of new
@@ -101,7 +99,7 @@ awareness shifts from short- to long-term.
 
 \section{Results and Discussion}
 \subsection{SEIR Model with Short-Term Awareness of Risk}
-Consider a SEIR like model
+Consider an SEIR like model
 \begin{eqnarray}
 \dot{S} &=& -\frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}\\
 \dot{E} &=& \frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}-\mu E\\
@@ -119,7 +117,10 @@ Consider a SEIR like model
 %where $a(\vec{x})$ denotes awareness-based distancing given the
 %epidemiological phase space
 where $S$, $E$, $I$, $R$, and $D$ denote the proportions of
-susceptible, exposed, infectious, recovered, and deaths, respectively.
+susceptible, exposed, infectious, recovered, and deaths, respectively,
+given transmission rate $\beta$ /day, transition
+to infectious rate $\mu$ /day, recovery rate $\gamma$ /day,
+where $f_D$ is the infection fatality probability.
 The awareness-based distancing is controlled by 
 the death rate $\delta\equiv \dot{D}$,
 the half-saturation constant ($\delta_c>0$), and
@@ -132,7 +133,7 @@ model converges to the conventional SEIR model as $\delta_c\rightarrow \infty$.
 \begin{figure}[t!]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{schematics/plateau_schematic.pdf}
-\caption{Schematic of a SEIR model with awareness-driven social distancing.
+\caption{Schematic of an SEIR model with awareness-driven social distancing.
 Transmission is reduced based on short- and/or long-term awareness
 of population-level disease severity (i.e., fatalities).
 \label{fig.schematic}}
@@ -173,19 +174,18 @@ and $f_D=0.01$.
 \end{center}
 \end{figure}
 
-Typically, epidemics arising in SEIR models have a single case peak, corresponding 
+Unmitigated epidemics arising in SEIR models have a single case peak, corresponding 
 to the point where $\gamma I = \beta S I $ such that 
-$S=1/{\cal{R}}_0$, equivalent to when the herd
-immunity level proportion of individuals
-$1-1/{\cal{R}}_0$ have been infected.
+the population obtains herd immunity when only a proportion
+$S=1/{\cal{R}}_0$ have yet to be infected.
 However, when individuals decrease transmission in relationship
-to awareness of the current severity of the disease, $\delta(t)$,
+to awareness of the population impacts of the disease, $\delta(t)$,
 then the system can `peak' when levels of infected cases are
 far from herd immunity, specifically when
 \begin{equation}
 \gamma I = \frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}.
 \end{equation}
-When $\delta_c$ is small compared to the death rate of infectious individuals $(\gamma f_D)$ we anticipate that individual behavior will respond quickly to the disease outbreak.
+When $\delta_c$ is small compared to the per-capita death rate of infectious individuals $(\gamma f_D)$ we anticipate that individual behavior will respond quickly to the disease outbreak.
 Hence, we hypothesize that the
 emergence of an
 awareness-based peak can occur early, i.e., $S(t)\approx 1$, consistent
@@ -217,9 +217,10 @@ distancing (which leads to increases in cases and deaths) and an
 increase in awareness in response to increases in cases and deaths.  
 
 \subsection{Short-term awareness and long-term plateaus}
-Initial analysis of a SEIR model with short-term 
-awareness of population-level severity suggests a generic outcome: first fatalities will grow
-exponential before plateauing near to the fatality awareness level $\delta_c$.
+Initial analysis of an SEIR model with short-term 
+awareness of population-level severity suggests a generic outcome: 
+fatalities will increases
+exponentially before plateauing near to a level $\delta_c$.
 In the event that $\delta_c/(\gamma f_D)$ is sufficiently high then susceptible
 depletion will lead to the decline of cases and fatalities.
 Figure~\ref{fig.generic} shows
@@ -228,13 +229,13 @@ equivalent to 5 to 500 deaths/day given a population of $10^7$
 for $k=2$ (we note that results for $k=1$ and $k=4$ lead to similar
 findings, and are included in the \verb|github| repository).
 We find that fatalities can be sustained at near-constant levels
-for low vallues of $\delta_c$ (top)
+for low values of $\delta_c$ (top)
 even as the population remains susceptible at levels far above herd immunity (bottom).
-We also observe that as $k$ increases, then fatalities may overshoot
-the plateau. Overshoots arise because individuals initiate protective measures
-closer to the critical fatality rate.
-These overshoots may lead to oscillatory dynamics
-when there are larger lags between new cases and fatalities.
+%We also observe that as $k$ increases, then fatalities may overshoot
+%the plateau. Overshoots arise because individuals initiate protective measures
+%closer to the critical fatality rate.
+%These overshoots may lead to oscillatory dynamics
+%when there are larger lags between new cases and fatalities.
 
 \subsection{Emergent oscillations given lags between cases and fatalities}
 To explore the impacts of lags on dynamics,
@@ -297,7 +298,11 @@ distancing alone.
 \end{figure}
 
 \subsection{Dynamical consequences of short-term and long-erm awareness}
-Awareness can vary in duration.  In previous
+Awareness can vary in duration, e.g., awareness
+of SARS-1 may prepare individuals to more
+readily adopt and retain
+social distancing measures~\citep{chen_2020social,leung_lancet2020}.  
+In previous
 work, long-term awareness of cumulative incidence
 was shown to lead to substantial decreases
 in final size of epidemics compared
@@ -314,12 +319,15 @@ both short-term and long-term awareness:
 \dot{H} &=& f_D\gamma I - \gamma_H H\\
 \dot{D} &=& \gamma_H H
 \end{eqnarray}
-where $D_c$ denotes a critical cumulative fatality level. 
+where $D_c$ denotes a critical cumulative fatality level
+(and formally a half-saturation constant for the impact
+of long-term awareness on distancing).
 Note that the relative importance of short- and long-term
 awareness can be modulated by $\delta_c$ and $D_c$ respectively.
-Figure~\ref{fig.longterm} shows cumulative fatalities (left)
-and daily fatalities (right)
-for a SEIR model with ${\cal{R}}_0=2.5$, $T_H=14$ days, and $N\delta_c=50$ 
+Figure~\ref{fig.longterm} shows 
+daily fatalities (top)
+and cumulative fatalities (bottom)
+for an SEIR model with ${\cal{R}}_0=2.5$, $T_H=14$ days, and $N\delta_c=50$ 
 fatalities per day and critical cumulative fatalities of
 $ND_c=2,500$, 5,000, 10,000 as well as a comparison case with vanishing
 long-term awareness. As is evident, 
@@ -334,10 +342,13 @@ behavior is shaped by short- and long-term awareness of risks, including
 the potential for `decay' of long-term awareness~\citep{funk2009spread,funk2010modelling}.
 
 \section{Conclusions}
-In summary, we have shown how awareness of disease-induced death can reduce
-transmission and also lead
-to highly asymmetric epidemic curves, where the epidemic declines slowly 
-even as the majority of the population remains susceptible.
+In summary, we have developed and analyzed
+a model that assumes awareness of disease-induced death can 
+reduce transmission and shown that such awareness-driven feedback
+can lead
+to highly asymmetric epidemic curves.  Asymmetric
+curves exhibit extended periods of near-constant
+cases even as the majority of the population remains susceptible.
 In these conditions, if individuals are unable
 to sustain social
 distancing policies, or begin to tolerate higher death rates, then cases 
@@ -351,9 +362,36 @@ highlight the impacts of short-term and long-term awareness
 in efforts to shape information campaigns
 to reduce transmission after early onset `peaks', particularly
 when populations remain predominantly immunologically naive.
+
 Although the models here are intentionally simple,
 we contend that as cumulative data from COVID-19 outbreaks already
 indicate, the asymmetric post-peak dynamics of COVID-19, including
 slow declines and plateau-like behavior, may be an emergent
 property of awareness-driven epidemiological dynamics.
-
+We recognize that qualititatively similar effects could arise 
+if responses are due to case reports or to illnesses
+with a personal connection. In addition, ongoing ascertainment
+biases may also influence the shape of reported rather
+than actual case curves.  
+Moving forward, it is essential to fill in significant
+gaps in understanding how awareness of disease
+risk and severity shape behavior~\citep{west_nat2020}. 
+Mobility data is a proxy but
+not equivalent to a direct indicator of transmission
+risk. Nonetheless, measurements of community
+mobility have been
+used as a pre-indicator for epidemic outcomes.
+Prior work has shown significant impacts of changes
+in mobility and behavior on the COVID-19 outbreak~\citep{kraemer_2020sci}.
+Here we have
+shown the importance of looking at a complementary feedback
+mechanism,
+i.e., from outbreak to behavior.  
+%This feedback is key given
+%that many mobility studies suggested that individuals began
+%social distancing before shelter-in-place policies were instituted.
+Understanding the drivers behind emergent plateaus observed
+at national and sub-national levels could help decision
+makers structure intervention efforts appropriately to effectively 
+communicate awareness campaigns that may aid in collective
+efforts to control the ongoing COVID-19 pandemic.
