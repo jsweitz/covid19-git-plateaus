@@ -55,7 +55,7 @@ A single-peak paradigm is
 only robust insofar as the disease has spread
 sufficiently in a population to reach and exceed `herd immunity'.
 The converse
-is also true in the case of COVID-19 -- as long as 
+is also true  -- as long as 
 a population remains predominantly immunologically
 naive, then the risk of further infection has not passed. 
 
@@ -174,7 +174,7 @@ and $f_D=0.01$.
 \end{center}
 \end{figure}
 
-Unmitigated epidemics arising in SEIR models have a single case peak, corresponding 
+Uncontrolled epidemics in SEIR models have a single case peak, corresponding 
 to the point where $\gamma I = \beta S I $ such that 
 the population obtains herd immunity when only a proportion
 $S=1/{\cal{R}}_0$ have yet to be infected.
@@ -208,9 +208,11 @@ $f_D=0.01$, $N=10^7$, and $N\delta_c=50$ /day.
 As is evident, the rise and decline from peaks are not symmetric. Instead,
 increasing nonlinearity of awareness
 $a$ leads to shoulders where incidence decreases very slowly after a peak.
+\jd{What is ``increasing'' and causing shoulders? Everything in the referenced figure has shoulders? Also, what is $a$?}
 We interpret this finding to mean that as the awareness exponent $k$ increases,
 individuals become less sensitive to fatality rates
 where $\delta < \delta_c$ and more sensitive to fatality rates where $\delta > \delta_c$.  
+\jd{Whatever you're saying about non-linearity is not how we ``interpret this finding''. It's a side point. Spin this \P\ into two: one about what the curves have in common and the main point, and one that is a bit clearer about the effects of non-linearity.}
 The shoulders and plateaus emerge because of the balance
 between relaxation of awareness-based
 distancing (which leads to increases in cases and deaths) and an 
@@ -221,16 +223,14 @@ Initial analysis of an SEIR model with short-term
 awareness of population-level severity suggests a generic outcome: 
 fatalities will increases
 exponentially before plateauing near to a level $\delta_c$.
-In the event that $\delta_c/(\gamma f_D)$ is sufficiently high then susceptible
-depletion will lead to the decline of cases and fatalities.
 Figure~\ref{fig.generic} shows
 the results of dynamics given $\delta_c$ values over a range 
 equivalent to 5 to 500 deaths/day given a population of $10^7$
 for $k=2$ (we note that results for $k=1$ and $k=4$ lead to similar
 findings, see Figure~\ref{fig.generic_k1-4}.
-We find that fatalities can be sustained at near-constant levels
-for low values of $\delta_c$ (top)
-even as the population remains susceptible at levels far above herd immunity (bottom).
+When $\delta_c$ is small (compared to $(\gamma f_D)$,
+fatalities can be sustained at near-constant levels for a long time.
+When $\delta_c$ is higher then the decline of cases and fatalities due to susceptible depletion is relatively fast.
 %We also observe that as $k$ increases, then fatalities may overshoot
 %the plateau. Overshoots arise because individuals initiate protective measures
 %closer to the critical fatality rate.
@@ -241,11 +241,11 @@ even as the population remains susceptible at levels far above herd immunity (bo
 To explore the impacts of lags on dynamics,
 we incorporated an additional class $H$,
 assuming that fatalities follow potentially prolonged
-hospital stays.  We do not include explicit
+hospital stays.  We do not include 
 detailed information on symptomatic transmission, asymptomatic
 transmission, hospitalization outcome,
 age structure, and age-dependent risk (as in~\citep{ferguson2020report}). 
-Instead, consider the extended SEIR model:
+Instead, we consider the extended SEIR model:
 \begin{eqnarray}
 \dot{S} &=& -\frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}\\
 \dot{E} &=& \frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}-\mu E\\
@@ -308,7 +308,7 @@ was shown to lead to substantial decreases
 in final size of epidemics compared
 to baseline expectations from inferred 
 strength~\citep{eksin2019systematic}. Hence, 
-here we consider an extension of the SEIR model
+we consider an extension of the SEIR model
 with lags between infection and fatalities that incorporates
 both short-term and long-term awareness:
 \begin{eqnarray}
@@ -342,7 +342,7 @@ behavior is shaped by short- and long-term awareness of risks, including
 the potential for `decay' of long-term awareness~\citep{funk2009spread,funk2010modelling}.
 
 \section{Conclusions}
-In summary, we have developed and analyzed
+We have developed and analyzed
 a model that assumes awareness of disease-induced death can 
 reduce transmission and shown that such awareness-driven feedback
 can lead
@@ -357,22 +357,22 @@ Hence: passing a `peak' need not imply
 the rapid decline of risk.  These types of impacts of awareness-driven
 endogenous changes in ${\cal{R}}_{\mathrm{eff}}$ are typically
 absent in models that form the basis for public policy and strategic planning.
-Moving forward, we hope that our findings
-highlight the impacts of short-term and long-term awareness 
+Our findings
+highlight the potential impacts of short-term and long-term awareness 
 in efforts to shape information campaigns
 to reduce transmission after early onset `peaks', particularly
 when populations remain predominantly immunologically naive.
 
 Although the models here are intentionally simple,
-we contend that as cumulative data from COVID-19 outbreaks already
-indicate, the asymmetric post-peak dynamics of COVID-19, including
+it seems likely that observed asymmetric dynamics of COVID-19, including
 slow declines and plateau-like behavior, may be an emergent
 property of awareness-driven epidemiological dynamics.
 We recognize that qualititatively similar effects could arise 
 if responses are due to case reports or to illnesses
-with a personal connection. In addition, ongoing ascertainment
+with a personal connection. They may also be driven by official and media responses, as well as purely individual ones. In addition, ongoing ascertainment
 biases may also influence the shape of reported rather
 than actual case curves.  
+
 Moving forward, it is essential to fill in significant
 gaps in understanding how awareness of disease
 risk and severity shape behavior~\citep{west_nat2020}. 
@@ -380,7 +380,7 @@ Mobility data is a proxy but
 not equivalent to a direct indicator of transmission
 risk. Nonetheless, measurements of community
 mobility have been
-used as a pre-indicator for epidemic outcomes.
+used as a leading indicator for epidemic outcomes.
 Prior work has shown significant impacts of changes
 in mobility and behavior on the COVID-19 outbreak~\citep{kraemer_2020sci}.
 Here we have
