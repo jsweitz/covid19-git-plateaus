@@ -15,10 +15,10 @@ set(gcf,'DefaultLineMarkerSize',10);
 set(gcf,'DefaultAxesLineWidth',2);
 
 set(gcf,'PaperPositionMode','auto');
-tmppos= [0.1 0.2 0.7 0.7];
+tmppos= [0.2 0.2 0.7 0.7];
 tmpa = axes('position',tmppos);
 % set(gca,'Position',[680 132 630 688]);
-set(gcf,'Position',[   454   489   861   466]);
+set(gcf,'Position', [679 362 641 458]);
 
 
 % main data goes here
@@ -60,10 +60,10 @@ set(tmph,'linewidth',3);
 %set(tmph,'linewidth',3);
 ylim([0 180]);
 xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
-ylabel({'Deaths/day';'out of 10,000,000'},'fontsize',20,'verticalalignment','top','interpreter','latex');
-title('(B) Awareness, $k=1$','fontsize',20,'interpreter','latex');
+ylabel({'Deaths/day';'out of 10,000,000'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
+title('Awareness, $k=1$','fontsize',20,'interpreter','latex');
 set(gca,'fontsize',20);
-set(gca,'yaxislocation','right');
+%set(gca,'yaxislocation','right');
 % loglog(,, '');
 %
 %

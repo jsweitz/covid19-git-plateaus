@@ -19,6 +19,7 @@ tmppos= [0.2 0.2 0.7 0.7];
 tmpa = axes('position',tmppos);
 % set(gca,'Position',[680 132 630 688]);
 set(gcf,'Position',[   454   489   861   466]);
+set(gcf,'Position',[454 300 659 655])
 
 
 % main data goes here
@@ -57,8 +58,8 @@ tmph=semilogy(t,ones(size(t))*(1/pars.R0),'k--');
 set(tmph,'linewidth',3);
 % ylim([10^0 10^3]);
 xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
-ylabel('Susceptible fraction','fontsize',20,'verticalalignment','bottom','interpreter','latex');
-title('(B) Awareness, $k=1$','fontsize',20,'interpreter','latex');
+ylabel({'Susceptible';'fraction'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
+title('Awareness, $k=1$','fontsize',20,'interpreter','latex');
 set(gca,'fontsize',20);
 % loglog(,, '');
 %

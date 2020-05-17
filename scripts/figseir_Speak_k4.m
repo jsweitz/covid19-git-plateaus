@@ -19,6 +19,8 @@ tmppos= [0.2 0.2 0.7 0.7];
 tmpa = axes('position',tmppos);
 % set(gca,'Position',[680 132 630 688]);
 set(gcf,'Position',[   454   489   861   466]);
+set(gcf,'Position',[454 300 659 655]);
+
 
 
 % main data goes here
@@ -52,14 +54,14 @@ for i=length(pars.Dcrit_range):-1:1,
   tmph=semilogy(t,Dday*pars.N,'k-');
   set(tmph,'linewidth',3,'color',[0.0 0.0 0.0]+[0.15 0.15 0.15]*(5-i));
   hold on
-  tmpt=text(120,Dday(120)*pars.N*1.2,sprintf('$N D_c=%4.0f$ deaths/day',pars.Dcrit*pars.N));
+  tmpt=text(100,Dday(120)*pars.N*1.2,sprintf('$N \\delta_c=%4.0f$ deaths/day',pars.Dcrit*pars.N));
   set(tmpt,'interpreter','latex','fontsize',16);
 end
 ylim([10^0 10^3]);
+title('Awareness, $k=4$','fontsize',20,'interpreter','latex');
 xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
-ylabel({'Deaths/day';'out of 10,000,000'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
+ylabel({'Deaths/day';'given $N=10,000,000$'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
 set(gca,'fontsize',20);
-title('(E) Awareness, $k=4$','fontsize',20,'interpreter','latex');
 % loglog(,, '');
 %
 %

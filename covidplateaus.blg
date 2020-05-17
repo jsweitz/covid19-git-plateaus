@@ -3,89 +3,89 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: covidplateaus.aux
 The style file: pnas.bst
 Database file #1: covidplateaus.bib.bib
-I was expecting a `,' or a `}'---line 257 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 245 of file covidplateaus.bib.bib
  :   
  :   url = {https://doi.org/10.1016/S1473-3099(20)30141-9},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 321 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 309 of file covidplateaus.bib.bib
  :   
  :   volume = {579},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 601 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 589 of file covidplateaus.bib.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 994 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 982 of file covidplateaus.bib.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1033 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1021 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1042 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1030 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1051 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1039 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1642 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1631 of file covidplateaus.bib.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2035 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2024 of file covidplateaus.bib.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2074 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2063 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2083 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2072 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2092 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2081 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I'm ignoring kissler_medrxiv2020's extra "journal" field
---line 2433 of file covidplateaus.bib.bib
-I was expecting a `,' or a `}'---line 2743 of file covidplateaus.bib.bib
+--line 2421 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2731 of file covidplateaus.bib.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3136 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3124 of file covidplateaus.bib.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3175 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3163 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3184 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3172 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3193 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3181 of file covidplateaus.bib.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
@@ -93,43 +93,43 @@ I'm skipping whatever remains of this entry
 Warning--empty journal in ferguson2020report
 You've used 18 entries,
             1765 wiz_defined-function locations,
-            562 strings with 8672 characters,
-and the built_in function-call counts, 3478 in all, are:
-= -- 324
-> -- 150
-< -- 2
-+ -- 56
-- -- 38
-* -- 235
-:= -- 583
+            572 strings with 9017 characters,
+and the built_in function-call counts, 3812 in all, are:
+= -- 366
+> -- 162
+< -- 1
++ -- 60
+- -- 42
+* -- 277
+:= -- 635
 add.period$ -- 35
 call.type$ -- 18
 change.case$ -- 17
 chr.to.int$ -- 0
 cite$ -- 19
-duplicate$ -- 177
-empty$ -- 292
-format.name$ -- 44
-if$ -- 754
+duplicate$ -- 175
+empty$ -- 321
+format.name$ -- 47
+if$ -- 821
 int.to.chr$ -- 0
 int.to.str$ -- 18
 missing$ -- 19
-newline$ -- 93
+newline$ -- 97
 num.names$ -- 18
-pop$ -- 36
+pop$ -- 28
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 57
+skip$ -- 47
 stack$ -- 0
-substring$ -- 195
-swap$ -- 58
-text.length$ -- 2
+substring$ -- 281
+swap$ -- 53
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 26
+while$ -- 31
 width$ -- 20
-write$ -- 190
+write$ -- 201
 (There were 17 error messages)

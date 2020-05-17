@@ -18,7 +18,7 @@ set(gcf,'PaperPositionMode','auto');
 tmppos= [0.2 0.2 0.7 0.7];
 tmpa = axes('position',tmppos);
 % set(gca,'Position',[680 132 630 688]);
-set(gcf,'Position',[   454   489   861   466]);
+set(gcf,'Position', [679 362 641 458]);
 
 
 % main data goes here
@@ -59,7 +59,7 @@ end
 ylim([0 60000]);
 xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
 ylabel({'Infections/day';'given $N=10,000,000$'},'fontsize',20,'verticalalignment','bottom','interpreter','latex');
-title('(A) Awareness, $k=1$','fontsize',20,'interpreter','latex');
+title('Awareness, $k=1$','fontsize',20,'interpreter','latex');
 set(gca,'fontsize',20);
 % loglog(,, '');
 %

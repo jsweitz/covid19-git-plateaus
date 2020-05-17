@@ -4,7 +4,8 @@
 {IHME COVID-19 health services utilization forecasting team}, Murray CJ
 \newblock (2020) {Forecasting COVID-19 impact on hospital bed-days, ICU-days,
   ventilator-days and deaths by US state in the next 4 months}.
-\newblock \emph{medRxiv}.
+\newblock \emph{medRxiv}
+\newblock \url{https://www.medrxiv.org/content/10.1101/2020.03.27.20043752v1}.
 
 \bibitem{bregman1990farr}
 Bregman DJ, Langmuir AD
@@ -17,13 +18,12 @@ Ferguson NM, {et~al.}
   COVID19 mortality and healthcare demand}.
 \newblock
   \url{https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-9-impact-of-npis-on-covid-19/}.
-  Accessed Aprial 30, 2020.
 
 \bibitem{kucharski2020early}
 Kucharski AJ, {et~al.}
-\newblock (2020) Early dynamics of transmission and control of {COVID-19}: a
+\newblock (2020) Early dynamics of transmission and control of covid-19: a
   mathematical modelling study.
-\newblock \emph{The lancet infectious diseases}.
+\newblock \emph{The Lancet Infectious Diseases} 20:553 -- 558.
 
 \bibitem{kissler_medrxiv2020}
 Kissler SM, Tedijanto C, Goldstein E, Grad YH, Lipsitch M
@@ -36,25 +36,27 @@ Park SW, {et~al.}
 \newblock (2020) Reconciling early-outbreak estimates of the basic reproductive
   number and its uncertainty: framework and applications to the novel
   coronavirus ({{SARS-CoV-2}}) outbreak.
-\newblock \emph{medRxiv}.
+\newblock \emph{medRxiv}
+\newblock
+  \url{https://www.medrxiv.org/content/10.1101/2020.01.30.20019877v4.full.pdf}.
 
 \bibitem{kraemer_2020sci}
 Kraemer MUG, {et~al.}
 \newblock (2020) The effect of human mobility and control measures on the
   {COVID-19} epidemic in china.
-\newblock \emph{Science}.
+\newblock \emph{Science} 368:493--497.
 
 \bibitem{li_science2020}
 Li R, {et~al.}
 \newblock (2020) Substantial undocumented infection facilitates the rapid
-  dissemination of novel coronavirus ({SARS-CoV2}).
-\newblock \emph{Science}.
+  dissemination of novel coronavirus ({COVID-19}).
+\newblock \emph{Science} 368:489--493.
 
-\bibitem{wu2020estimating}
-Wu JT, {et~al.}
+\bibitem{wu_2020natmed}
+Wu J, Leung K, Bushman M, {et~al.}
 \newblock (2020) Estimating clinical severity of {COVID-19} from the
   transmission dynamics in {Wuhan, China}.
-\newblock \emph{Nature Medicine} pp 1--5.
+\newblock \emph{Nature Medicine} 26:506--510.
 
 \bibitem{anderson1991infectious}
 Anderson RM, May RM
@@ -93,21 +95,23 @@ Franco E
 
 \bibitem{chen_2020social}
 Chen H, Xu W, Paris C, Reeson A, Li X
-\newblock (2020) Social distance and sars memory: impact on the public
-  awareness of 2019 novel coronavirus (covid-19) outbreak.
-\newblock \emph{medRxiv}.
+\newblock (2020) {Social distance and SARS memory: impact on the public
+  awareness of 2019 novel coronavirus (COVID-19) outbreak}.
+\newblock \emph{medRxiv}
+\newblock \url{https://www.medrxiv.org/content/10.1101/2020.03.11.20033688v1}.
 
 \bibitem{leung_lancet2020}
 Leung K, Wu JT, Liu D, Leung GM
-\newblock (2020) First-wave covid-19 transmissibility and severity in china
-  outside hubei after control measures, and second-wave scenario planning: a
-  modelling impact assessment.
+\newblock (2020) {First-wave COVID-19 transmissibility and severity in China
+  outside Hubei after control measures, and second-wave scenario planning: a
+  modelling impact assessment}.
 \newblock \emph{The Lancet} 395:1382 -- 1393.
 
 \bibitem{west_nat2020}
 West R, Michie S, Rubin GJ, Aml{\^o}t R
 \newblock (2020) {Applying principles of behaviour change to reduce SARS-CoV-2
   transmission}.
-\newblock \emph{Nature Human Behaviour}.
+\newblock \emph{Nature Human Behaviour}
+\newblock \url{https://doi.org/10.1038/s41562-020-0887-9}.
 
 \end{thebibliography}
