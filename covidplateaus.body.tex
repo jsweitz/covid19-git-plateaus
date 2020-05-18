@@ -71,7 +71,7 @@ school closings, and so on.
 As a result, the ICL model suggests that lifting of large-scale
 public health interventions could be followed by a second wave of cases.
 Yet, for a disease
-that is already the documented cause of more than 70,000 deaths
+that is already the documented cause of more than 83,000 deaths
 in the United States alone, we posit that individuals
 are likely to continue to modify
 their behavior even after lockdowns are lifted.  
@@ -148,7 +148,8 @@ of population-level disease severity (i.e., fatalities).
 social distancing model.  Simulations have the
 epidemiological parameters 
 $\beta=0.5$ /day, $\mu=1/2$ /day, $\gamma=1/6$/day,
-and $f_D=0.01$, with variation in $k=1$, 2 and 4. 
+and $f_D=0.01$, with variation in $k=1$, 2 and 4. We assume
+$N\delta_c = 50$ /day in all cases.
 \label{fig.ID_day}}
 \end{center}
 \end{figure}
@@ -162,10 +163,10 @@ and $f_D=0.01$, with variation in $k=1$, 2 and 4.
 %\includegraphics[width=0.45\textwidth]{figseir_Speak_k4_noname.pdf}
 %\includegraphics[width=0.435\textwidth]{figseir_Susc_k4_noname.pdf}\\
 \caption{Dynamics given variation in the critical fatality awareness
-level, $D_c$ for awareness $k=2$. Panels show
+level, $\delta_c$ for awareness $k=2$. Panels show
 deaths/day (top) and the susceptible fraction as a function of time (bottom),
 the latter compared to a herd immunity
-level when only $S=1/{\cal{R}}_0$ remain.
+level when only a fraction $1/{\cal{R}}_0$ remain susceptible.
 These simulations share the
 epidemiological parameters 
 $\beta=0.5$ /day, $\mu=1/2$ /day, $\gamma=1/6$ /day,
@@ -206,17 +207,23 @@ given disease dynamics with $\beta=0.5$ /day, $\mu=1/2$ /day, $\gamma=1/6$
 /day,
 $f_D=0.01$, $N=10^7$, and $N\delta_c=50$ /day.  
 As is evident, the rise and decline from peaks are not symmetric. Instead,
-increasing nonlinearity of awareness
-$a$ leads to shoulders where incidence decreases very slowly after a peak.
-\jd{What is ``increasing'' and causing shoulders? Everything in the referenced figure has shoulders? Also, what is $a$?}
-We interpret this finding to mean that as the awareness exponent $k$ increases,
-individuals become less sensitive to fatality rates
-where $\delta < \delta_c$ and more sensitive to fatality rates where $\delta > \delta_c$.  
-\jd{Whatever you're saying about non-linearity is not how we ``interpret this finding''. It's a side point. Spin this \P\ into two: one about what the curves have in common and the main point, and one that is a bit clearer about the effects of non-linearity.}
-The shoulders and plateaus emerge because of the balance
+incorporating
+awareness leads to dynamics where incidence decreases very slowly after a peak.
+The peaks occur at levels of infection far from that associated
+with herd immunity.  
+Post-peak, shoulders and plateaus emerge because of the balance
 between relaxation of awareness-based
 distancing (which leads to increases in cases and deaths) and an 
 increase in awareness in response to increases in cases and deaths.  
+
+We also observe some differences
+in dynamics given increases in the awareness exponent $k$.
+As $k$ increases, 
+individuals become less sensitive to fatality rates
+where $\delta < \delta_c$ and more sensitive to fatality rates where $\delta > \delta_c$.  
+This leads to sharper dynamics. In addition, 
+infections can over-shoot the expected plateau given that awareness
+is driven by fatalities which are offset with respect to new infections.
 
 \subsection{Short-term awareness and long-term plateaus}
 Initial analysis of an SEIR model with short-term 
@@ -227,10 +234,15 @@ Figure~\ref{fig.generic} shows
 the results of dynamics given $\delta_c$ values over a range 
 equivalent to 5 to 500 deaths/day given a population of $10^7$
 for $k=2$ (we note that results for $k=1$ and $k=4$ lead to similar
-findings, see Figure~\ref{fig.generic_k1-4}.
+findings, see Figure~\ref{fig.generic_k1-4}).
 When $\delta_c$ is small (compared to $(\gamma f_D)$,
 fatalities can be sustained at near-constant levels for a long time.
 When $\delta_c$ is higher then the decline of cases and fatalities due to susceptible depletion is relatively fast.
+Hence, even given significant variation
+in the critical daily fatality rates,
+the population remains largely susceptible even as
+sustained fatalities continue for a period far greater than
+the time it took to reach the plateau.
 %We also observe that as $k$ increases, then fatalities may overshoot
 %the plateau. Overshoots arise because individuals initiate protective measures
 %closer to the critical fatality rate.
@@ -255,8 +267,14 @@ Instead, we consider the extended SEIR model:
 \dot{D} &=& \gamma_H H
 \end{eqnarray}
 where $T_H=1/\gamma_H$ defines the average time in a hospital
-stay before a fatality. The earlier analysis of
-the quasi-stationary equilibrium in fatalities holds; hence
+stay before a fatality. Note, we recognize that many individuals
+recover from COVID-19 after hospitalization; this model's hospital
+compartment functions as a prefilter.  
+
+The earlier analysis of
+the quasi-stationary equilibrium in fatalities holds in the
+case of a SEIR model with additional classes before
+fatalities. Hence,
 we anticipate that dynamics should converge to $\delta=\delta^{(q)}$
 at early times. However, increased delays between cases and
 fatalities could lead to oscillations in both.  Indeed, this
@@ -276,7 +294,7 @@ $k=4$ shown in Figure~\ref{fig.oscillate_k1-4}).
 %\includegraphics[width=0.45\textwidth]{figseir_Hdel_k4D_noname.pdf}\\
 \caption{Emergence of oscillatory dynamics in a death-driven awareness
 model of social distancing given lags between infection and fatality.
-Awareness is $k=2$ and all other parameters as in Figure 2.
+Awareness is $k=2$ and all other parameters as in Figure~\ref{fig.ID_day}.
 The dashed
 lines for fatalities expected quasi-stationary value $\delta^{(q)}$.
 \label{fig.oscillate}}
@@ -297,7 +315,7 @@ distancing alone.
 \end{center}
 \end{figure}
 
-\subsection{Dynamical consequences of short-term and long-erm awareness}
+\subsection{Dynamical consequences of short-term and long-term awareness}
 Awareness can vary in duration, e.g., awareness
 of SARS-1 may prepare individuals to more
 readily adopt and retain
@@ -370,8 +388,8 @@ property of awareness-driven epidemiological dynamics.
 We recognize that qualititatively similar effects could arise 
 if responses are due to case reports or to illnesses
 with a personal connection. They may also be driven by official and media responses, as well as purely individual ones. In addition, ongoing ascertainment
-biases may also influence the shape of reported rather
-than actual case curves.  
+biases may also influence the shape of reported, rather
+than actual, case curves.  
 
 Moving forward, it is essential to fill in significant
 gaps in understanding how awareness of disease
