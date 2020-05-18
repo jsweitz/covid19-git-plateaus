@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 MAY 2020 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 MAY 2020 00:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -554,7 +554,7 @@ File: scripts/figseir_Hdel_k2_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k2_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hdel_k2_noname.pdf used on input line 
-291.
+288.
 (pdftex.def)             Requested size: 239.70062pt x 179.0972pt.
 
 <scripts/figseir_Hdel_k2D_noname.pdf, id=82, 556.0775pt x 376.40625pt>
@@ -562,7 +562,7 @@ File: scripts/figseir_Hdel_k2D_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k2D_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hdel_k2D_noname.pdf used on input line
- 292.
+ 289.
 (pdftex.def)             Requested size: 239.70062pt x 162.25357pt.
 
 <scripts/figseir_Hlong_k2D_noname.pdf, id=83, 556.0775pt x 376.40625pt>
@@ -570,7 +570,7 @@ File: scripts/figseir_Hlong_k2D_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hlong_k2D_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hlong_k2D_noname.pdf used on input lin
-e 306.
+e 303.
 (pdftex.def)             Requested size: 239.70062pt x 162.25357pt.
 
 <scripts/figseir_Hlong_k2Dtot_noname.pdf, id=84, 553.06625pt x 385.44pt>
@@ -578,16 +578,16 @@ File: scripts/figseir_Hlong_k2Dtot_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hlong_k2Dtot_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hlong_k2Dtot_noname.pdf used on input 
-line 307.
+line 304.
 (pdftex.def)             Requested size: 239.70062pt x 167.0475pt.
  [5 <./scripts/figseir_Hdel_k2_noname.pdf> <./scripts/figseir_Hdel_k2D_noname.p
 df>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 383.
+ on input line 380.
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 384--393
+Underfull \hbox (badness 1275) in paragraph at lines 381--390
 \OT1/cmr/m/n/10 COVID-19, includ-ing slow declines and plateau-like
  []
 
@@ -715,7 +715,7 @@ _noname.pdf>] (./covidplateaus.aux) )
 Here is how much of TeX's memory you used:
  11345 strings out of 493117
  198787 string characters out of 6135433
- 283857 words of memory out of 5000000
+ 282857 words of memory out of 5000000
  14537 multiletter control sequences out of 15000+600000
  9922 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -742,7 +742,7 @@ b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on covidplateaus.pdf (9 pages, 1811955 bytes).
+Output written on covidplateaus.pdf (9 pages, 1811927 bytes).
 PDF statistics:
  239 PDF objects out of 1000 (max. 8388607)
  170 compressed objects within 2 object streams
