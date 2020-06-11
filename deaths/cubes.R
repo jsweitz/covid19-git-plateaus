@@ -17,8 +17,8 @@ names(cf) <- NULL
 print(cf)
 
 findPeak <- function(cf){
-	c <- cf[2]
-	β <- cf[3]
+c <- cf[2]
+β <- cf[3]
 a <- 3*cf[4]
 D <- β^2-a*c
 if (D<0) return(NA)
