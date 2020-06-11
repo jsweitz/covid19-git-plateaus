@@ -212,5 +212,5 @@ g2 <- ggplot(national_deaths_metric2) +
 
 gtot <- ggarrange(g1, g2, nrow=1, draw=FALSE)
 
-ggsave("national_death_metric.pdf", gtot, width=8, height=6)
-ggsave("national_death_metric.png", gtot, width=8, height=6)
+ggsave("national_deaths_metric.pdf", gtot, width=8, height=6)
+ggsave("national_deaths_metric.png", gtot, width=8, height=6)
