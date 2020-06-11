@@ -3,7 +3,7 @@ library(ggplot2); theme_set(theme_bw())
 library(lubridate)
 library(egg)
 
-cutoff <- seq(0.4, 0.6, by=0.01)
+cutoff <- seq(0.3, 0.7, by=0.01)
 
 us_death <- read.csv("daily.csv") %>%
   mutate(
@@ -99,15 +99,15 @@ national_deaths_metric <- lapply(split(national_deaths_loess_fit2, national_deat
   lapply(cutoff, function(cc) {
     x2 <- arrange(x, day)
     
-    D_P <- log(max(x2$fit, na.rm=TRUE))
+    D_P <- max(x2$fit, na.rm=TRUE)
     
-    t_P <- x2$day[which(log(x2$fit)==D_P)]
+    t_P <- x2$day[which(x2$fit==D_P)]
     
-    tau_R <- t_P - x2$day[which(log(x2$fit) >= cc * D_P)[1]]
+    tau_R <- t_P - x2$day[which(x2$fit >= cc * D_P)[1]]
     
-    D_F <- log(x2$fit[which(x2$day>(t_P + tau_R))[1]])
+    D_F <- x2$fit[which(x2$day>(t_P + tau_R))[1]]
     
-    metric <- (D_P - D_F)/(D_P - log(x2$fit[x2$day==(t_P - tau_R)]))
+    metric <- (D_P - D_F)/(D_P - x2$fit[x2$day==(t_P - tau_R)])
     
     if (length(metric) == 0) {
        NULL
@@ -207,7 +207,7 @@ g1 <- ggplot(deathfilter) +
 g2 <- ggplot(national_deaths_metric2) +
   geom_point(aes(est, region)) +
   geom_errorbarh(aes(xmin=lwr, xmax=upr, y=region), height=0) +
-  scale_x_continuous("Symmetry coefficient", limits=c(0, 0.5)) +
+  scale_x_continuous("Symmetry coefficient", limits=c(0, 1)) +
   scale_y_discrete("States")
 
 gtot <- ggarrange(g1, g2, nrow=1, draw=FALSE)
