@@ -1,8 +1,9 @@
 library(dplyr)
 library(ggplot2); theme_set(theme_bw())
+library(lubridate)
 library(egg)
-
-cutoff <- seq(0.3, 0.7, by=0.01)
+ 
+cutoff <- seq(0.4, 0.6, by=0.01)
 
 us_death <- read.csv("daily.csv") %>%
   mutate(
@@ -98,26 +99,31 @@ national_deaths_metric <- lapply(split(national_deaths_loess_fit2, national_deat
   lapply(cutoff, function(cc) {
     x2 <- arrange(x, day)
     
-    D_P <- max(x2$fit, na.rm=TRUE)
+    D_P <- log(max(x2$fit, na.rm=TRUE))
     
-    t_P <- x2$day[which(x2$fit==D_P)]
+    t_P <- x2$day[which(log(x2$fit)==D_P)]
     
-    tau_R <- t_P - x2$day[which(x2$fit >= cc * D_P)[1]]
+    tau_R <- t_P - x2$day[which(log(x2$fit) >= cc * D_P)[1]]
     
-    D_F <- x2$fit[which(x2$day>(t_P + tau_R))[1]]
+    D_F <- log(x2$fit[which(x2$day>(t_P + tau_R))[1]])
     
-    metric <- (D_P - D_F)/(D_P - x2$fit[x2$day==(t_P - tau_R)])
+    metric <- (D_P - D_F)/(D_P - log(x2$fit[x2$day==(t_P - tau_R)]))
     
     if (length(metric) == 0) {
-       metric <- NA
+       NULL
+    } else {
+      data.frame(
+        region=x$region[1],
+        metric=metric,
+        cutoff=cc,
+        D_P=exp(D_P),
+        t_P=t_P,
+        t_1=t_P-tau_R,
+        t_2=t_P+tau_R
+      )
+      
     }
-    
-    data.frame(
-      region=x$region[1],
-      metric=metric,
-      cutoff=cc
-    )
-    
+
   }) %>%
     bind_rows
 }) %>%
@@ -131,7 +137,7 @@ national_deaths_metric_filter <- national_deaths_metric %>%
     max=max(cutoff)
   ) %>%
   filter(
-    min==0.3, max==0.7
+    min==0.4, max==0.6
   )
 
 national_deaths_metric2 <- national_deaths_metric %>%
@@ -148,20 +154,29 @@ national_deaths_metric2 <- national_deaths_metric %>%
     region=factor(region, levels=region)
   )
 deathfilter <- deathall %>%
-  filter(region %in% c("MN", "NY", "IN")) %>%
+  filter(region %in% c("MN", "NY", "MD")) %>%
   ungroup %>%
   mutate(
     day=yday(date)
   ) %>%
   mutate(
-    region=factor(region, levels=c("IN", "NY", "MN"))
+    region=factor(region, levels=c("MD", "NY", "MN"))
+  )
+
+national_deaths_time <- national_deaths_metric %>%
+  filter(region %in% c("MN", "NY", "MD"), cutoff==0.5) %>%
+  mutate(
+    region=factor(region, levels=c("MD", "NY", "MN")),
+    t_P=as.Date("2020-01-01")+t_P-1,
+    t_1=as.Date("2020-01-01")+t_1-1,
+    t_2=as.Date("2020-01-01")+t_2-1
   )
 
 national_deaths_loess_filter <- national_deaths_loess_fit %>%
-  filter(region %in% c("MN", "NY", "IN")) %>%
+  filter(region %in% c("MN", "NY", "MD")) %>%
   merge(deathfilter) %>%
   mutate(
-    region=factor(region, levels=c("IN", "NY", "MN"))
+    region=factor(region, levels=c("MD", "NY", "MN"))
   )
 
 deathmin <- national_deaths_loess_filter %>%
@@ -173,6 +188,9 @@ g1 <- ggplot(deathfilter) +
   geom_point(aes(date, deaths2)) +
   geom_line(aes(date, deaths2)) +
   geom_line(data=national_deaths_loess_filter, aes(date, fit), col="blue", lwd=1) +
+  geom_vline(data=national_deaths_time, aes(xintercept=t_P), lty=2) +
+  geom_vline(data=national_deaths_time, aes(xintercept=t_1), lty=2) +
+  geom_vline(data=national_deaths_time, aes(xintercept=t_2), lty=2) +
   scale_y_log10("Daily number of reported deaths") +
   facet_wrap(~region, ncol=1, scale="free") +
   theme(
@@ -189,9 +207,10 @@ g1 <- ggplot(deathfilter) +
 g2 <- ggplot(national_deaths_metric2) +
   geom_point(aes(est, region)) +
   geom_errorbarh(aes(xmin=lwr, xmax=upr, y=region), height=0) +
-  scale_x_continuous("Symmetry coefficient", limits=c(0, 1)) +
+  scale_x_continuous("Symmetry coefficient", limits=c(0, 0.5)) +
   scale_y_discrete("States")
 
 gtot <- ggarrange(g1, g2, nrow=1, draw=FALSE)
 
 ggsave("national_death_metric.pdf", gtot, width=8, height=6)
+ggsave("national_death_metric.png", gtot, width=8, height=6)
