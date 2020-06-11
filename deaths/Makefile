@@ -17,7 +17,7 @@ cubes.Rout: cubes.R
 
 ## Daniel
 
-## national_deaths_metric.Rout.png:
+national_deaths_metric.pdf: national_deaths_metric.Rout ;
 national_deaths_metric.Rout: national_deaths_metric.R
 
 ### Makestuff
