@@ -1,6 +1,5 @@
 library(dplyr)
-library(ggplot2); theme_set(theme_bw())
-library(tikzDevice)
+library(lubridate)
 
 us_death <- read.csv("daily.csv") %>%
   mutate(
@@ -46,30 +45,28 @@ deathmin <- deathall %>%
   group_by(region) %>%
   filter(date==min(date))
 
-## a bit hacky...
-g1 <- ggplot(deathall) +
-  geom_text(data=deathmin, aes(x=date, y=Inf, label=region), hjust=-0.2, vjust=1.3) +
-  geom_point(aes(date, deaths)) +
-  geom_line(aes(date, deaths)) +
-  geom_smooth(aes(date, deaths, col=type), se=FALSE, lwd=1.5) +
-  scale_x_date(expand=c(0, 0), breaks=c(as.Date("2020-02-01"), as.Date("2020-03-01"), as.Date("2020-04-01"), as.Date("2020-05-01"),
-                                        as.Date("2020-06-01")),
-               labels=c("Feb", "Mar", "Apr", "May", "Jun")) +
-  scale_y_log10("Daily number of reported deaths") +
-  facet_wrap(~region, scale="free", ncol=5) +
-  scale_color_manual(values=c("red", "blue")) +
-  theme(
-    panel.grid = element_blank(),
-    axis.title.x = element_blank(),
-    strip.background = element_blank(),
-    strip.placement = "none",
-    strip.text = element_blank(),
-    axis.text.y.right = element_blank(),
-    axis.ticks.y.right = element_blank(),
-    legend.position="none"
+national_deaths_loess_fit <- lapply(split(deathall, deathall$region), function(x) {
+  y <- x %>%
+    arrange(date) %>%
+    mutate(
+      day=yday(date)
+    )
+  
+  y2 <- y %>%
+    filter(
+      deaths != 0
+    )
+  
+  lfit <- loess(log(deaths)~day, data=y2)
+  
+  y$fit <- exp(predict(lfit, newdata=y))
+  y
+}) %>%
+  bind_rows %>%
+  ungroup %>%
+  mutate(
+    region=factor(region, levels=c("China", "Iran", "Italy", "UK", "USA", 
+                                   as.character(unique(us_death$region))))
   )
 
-tikz(file = "national_death.tex", width = 12, height = 12, standAlone = T)
-plot(g1)
-dev.off()
-tools::texi2dvi('national_death.tex', pdf = T, clean = T)
+save("national_deaths_loess_fit", file="national_deaths_loess_fit.rda")
