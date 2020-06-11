@@ -11,7 +11,7 @@ Sources += $(wildcard *.R)
 
 data.Rout: daily.csv data.R
 
-cubes.Rout: cubes.R
+cubes.Rout: data.Rout cubes.R
 
 ######################################################################
 
