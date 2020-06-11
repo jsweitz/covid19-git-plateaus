@@ -2,7 +2,7 @@ library(dplyr)
 library(ggplot2); theme_set(theme_bw())
 library(lubridate)
 library(egg)
- 
+
 cutoff <- seq(0.4, 0.6, by=0.01)
 
 us_death <- read.csv("daily.csv") %>%
