@@ -3,7 +3,7 @@ library(ggplot2); theme_set(theme_bw())
 library(lubridate)
 library(egg)
 
-cutoff <- seq(0.3, 0.7, by=0.01)
+cutoff <- 0.05
 
 us_death <- read.csv("daily.csv") %>%
   mutate(
@@ -90,93 +90,75 @@ national_deaths_max <- national_deaths_loess_fit %>%
   filter(max > 10)
 
 national_deaths_loess_fit2 <- national_deaths_loess_fit %>%
-  filter(region %in% national_deaths_max$region) %>%
+  filter(region %in% national_deaths_max$region,
+         region %in% state.abb) %>%
   mutate(
     region=as.character(region)
   )
 
 national_deaths_metric <- lapply(split(national_deaths_loess_fit2, national_deaths_loess_fit2$region), function(x) {
-  lapply(cutoff, function(cc) {
-    x2 <- arrange(x, day)
-    
-    D_P <- max(x2$fit, na.rm=TRUE)
-    
-    t_P <- x2$day[which(x2$fit==D_P)]
-    
-    tau_R <- t_P - x2$day[which(x2$fit >= cc * D_P)[1]]
-    
-    D_F <- x2$fit[which(x2$day>(t_P + tau_R))[1]]
-    
-    metric <- (D_P - D_F)/(D_P - x2$fit[x2$day==(t_P - tau_R)])
-    
-    if (length(metric) == 0) {
-       NULL
-    } else {
-      data.frame(
-        region=x$region[1],
-        metric=metric,
-        cutoff=cc,
-        D_P=exp(D_P),
-        t_P=t_P,
-        t_1=t_P-tau_R,
-        t_2=t_P+tau_R
-      )
-      
-    }
-
-  }) %>%
-    bind_rows
-}) %>%
+  x2 <- arrange(x, day)
+  
+  D_P <- max(x2$fit, na.rm=TRUE)
+  
+  t_P <- x2$day[which(x2$fit==D_P)]
+  
+  tau_R <- min(t_P - x2$day[which(x2$fit >= cutoff * D_P)[1]], max(x2$day)-t_P)
+  
+  D_F <- x2$fit[which(x2$day>=(t_P + tau_R))[1]]
+  
+  ## == doesn't always work
+  ## due to numerical issues
+  metric <- (x2$fit[which.min((x2$day-round(t_P - tau_R, 2))^2)])/(D_F)
+  
+  data.frame(
+    region=x$region[1],
+    metric=metric,
+    cutoff=(x2$fit[which.min((x2$day-round(t_P - tau_R, 2))^2)])/D_P,
+    D_P=D_P,
+    t_P=t_P,
+    t_1=t_P-tau_R,
+    t_2=t_P+tau_R
+  )
+})%>%
   bind_rows()
 
 national_deaths_metric_filter <- national_deaths_metric %>%
-  filter(!is.na(metric)) %>%
-  group_by(region) %>%
-  summarize(
-    min=min(cutoff),
-    max=max(cutoff)
-  ) %>%
-  filter(
-    min==0.4, max==0.6
-  )
+  filter(!is.na(metric))
 
 national_deaths_metric2 <- national_deaths_metric %>%
-  filter(region %in% national_deaths_metric_filter$region,
-         region %in% state.abb) %>%
+  filter(region %in% national_deaths_metric_filter$region) %>%
   group_by(region) %>%
   summarize(
-    est=metric[cutoff==0.5],
-    lwr=min(metric),
-    upr=max(metric)
+    est=metric
   ) %>%
   arrange(est) %>%
   mutate(
     region=factor(region, levels=region)
   )
+
 deathfilter <- deathall %>%
-  filter(region %in% c("MN", "NY", "MD")) %>%
+  filter(region %in% national_deaths_metric2$region) %>%
   ungroup %>%
   mutate(
     day=yday(date)
   ) %>%
   mutate(
-    region=factor(region, levels=c("MD", "NY", "MN"))
+    region=factor(region, levels=national_deaths_metric2$region)
   )
 
 national_deaths_time <- national_deaths_metric %>%
-  filter(region %in% c("MN", "NY", "MD"), cutoff==0.5) %>%
   mutate(
-    region=factor(region, levels=c("MD", "NY", "MN")),
+    region=factor(region, levels=national_deaths_metric2$region),
     t_P=as.Date("2020-01-01")+t_P-1,
     t_1=as.Date("2020-01-01")+t_1-1,
     t_2=as.Date("2020-01-01")+t_2-1
   )
 
 national_deaths_loess_filter <- national_deaths_loess_fit %>%
-  filter(region %in% c("MN", "NY", "MD")) %>%
   merge(deathfilter) %>%
   mutate(
-    region=factor(region, levels=c("MD", "NY", "MN"))
+    region=factor(region, levels=national_deaths_metric2$region)
   )
 
 deathmin <- national_deaths_loess_filter %>%
@@ -192,7 +174,7 @@ g1 <- ggplot(deathfilter) +
   geom_vline(data=national_deaths_time, aes(xintercept=t_1), lty=2) +
   geom_vline(data=national_deaths_time, aes(xintercept=t_2), lty=2) +
   scale_y_log10("Daily number of reported deaths") +
-  facet_wrap(~region, ncol=1, scale="free") +
+  facet_wrap(~region, scale="free") +
   theme(
     panel.grid = element_blank(),
     axis.title.x = element_blank(),
@@ -206,11 +188,9 @@ g1 <- ggplot(deathfilter) +
 
 g2 <- ggplot(national_deaths_metric2) +
   geom_point(aes(est, region)) +
-  geom_errorbarh(aes(xmin=lwr, xmax=upr, y=region), height=0) +
-  scale_x_continuous("Symmetry coefficient", limits=c(0, 1)) +
+  # geom_errorbarh(aes(xmin=lwr, xmax=upr, y=region), height=0) +
+  scale_x_continuous("Symmetry coefficient") +
   scale_y_discrete("States")
 
-gtot <- ggarrange(g1, g2, nrow=1, draw=FALSE)
-
-ggsave("national_death_metric.pdf", gtot, width=8, height=6)
-ggsave("national_death_metric.png", gtot, width=8, height=6)
+ggsave("national_death_metric1.pdf", g1, width=12, height=9)
+ggsave("national_death_metric2.pdf", g2, width=8, height=6)
