@@ -1,1 +1,1 @@
-../makefiles/plateaus.make
+../mkfiles/plateaus.make
