@@ -191,6 +191,6 @@ g2 <- ggplot(national_deaths_metric2) +
   # geom_errorbarh(aes(xmin=lwr, xmax=upr, y=region), height=0) +
   scale_x_continuous("Symmetry coefficient") +
   scale_y_discrete("States")
-
+ 
 ggsave("national_death_metric1.pdf", g1, width=12, height=9)
 ggsave("national_death_metric2.pdf", g2, width=8, height=6)
