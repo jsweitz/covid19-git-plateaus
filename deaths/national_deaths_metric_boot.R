@@ -175,22 +175,22 @@ us_death_fit3 <- us_death_fit2 %>%
   arrange(metric)
 
 us_death_fit0a <- us_death_fit0 %>%
+  merge(us_death_fit3) %>%
   group_by(region) %>%
   mutate(
-    pred2=pred-min(pred)+1,
-    day2=(day-min(day))
-  ) %>%
-  merge(us_death_fit3)
+    day2=(day-t_P)
+  )
 
 us_death_fit0a_end <- us_death_fit0a %>%
   group_by(region) %>%
   filter(day2==max(day2))
 
 g1 <- ggplot(us_death_fit0a) +
+  geom_vline(xintercept = 0, lty=2) +
   geom_line(aes(day2, pred, group=region, col=metric, lty=region)) +
   geom_point(data=us_death_fit0a_end, aes(day2, pred, group=region, fill=metric), shape=21, col=1) +
   geom_dl(aes(day2, pred, label=region, col=metric), method=list("last.bumpup", hjust=-0.2)) +
-  scale_x_continuous("Time since $t_1$ (days)", expand=c(0, 0), limits=c(0, 78)) +
+  scale_x_continuous("Time since $t_P$ (days)", expand=c(0, 0), limits=c(-45, 45)) +
   scale_y_log10("Smoothed daily number of deaths") +
   scale_color_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_fill_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
