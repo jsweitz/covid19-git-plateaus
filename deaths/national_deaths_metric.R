@@ -30,7 +30,7 @@ us_death <- read.csv("daily.csv") %>%
 us_death_fit <- lapply(split(us_death, us_death$region), function(x) {
   print(x$region[1])
   pp <- data.frame(
-    day=seq(min(x$day), max(x$day), length.out=1000)
+    day=seq(min(x$day), max(x$day), by=0.01)
   )
   
   lfit <- loess(log(deaths)~day, data=x)
@@ -93,7 +93,7 @@ us_death_fit0 <- lapply(split(us_death_filter, us_death_filter$region), function
   
   metric <- D_l/D_r
   
-  day2 <- seq(pp$day[ww], pp$day[which(pp$day>=(t_P + tau_R))[1]], length.out=1000)
+  day2 <- seq(pp$day[ww], pp$day[which(pp$day>=(t_P + tau_R))[1]], by=0.01)
   
   pp2 <- data.frame(
     day=day2
@@ -104,7 +104,9 @@ us_death_fit0 <- lapply(split(us_death_filter, us_death_filter$region), function
   data.frame(
     region=x$region[1],
     day=day2,
-    pred=pred2
+    pred=pred2,
+    metric=metric,
+    t_P=t_P
   )
 }) %>%
   bind_rows

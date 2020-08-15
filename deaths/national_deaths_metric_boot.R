@@ -66,7 +66,6 @@ us_death_fit3 <- us_death_fit2 %>%
   arrange(metric)
 
 us_death_fit0a <- us_death_fit0 %>%
-  merge(us_death_fit3) %>%
   group_by(region) %>%
   mutate(
     day2=(day-t_P)
@@ -81,11 +80,12 @@ g1 <- ggplot(us_death_fit0a) +
   geom_line(aes(day2, pred, group=region, col=metric, lty=region)) +
   geom_point(data=us_death_fit0a_end, aes(day2, pred, group=region, fill=metric), shape=21, col=1) +
   geom_dl(aes(day2, pred, label=region, col=metric), method=list("last.bumpup", hjust=-0.2)) +
-  scale_x_continuous("Time since $t_P$ (days)", expand=c(0, 0), limits=c(-45, 45)) +
+  scale_x_continuous("Time since $t_P$ (days)", expand=c(0, 0), limits=c(-60, 60)) +
   scale_y_log10("Smoothed daily number of deaths") +
   scale_color_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_fill_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_linetype_manual(values=c(1:9, 1:9)) +
+  ggtitle("A") +
   theme(
     legend.position = "none",
     panel.grid = element_blank()
@@ -94,11 +94,12 @@ g1 <- ggplot(us_death_fit0a) +
 g2 <- ggplot(us_death_fit3) +
   geom_point(aes(metric, region, col=metric)) +
   geom_errorbarh(aes(xmin=lwr, xmax=upr, y=region, col=metric), height=0) +
-  scale_color_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
+  scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_x_continuous("Symmetry coefficient") +
   scale_y_discrete("States", limits = rev(us_death_fit3$region)) +
+  ggtitle("B") +
   theme(
-    legend.position = "none",
+    legend.position = "right",
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank()
   )
@@ -109,3 +110,4 @@ tikz(file = "national_deaths_metric_boot.tex", width = 10, height = 5, standAlon
 print(gtot)
 dev.off()
 tools::texi2dvi('national_deaths_metric_boot.tex', pdf = T, clean = F)
+## clean = T somehow deleted all other files...
