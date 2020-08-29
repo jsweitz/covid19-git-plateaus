@@ -1,5 +1,10 @@
 source("national_deaths_metric.R")
 
+firstup <- function(x) {
+  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+  x
+}
+
 mobility <- read.csv("Global_Mobility_Report.csv")
 
 mobility_US <- mobility %>%
@@ -51,19 +56,32 @@ phasedata_end <- phasedata %>%
   group_by(region, type) %>%
   filter(day==max(day))
 
-g1 <- ggplot(phasedata) +
-  geom_path(aes(mobility, deaths, group=region, col=metric, lty=region)) +
-  geom_point(data=phasedata_end, aes(mobility, deaths, group=region, fill=metric), shape=21, col=1) +
-  geom_dl(data=phasedata_end, aes(mobility, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.2)) +
-  scale_y_log10() +
-  scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
-  scale_fill_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
-  scale_linetype_manual(values=c(1:9, 1:9), guide=FALSE) +
-  facet_wrap(~type, scale="free") +
-  theme(
-    panel.grid = element_blank(),
-    strip.background = element_blank()
-  )
+tt <- unique(phasedata$type)
 
-ggsave("national_deaths_metric_phase.pdf", g1, width=20, height=12)
-ggsave("national_deaths_metric_phase.png", g1, width=20, height=12)
+for (i in 1:length(tt)) {
+  print(i)
+  pp <- paste0("national_deaths_metric_phase_", tt[i], ".tex")
+  
+  x <- filter(phasedata, type==tt[i])
+  
+  x_end <- filter(phasedata_end, type==tt[i])
+  
+  gplot <- ggplot(x) +
+    geom_path(aes(mobility, deaths, group=region, col=metric, lty=region),
+              arrow = arrow(length = unit(0.1, "inches"), type = "closed")) +
+    geom_dl(data=x_end, aes(mobility, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.2)) +
+    scale_x_continuous(firstup(gsub("\\_", " ", tt[i]))) +
+    scale_y_log10("Smoothed daily number of reported deaths") +
+    scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
+    scale_fill_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
+    scale_linetype_manual(values=c(1:9, 1:9), guide=FALSE) +
+    theme(
+      panel.grid = element_blank(),
+      strip.background = element_blank()
+    )
+  
+  tikz(file = pp, width = 6, height = 6, standAlone = T)
+  plot(gplot)
+  dev.off()
+  tools::texi2dvi(pp, pdf = T, clean = F)
+}
