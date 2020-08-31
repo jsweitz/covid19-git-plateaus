@@ -31,36 +31,43 @@ mobility_US <- mobility %>%
     day=yday(date)
   )
 
+dd_mobility <- mobility_US %>%
+  filter(sub_region_2=="") %>%
+  arrange(region, date) %>%
+  dplyr::select(retail_and_recreation_percent_change_from_baseline, grocery_and_pharmacy_percent_change_from_baseline,
+                parks_percent_change_from_baseline, transit_stations_percent_change_from_baseline,
+                workplaces_percent_change_from_baseline, residential_percent_change_from_baseline)
+
+pc <- prcomp(dd_mobility)
+
+pcdata <- mobility_US %>%
+  filter(sub_region_2=="") %>%
+  arrange(region, date) %>%
+  mutate(
+    pc1=pc$x[,1],
+    pc2=pc$x[,2]
+  )
+
 phasedata_pca <- lapply(unique(mobility_US$region), function(x) {
   dd0 <- us_death_fit0 %>% filter(region==x)
   dd1 <- us_death_fit_all %>% filter(region==x)
   
-  dd2 <- mobility_US %>% 
-    filter(region==x, sub_region_2=="")
-  
-  dd3 <- dd2 %>%
-    arrange(date) %>%
-    dplyr::select(retail_and_recreation_percent_change_from_baseline, grocery_and_pharmacy_percent_change_from_baseline,
-                  parks_percent_change_from_baseline, transit_stations_percent_change_from_baseline,
-                  workplaces_percent_change_from_baseline, residential_percent_change_from_baseline)
-  
-  pc <- prcomp(dd3)
-  
-  print(pc$rotation[,1])
-  print(summary(pc)[[6]])
+  dd2 <- pcdata %>% 
+    filter(region==x) %>%
+    arrange(date)
   
   pp <- data.frame(
     day=seq(min(dd1$day), max(dd1$day), by=0.01)
   )
   
   fitdata1 <- data.frame(
-    day=sort(dd2$day),
-    resp=pc$x[,1]
+    day=dd2$day,
+    resp=dd2$pc1
   )
   
   fitdata2 <- data.frame(
-    day=sort(dd2$day),
-    resp=pc$x[,2]
+    day=dd2$day,
+    resp=dd2$pc2
   )
   
   lfit1 <- loess(resp~day, data=fitdata1)
@@ -99,12 +106,12 @@ x_end <- phasedata_pca3 %>%
   filter(day==max(day))
 
 g1 <- ggplot(phasedata_pca3) +
-  geom_path(data=phasedata_pca2, aes(pc1, deaths, group=region),
+  geom_path(data=phasedata_pca2, aes(-pc1, deaths, group=region),
             col="gray", alpha=0.5) +
-  geom_path(aes(pc1, deaths, group=region, col=metric, lty=region),
+  geom_path(aes(-pc1, deaths, group=region, col=metric, lty=region),
             arrow = arrow(length = unit(0.1, "inches"), type = "closed")) +
-  geom_dl(data=x_end, aes(pc1, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.1, vjust=1.2)) +
-  scale_x_continuous("Mobility principal component 1", limits=c(-110, 100)) +
+  geom_dl(data=x_end, aes(-pc1, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.1, vjust=1.2)) +
+  scale_x_continuous("Mobility principal component 1", limits=c(-100, 160)) +
   scale_y_log10("Smoothed daily number of reported deaths") +
   scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_fill_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
@@ -132,4 +139,4 @@ g2 <- ggplot(phasedata_pca3) +
 
 gtot <- ggarrange(g1, g2, nrow=1, draw=FALSE)
 
-ggsave("national_deaths_metric_phase_pca.pdf", gtot, width=12, height=6)
+ggsave("national_deaths_metric_phase_pca_grand.pdf", gtot, width=12, height=6)
