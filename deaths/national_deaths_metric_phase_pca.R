@@ -102,8 +102,8 @@ g1 <- ggplot(phasedata_pca3) +
             col="gray", alpha=0.5) +
   geom_path(aes(pc1, deaths, group=region, col=metric, lty=region),
             arrow = arrow(length = unit(0.1, "inches"), type = "closed")) +
-  geom_dl(data=x_end, aes(pc1, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.2, vjust=1.2)) +
-  scale_x_continuous("Mobility principal component 1") +
+  geom_dl(data=x_end, aes(pc1, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.1, vjust=1.2)) +
+  scale_x_continuous("Mobility principal component 1", limits=c(-110, 100)) +
   scale_y_log10("Smoothed daily number of reported deaths") +
   scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_fill_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
@@ -118,7 +118,7 @@ g2 <- ggplot(phasedata_pca3) +
             col="gray", alpha=0.5) +
   geom_path(aes(pc2, deaths, group=region, col=metric, lty=region),
             arrow = arrow(length = unit(0.1, "inches"), type = "closed")) +
-  geom_dl(data=x_end, aes(pc2, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.2, vjust=1.2)) +
+  geom_dl(data=x_end, aes(pc2, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.1, vjust=1.2)) +
   scale_x_continuous("Mobility principal component 2") +
   scale_y_log10("Smoothed daily number of reported deaths") +
   scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
