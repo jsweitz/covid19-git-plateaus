@@ -18,7 +18,6 @@ us_death_fit_all <- lapply(split(us_death_filter, us_death_filter$region), funct
 }) %>%
   bind_rows
 
-
 mobility <- read.csv("Global_Mobility_Report.csv")
 
 mobility_US <- mobility %>%
@@ -35,10 +34,10 @@ dd_mobility <- mobility_US %>%
   filter(sub_region_2=="") %>%
   arrange(region, date) %>%
   dplyr::select(retail_and_recreation_percent_change_from_baseline, grocery_and_pharmacy_percent_change_from_baseline,
-                parks_percent_change_from_baseline, transit_stations_percent_change_from_baseline,
+                transit_stations_percent_change_from_baseline,
                 workplaces_percent_change_from_baseline, residential_percent_change_from_baseline)
 
-pc <- prcomp(dd_mobility)
+pc <- prcomp(dd_mobility, scale.=TRUE)
 
 pcdata <- mobility_US %>%
   filter(sub_region_2=="") %>%
@@ -111,7 +110,7 @@ g1 <- ggplot(phasedata_pca3) +
   geom_path(aes(-pc1, deaths, group=region, col=metric, lty=region),
             arrow = arrow(length = unit(0.1, "inches"), type = "closed")) +
   geom_dl(data=x_end, aes(-pc1, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.1, vjust=1.2)) +
-  scale_x_continuous("Mobility principal component 1", limits=c(-100, 160)) +
+  scale_x_continuous("Mobility principal component 1") +
   scale_y_log10("Smoothed daily number of reported deaths") +
   scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_fill_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
@@ -140,3 +139,37 @@ g2 <- ggplot(phasedata_pca3) +
 gtot <- ggarrange(g1, g2, nrow=1, draw=FALSE)
 
 ggsave("national_deaths_metric_phase_pca_grand.pdf", gtot, width=12, height=6)
+
+mobility_US2 <- mobility_US %>%
+  filter(sub_region_2=="") %>%
+  arrange(region, date) %>%
+  dplyr::select(retail_and_recreation_percent_change_from_baseline, grocery_and_pharmacy_percent_change_from_baseline,
+                parks_percent_change_from_baseline, transit_stations_percent_change_from_baseline,
+                workplaces_percent_change_from_baseline, residential_percent_change_from_baseline,
+                region, date) %>%
+  tidyr::gather(key, value, -region, -date) %>%
+  mutate(
+    date=as.Date(as.character(date))
+  )
+
+g3 <- ggplot(mobility_US2) +
+  geom_line(aes(date, value, col=key, lty=key)) +
+  facet_wrap(~region)
+
+pcdata2 <- pcdata %>%
+  select(pc1, pc2, region, date) %>%
+  mutate(
+    pc1=-pc1
+  ) %>%
+  tidyr::gather(key, value, -region, -date) %>%
+  mutate(
+    date=as.Date(as.character(date))
+  )
+
+g4 <- ggplot(pcdata2) +
+  geom_line(aes(date, value, col=key, lty=key)) +
+  facet_wrap(~region)
+
+ggsave("national_deaths_metric_phase_pca_grand2.pdf", g3, width=12, height=8)
+ggsave("national_deaths_metric_phase_pca_grand3.pdf", g4, width=12, height=8)
+
