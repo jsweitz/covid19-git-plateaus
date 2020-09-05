@@ -33,20 +33,24 @@ mobility_US <- mobility %>%
 dd_mobility <- mobility_US %>%
   filter(sub_region_2=="") %>%
   arrange(region, date) %>%
-  dplyr::select(retail_and_recreation_percent_change_from_baseline, grocery_and_pharmacy_percent_change_from_baseline,
+  dplyr::select(region, date, retail_and_recreation_percent_change_from_baseline, grocery_and_pharmacy_percent_change_from_baseline,
                 transit_stations_percent_change_from_baseline,
                 workplaces_percent_change_from_baseline, residential_percent_change_from_baseline)
 
-dd_mobility2 <- as.data.frame(lapply(dd_mobility, zoo::rollmean, k=7, na.pad=TRUE))
+dd_mobility2 <- lapply(split(dd_mobility, dd_mobility$region), function(x) {
+  dd <- as.data.frame(lapply(x[,-c(1:2)], zoo::rollmean, k=7, na.pad=TRUE))
+  
+  dd$region <- x$region
+  dd$date <- x$date
+  dd
+}) %>%
+  bind_rows
 
-pc <- prcomp(dd_mobility2[complete.cases(dd_mobility2),], scale.=TRUE)
+pc <- prcomp(dd_mobility2[complete.cases(dd_mobility2),-(6:7)], scale.=TRUE)
 
-pcdata <- mobility_US %>%
-  filter(sub_region_2=="") %>%
-  arrange(region, date) %>%
-  mutate(
-    pc1=c(NA, NA, NA, pc$x[,1], NA, NA, NA)
-  )
+pcdata <- dd_mobility2[complete.cases(dd_mobility2),6:7]
+
+pcdata$pc1 <- pc$x[,1]
 
 phasedata_pca <- lapply(unique(mobility_US$region), function(x) {
   dd0 <- us_death_fit0 %>% filter(region==x)
@@ -61,7 +65,7 @@ phasedata_pca <- lapply(unique(mobility_US$region), function(x) {
   )
   
   fitdata1 <- data.frame(
-    day=dd2$day,
+    day=yday(dd2$date),
     resp=dd2$pc1
   )
   

@@ -82,8 +82,7 @@ their behavior even after lockdowns are lifted.
 Indeed, the peak death rates in the United States and globally
 are not as high as potential maximums in the event that
 COVID-19 had spread unhindered in the population~\citep{ferguson2020report}. 
-Moreover, rather than a peak and decline, there is evidence at both national
-and within-US state scales of plateaus and shoulder like
+Moreover, rather than a peak and decline, there is evidence at within-US state scales of plateaus and shoulder like
 behavior for daily fatality rates (Figure~\ref{fig.plateaus_cases}).   
 
 In this manuscript we use a nonlinear model of epidemiological dynamics to
@@ -414,3 +413,23 @@ at national and sub-national levels could help decision
 makers structure intervention efforts appropriately to effectively 
 communicate awareness campaigns that may aid in collective
 efforts to control the ongoing COVID-19 pandemic.
+
+\section{Methods}
+
+\subsection{Epidemiological data}
+
+Daily number of reported deaths as of June 7, 2020, is obtained from The COVID Tracking Project (covidtracking.com;).
+
+\subsection{Mobility data}
+
+Mobility data as of June 12, 2020, are obtained from Google COVID-19 Community Mobility Reports (https://www.google.com/covid19/mobility/).
+The data set describes relative changes in mobility across six categories (grocery and pharmacy; parks; residential; retail and recreation; transit; and workplaces)
+compared to the median value from the 5‑week period Jan 3 – Feb 6, 2020.
+
+\subsection{Principal component analysis}
+
+We analyze mobility data using principal component analysis (PCA) in order to obtain an ``average'' mobility proxy. We remove the mobility measure for parks from the analysis because ???. Before performing PCA, we first calculate the 7-day rolling average for each mobility measure in order to remove the effects of weekdays. 
+Mobility measures are centered to have zero mean and scaled to unit variance. We then perform a single PCA using a combined mobility data set across all 17 states (instead of performing independent PCAs for each state). 
+Estimated principal components are then smoothed using locally locally estimated scatterplot smoothing to draw a continuous-time phase plain.
+We focus on the first principal component, which explains 93\% of the total variance, in our phase plain analysis. The first principal component is negatively correlated with all mobility measures, except for mobility in the residential area. 
+We inverted the sign of this principal component such that a decrease in the first principal component corresponds to the reduction in overall mobility.
