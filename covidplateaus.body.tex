@@ -24,12 +24,16 @@ the archaic Farr's Law of Epidemics notwithstanding
 Farr's law as applied to the HIV epidemic). 
 \begin{figure*}[t!]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{deaths/national_death.pdf}\\
+\includegraphics[width=0.9\textwidth]{deaths/national_deaths_metric_boot.pdf}\\
 %\includegraphics[width=0.8\textwidth]{deaths/deaths.pdf}
-\caption{Locally estimated scatterplot smoothing (LOESS) of daily number of deaths for COVID-19.
-Daily number of deaths is averaged in log space, only including days with
-one or more reported deaths. (Top; points and red lines) Selected national
-level averages; (Bottom; points and blue lines) US state level averages.
+\caption{
+Observed asymmetry in fatality rates due to COVID-19 in the US.
+(A) Daily numbers of deaths (black points and lines) and the corresponding locally estimated scatterplot smoothing curves (red lines) from two most (MN, NC) and least (IN, MD) asymmetric states in the US.
+Daily numbers of deaths are smoothed in log space, only including days with one or more reported deaths.
+We restrict our analysis to states in which the peak smoothed death is greater than 10 as of June 7, 2020 (17 states in total).
+(B) Smoothed daily deaths across 17 states with respect to peak time, $t_P$.
+Death curves are plotted between $t_P - \Delta t$ and $t_P + \Delta t$, where $\Delta t$ is defined such that smoothed death at time $t_P - \Delta t$ corresponds to 10\% of the smoothed peak value.
+(C) Symmetry coefficient is calculated by dividing the death value at time $t_P - \Delta t$ by the death value at time $t_P + \Delta t$. If the death curve is symmetric, the symmetry coefficient should equal 1.
 \label{fig.plateaus_cases}}
 \end{center}
 \end{figure*}

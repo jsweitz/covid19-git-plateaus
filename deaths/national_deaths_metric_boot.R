@@ -130,9 +130,9 @@ g3 <- ggplot(us_death_fit3) +
 
 g4 <- arrangeGrob(g2, g3, nrow=1)
 
-gtot <- arrangeGrob(g1, g4, nrow=2)
+gtot <- arrangeGrob(g1, g4, nrow=2, heights=c(1, 2))
 
-tikz(file = "national_deaths_metric_boot.tex", width = 10, height = 8, standAlone = T)
+tikz(file = "national_deaths_metric_boot.tex", width = 10, height = 7, standAlone = T)
 plot(gtot)
 dev.off()
 tools::texi2dvi('national_deaths_metric_boot.tex', pdf = T, clean = F)
