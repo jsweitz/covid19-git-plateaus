@@ -25,15 +25,19 @@ Farr's law as applied to the HIV epidemic).
 \begin{figure*}[t!]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{deaths/national_deaths_metric_boot.pdf}\\
+%\includegraphics[width=0.9\textwidth]{deaths/deaths.pdf}
 %\includegraphics[width=0.8\textwidth]{deaths/deaths.pdf}
-\caption{
-Observed asymmetry in fatality rates due to COVID-19 in the US.
-(A) Daily numbers of deaths (black points and lines) and the corresponding locally estimated scatterplot smoothing curves (red lines) from two most (MN, NC) and least (IN, MD) asymmetric states in the US.
-Daily numbers of deaths are smoothed in log space, only including days with one or more reported deaths.
-We restrict our analysis to states in which the peak smoothed death is greater than 10 as of June 7, 2020 (17 states in total).
-(B) Smoothed daily deaths across 17 states with respect to peak time, $t_P$.
-Death curves are plotted between $t_P - \Delta t$ and $t_P + \Delta t$, where $\Delta t$ is defined such that smoothed death at time $t_P - \Delta t$ corresponds to 10\% of the smoothed peak value.
-(C) Symmetry coefficient is calculated by dividing the death value at time $t_P - \Delta t$ by the death value at time $t_P + \Delta t$. If the death curve is symmetric, the symmetry coefficient should equal 1.
+\caption{Plateaus and shoulder-like dynamics in 
+COVID-19 fatalities.  (A) Examples of locally estimated scatterplot smoothing (LOESS) of daily number of deaths for COVID-19 in four states, including
+two estimated to be the most plateau-like (Minnesota and North Carolina)
+and two estimated to be the most peak-like (Indiana and Maryland). 
+Daily number of deaths is averaged in log space, only including days with
+one or more reported deaths; US state level averages.
+(B) Smoothed daily number of reported deaths centered around the first
+fatality peak of the epidemic for 17 states. (C) Measured
+symmetry coefficient and confidence intervals. Methods and Supplementary
+Information contain detailed description of the LOESS smoothing in (A),
+peak identification in (B), and symmetry coefficient estimator in (C).
 \label{fig.plateaus_cases}}
 \end{center}
 \end{figure*}
@@ -75,15 +79,19 @@ school closings, and so on.
 As a result, the ICL model suggests that lifting of large-scale
 public health interventions could be followed by a second wave of cases.
 Yet, for a disease
-that is already the documented cause of more than 83,000 deaths
+that is already the documented cause of more than XXXX deaths
 in the United States alone, we posit that individuals
 are likely to continue to modify
 their behavior even after lockdowns are lifted.  
 Indeed, the peak death rates in the United States and globally
 are not as high as potential maximums in the event that
 COVID-19 had spread unhindered in the population~\citep{ferguson2020report}. 
-Moreover, rather than a peak and decline, there is evidence at within-US state scales of plateaus and shoulder like
-behavior for daily fatality rates (Figure~\ref{fig.plateaus_cases}).   
+Moreover, rather than a peak and symmetric decline, there is evidence 
+%at both national
+of asymmetric plateaus and shoulder like
+behavior for daily fatality rates within US-states
+(Figure~\ref{fig.plateaus_cases}, full state-level data in Supplementary
+Figure~\ref{fig.supp_plateaus}).   
 
 In this manuscript we use a nonlinear model of epidemiological dynamics to
 ask the question: what is the anticipated
@@ -225,7 +233,7 @@ This leads to sharper dynamics. In addition,
 infections can over-shoot the expected plateau given that awareness
 is driven by fatalities which are offset with respect to new infections.
 
-\subsection{Short-term awareness and long-term plateaus}
+\subsection{Short-term awareness, long-term plateaus, and oscillations}
 Initial analysis of an SEIR model with short-term 
 awareness of population-level severity suggests a generic outcome: 
 fatalities will increases
@@ -249,7 +257,7 @@ the time it took to reach the plateau.
 %These overshoots may lead to oscillatory dynamics
 %when there are larger lags between new cases and fatalities.
 
-\subsection{Emergent oscillations given lags between cases and fatalities}
+%\subsection{Emergent oscillations given lags between cases and fatalities}
 To explore the impacts of lags on dynamics,
 we incorporated an additional class $H$,
 assuming that fatalities follow potentially prolonged
@@ -357,22 +365,176 @@ of transmission.  However, when $\delta_c$ rather than
 $D_c$ drives dynamics, then shoulders and plateaus can re-emerge.
 In reality, we expect that individual
 behavior is shaped by short- and long-term awareness of risks, including
-the potential for `decay' of long-term awareness~\citep{funk2009spread,funk2010modelling}.
+the potential for fatigue and `decay' of long-term behavior
+change~\citep{funk2009spread,funk2010modelling}.
+
+\subsection{Empirical assessment of mechanistic drivers of asymmetric peaks in Covid-19 death rates}
+
+%Hence, we evaluated the shape of state-level epidemic peaks in the early part
+%of the epidemic. In doing so, we measure the degree of asymmetry in
+%the shape of empirical fatality time series.  
+%To do so, we 
+%find the time at which the death rate reached 10\% of its local peak
+%and then compare the death rate an equivalent time period after the
+%peak (see Methods).  If symmetric, these death rates should 
+%be approximately equal; and note that peaks in herd-immunity
+%driven SIR models have symmetry coefficients in the range of X-Y
+%for ${\cal{R}}_0\approx 3$ (see Supplementary Figure X). Instead, many states 
+%exhibited significantly asymetric peaks such
+%that the fatality rates after peaks remained elevated.
+%, i.e., sharp
+%rises to the peak followed by but shallow or shoulder-like declines.
+%\textbf{INSERT description of findings, reference Figure...
+%For example, in Louisiana... in contrast ....}
+Epidemic models with behavior suggest that 
+awareness-driven distancing underlies 
+the degree of asymmetry surrounding peaks in fatalities.
+%robust to variation in assumptions on the 
+%quantitative and qualitative nature of awareness-driven distancing.
+To test this mechanistic link, we jointly analzed the dynamics of fatality
+rates and behavior, using mobility
+data obtained from \textbf{sources X and Y}
+as a proxy for behavior (see Methods for the
+aggregation of multiple mobility metrics via
+a Principal Component Analysis (PCA)).
+Notably, we find that aggregated rates of mobility 
+typically began to \emph{increase} before
+the local peak in fatality was reached (Figure~\ref{fig.phase_real_theory}A).  
+This rebound in mobility rates
+implies a collective response akin to opening up too early.
+For example, in the case of North Carolina, mobility increased even as fatality
+rates were increasing. Whereas, the state of New York exhibited reversible
+dynamics in the phase plane, implying that decreases in mobility were
+tightly linked to fatality rates.
+%%Mobility increases while deaths increase
+%is the opposite of model predictions given short- or
+%long-term awareness.
+As shown in Figure~\ref{fig.phase_real_theory}B,
+the shape of dynamics are expected to be `reversible' 
+(given short-term awareness, analogous to the dynamics
+in New York) or `counter-clockwise' (given long-term
+awareness that would lead to sustained declines in fatalities).
+Counter-clockwise shapes are not observed in any of the data sets we studied. 
+%Given short-term awareness,
+%individuals distance as deaths increase (reducing mobility), driving down
+%deaths, which leads to an increase in mobility, albeit along
+%the same curve in the phase plane (similar to the NY state trajectory).
+%Yet, with long-term awareness, then given sufficient deaths, behavior
+%is driven down and remains low, as individual behavior is shaped
+%by the cumulative deaths (unlike any observed trajectory). 
+\begin{figure*}
+\begin{center}
+\mbox{\hspace{0.05\textwidth}}
+\includegraphics[width=0.5\textwidth]{national_deaths_metric_phase_pca_grand.pdf}\\
+\includegraphics[width=0.325\textwidth]{figseir_phase2_noname.pdf}
+\includegraphics[width=0.325\textwidth]{figseir_phase2_statefix_noname.pdf}
+\includegraphics[width=0.325\textwidth]{figseir_phase2_state_noname.pdf}
+\caption{Dynamics of mobility and fatality for state-level
+data (top) and SEIR models (bottom panels).
+(Top) PCA projection of XXXX. FILL IN
+(B)
+Dynamics of effective behavior and death rates
+in a SEIR model with short- and long-term awareness. 
+Curves denote different assumptions regarding long-term awareness,
+in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+with $k=2$, $\gamma_H=1/21$, and $f_D=0.01$.  The short-term awareness
+corresponds go $N\delta_c=50$ deaths/day. Thin lines denote
+full dynamics over 400 days; thick lines denote the dynamics
+near the case fatality peak.
+(C) Dynamics of effective behavior and death rates
+in a SEIR model with awareness and fatigue. The three
+different curves denote different assumptions regarding long-term awareness,
+in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+with $k=2$, $\gamma_H=1/21$, $f_D=0.01$, and $\epsilon=1/7$.  
+The short-term awareness
+corresponds go $N\delta_c=50$ deaths/day. 
+The force of infection does not include long term changes in behavior
+beyond mobility, i.e., $g(D)=1$.
+(D) As in (C), but the force
+of infection includes long-term changes in behavior, i.e., 
+$g(D)=1/\left(1+(D/D_c)^k\right)$.
+\label{fig.phase_real_theory}}
+\end{center}
+\end{figure*}
+
+We hypothesize that
+a combination of awareness-driven distancing and fatigue
+can lead to clockwise like dynamics; implying
+that changes in behavior are not necessarily 
+monotonically related to near-term or long-term fatalities.
+Consider the following model of awareness-driven
+distancing including fatigue:
+\begin{eqnarray}
+\dot{S} &=& -\frac{\beta SI}{g(D)}\\
+\dot{E} &=& \frac{\beta SI}{g(D)}-\mu E\\
+\dot{I} &=& \mu E-\gamma I \\
+\dot{R} &=& (1-f_D)\gamma I\\
+\dot{H} &=& f_D\gamma I - \gamma_H H\\
+\dot{D} &=& \gamma_H H \\
+\dot{\beta} &=&\frac{\epsilon}{2}\left[\frac{\left(\frac{\hat{\beta}}{1+\left(\delta/\delta_c\right)^{k}}-\beta\right)}{1+\left(D/D_c\right)^k}+\left(\hat{\beta}-\beta\right)\right] \label{eq.fatigue}
+\end{eqnarray}
+Here the force of infection is related to the
+mobility denoted by $\beta(t)$ (which dictates
+the number of interactions per unit time) modulated by
+a reduction in risk per infection $g(D)$.
+In this model,
+$\hat{\beta}$ denotes the baseline behavior,
+and $\epsilon$ denotes a time-scale for behavior change.  
+%Note
+%that in the limit of $\delta=0$ and $D=0$, then $\beta$
+%asymptotically approaches $\hat{\beta}$ given a time scale $1/\epsilon$
+%in the absence of fatalities. 
+The level of fatigue is controlled by $D_c$, such that
+mobility returns to a baseline $\hat{\beta}$ once $D\gg D_c$.
+We consider two models, corresponding to
+$g(D)=1$ such that the force of infection depends on mobility alone,
+and 
+$g(D)=\left(1+(D/D_c)^k\right)$
+corresponding to sustained changes in the risk of infection
+per contact (e.g., due to mask wearing, contact-less
+interactions, use of PPE, etc.). 
+As shown in Figure~\ref{fig.phase_real_theory}C/D, the dynamics 
+switch from counter-clockwise to clockwise in the $\delta-\beta$ plane
+given the incorporation of fatigue.
+Deaths drive down mobility, but eventually,
+decreases in $\beta$ due to short-term awareness
+are over-come by fatigue, leading to increases in $\beta$.
+If $g(D)=1$, then 
+the dynamics include increases in both mobility and fatalities
+akin to levels expected in the absence of behavior, and eventually
+levels of infection that are stopped by herd immunity, rather than by 
+awareness (see Figure~\ref{fig.phase_real_theory}C).  
+In contrast, if there is sustained behavior change
+such that $g(D)$ decreases with increasing cumulative deaths
+then there is a single peak that forms a clockwise loop; with
+the peak close to, but after the minimum in behavior (Figure~\ref{fig.phase_real_theory}D); as observed in nearly all state-level data sets.
+%This analysis reveals a complex interplay between short-term awareness,
+%long-term awareness, and fatigue, can generate qualitative
+%signatures consistent with empirical observations.
 
 \section{Conclusions}
 We have developed and analyzed
-a model that assumes awareness of disease-induced death can 
+a series of models that assume awareness of disease-induced death can 
 reduce transmission and shown that such awareness-driven feedback
 can lead
 to highly asymmetric epidemic curves.  Asymmetric
 curves exhibit extended periods of near-constant
 cases even as the majority of the population remains susceptible.
+Hence: passing a `peak' need not imply
+the rapid decline of risk.  
 In these conditions, if individuals are unable
 to sustain social
 distancing policies, or begin to tolerate higher death rates, then cases 
 could increase (similar results have also been proposed in a recent, independently derived feedback SIR model~\citep{franco2020feedback}). 
-Hence: passing a `peak' need not imply
-the rapid decline of risk.  These types of impacts of awareness-driven
+Indeed, detailed analysis of mobility and fatalities suggest
+that mobility increased before fatalities peak; consistent
+with models in which awareness-driven distancing
+is limited by fatigue.  Notably we find that
+if mobility increases but the risk of infection per interaction
+decreases due to systemtic changes in behavior, then models
+suggest `clockwise' dynamics between behavior and fatality 
+as found in nearly all state-level datasets analyzed here.
+Awareness-driven
 endogenous changes in ${\cal{R}}_{\mathrm{eff}}$ are typically
 absent in models that form the basis for public policy and strategic planning.
 Our findings
@@ -385,18 +547,19 @@ Although the models here are intentionally simple,
 it seems likely that observed asymmetric dynamics of COVID-19, including
 slow declines and plateau-like behavior, may be an emergent
 property of awareness-driven epidemiological dynamics.
-We recognize that qualititatively similar effects could arise 
-if responses are due to case reports or to illnesses
-with a personal connection. They may also be driven by official and media responses, as well as purely individual ones. In addition, ongoing ascertainment
-biases may also influence the shape of reported, rather
-than actual, case curves.  
-
+%
+%We recognize that qualititatively similar effects could arise 
+%if responses are due to case reports or to illnesses
+%with a personal connection. They may also be driven by official and media responses, as well as purely individual ones. In addition, ongoing ascertainment
+%biases may also influence the shape of reported, rather
+%than actual, case curves.  
+%
 Moving forward, it is essential to fill in significant
 gaps in understanding how awareness of disease
 risk and severity shape behavior~\citep{west_nat2020}. 
 Mobility data is a proxy but
 not equivalent to a direct indicator of transmission
-risk. Nonetheless, measurements of community
+risk. Thus far, measurements of community
 mobility have been
 used as a leading indicator for epidemic outcomes.
 Prior work has shown significant impacts of changes
@@ -405,6 +568,10 @@ Here we have
 shown the importance of looking at a complementary feedback
 mechanism,
 i.e., from outbreak to behavior.  
+In doing so, we have also shown that decomposing the 
+force of infection in terms of the number of potential
+transmissions and the probability of infection per contact
+can lead to outcomes aligned with observed state-level dynamics.
 %This feedback is key given
 %that many mobility studies suggested that individuals began
 %social distancing before shelter-in-place policies were instituted.
@@ -414,22 +581,38 @@ makers structure intervention efforts appropriately to effectively
 communicate awareness campaigns that may aid in collective
 efforts to control the ongoing COVID-19 pandemic.
 
-\section{Methods}
 
-\subsection{Epidemiological data}
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=0.45\textwidth]{figseir_phase2_noname.pdf}
+%\caption{Dynamics of effective behavior and death rates
+%in a SEIR model with short- and long-term awareness. The four
+%curves denote different assumptions regarding long-term awareness,
+%in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+%with $k=2$, $\gamma_H=1/21$, and $f_D=0.01$.  The short-term awareness
+%corresponds go $N\delta_c=50$ deaths/day. Thin lines denote
+%full dynamics over 400 days; thick lines denote the dynamics
+%near the case fatality peak.
+%\label{fig.phase_theory}}
+%\end{center}
+%\end{figure}
 
-Daily number of reported deaths as of June 7, 2020, is obtained from The COVID Tracking Project (covidtracking.com;).
-
-\subsection{Mobility data}
-
-Mobility data as of June 12, 2020, are obtained from Google COVID-19 Community Mobility Reports (https://www.google.com/covid19/mobility/).
-The data set describes relative changes in mobility across six categories (grocery and pharmacy; parks; residential; retail and recreation; transit; and workplaces)
-compared to the median value from the 5‑week period Jan 3 – Feb 6, 2020.
-
-\subsection{Principal component analysis}
-
-We analyze mobility data using principal component analysis (PCA) in order to obtain an ``average'' mobility proxy. We remove the mobility measure for parks from the analysis because ???. Before performing PCA, we first calculate the 7-day rolling average for each mobility measure in order to remove the effects of weekdays. 
-Mobility measures are centered to have zero mean and scaled to unit variance. We then perform a single PCA using a combined mobility data set across all 17 states (instead of performing independent PCAs for each state). 
-Estimated principal components are then smoothed using locally locally estimated scatterplot smoothing to draw a continuous-time phase plain.
-We focus on the first principal component, which explains 93\% of the total variance, in our phase plain analysis. The first principal component is negatively correlated with all mobility measures, except for mobility in the residential area. 
-We inverted the sign of this principal component such that a decrease in the first principal component corresponds to the reduction in overall mobility.
+%\begin{figure*}
+%\begin{center}
+%\includegraphics[width=0.45\textwidth]{figseir_phase2_state_noname.pdf}
+%\mbox{\hspace{0.05\textwidth}}
+%\includegraphics[width=0.45\textwidth]{figseir_phase2_statefix_noname.pdf}
+%\caption{
+%Dynamics of effective behavior and death rates
+%in a SEIR model with awareness and fatigue. The three
+%different curves denote different assumptions regarding long-term awareness,
+%in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+%with $k=2$, $\gamma_H=1/21$, $f_D=0.01$, and $\epsilon=1/7$.  
+%The short-term awareness
+%corresponds go $N\delta_c=50$ deaths/day. (A) The force
+%of infection includes long-term changes in behavior, i.e., $\beta SI/\left(1+(D/D_c)^k\right)$.
+%(B) The force of infection does not include long term changes in behavior
+%beyond mobility, i.e., $\beta S I$.
+%\label{fig.phase_fatigue}}
+%\end{center}
+%\end{figure*}

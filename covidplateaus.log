@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 MAY 2020 00:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  6 SEP 2020 14:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -149,18 +149,29 @@ Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 (/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2010/texmf-dist/doc/latex/latex-graphics-companion/inputs/g
-raphics.cfg)
-Package graphics Info: Driver file: dvips.def on input line 91.
- (/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/18 v0.06c Graphics/color for pdfTeX
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count105
 ))
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
 )
 \epsfxsize=\dimen113
 \epsfysize=\dimen114
-) (/usr/local/texlive/2010/texmf-dist/tex/latex/tools/enumerate.sty
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks22
 )
@@ -213,24 +224,23 @@ ode.tex
 \pgf@yc=\dimen122
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count105
-\c@pgf@countb=\count106
-\c@pgf@countc=\count107
-\c@pgf@countd=\count108
+\c@pgf@counta=\count106
+\c@pgf@countb=\count107
+\c@pgf@countc=\count108
+\c@pgf@countd=\count109
 
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Package pgfsys Info: Driver file for pgf: pgfsys-dvips.def on input line 900.
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
 
-(/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
-f
-File: pgfsys-dvips.def 2008/04/03  (rcs-revision 1.20)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
 
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-ostscript.def
-File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
-\pgf@objectcount=\count109
+df.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
@@ -248,19 +258,8 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-(/usr/local/texlive/2010/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/18 v0.06c Graphics/color for pdfTeX
-
-(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
-(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count112
-)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -276,7 +275,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen123
-\pgfmath@count=\count113
+\pgfmath@count=\count112
 \pgfmath@box=\box37
 \pgfmath@toks=\toks29
 \pgfmath@stack@operand=\toks30
@@ -299,7 +298,7 @@ code.tex)
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
 code.tex)))
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count114
+\c@pgfmathroundto@lastzeros=\count113
 ))
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
@@ -337,7 +336,7 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box38
 \pgf@hbox=\box39
 \pgf@layerbox@main=\box40
-\pgf@picture@serial@count=\count115
+\pgf@picture@serial@count=\count114
 )
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
@@ -371,7 +370,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 e.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen146
-\pgf@sys@shading@range@num=\count116
+\pgf@sys@shading@range@num=\count115
 )
 (/usr/local/texlive/2010/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -427,16 +426,16 @@ Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count117
+\et@xins=\count116
 )
-\etb@tempcnta=\count118
+\etb@tempcnta=\count117
 )
 \tcb@titlebox=\box43
 \tcb@upperbox=\box44
 \tcb@lowerbox=\box45
 \tcb@phantombox=\box46
-\c@tcbbreakpart=\count119
-\c@tcblayer=\count120
+\c@tcbbreakpart=\count118
+\c@tcblayer=\count119
 \tcb@temp=\box47
 \tcb@temp=\box48
 \tcb@temp=\box49
@@ -467,131 +466,220 @@ LaTeX Font Info:    ... okay on input line 12.
 Class revtex4 Info: Patching LaTeX tabular. on input line 12.
 Class revtex4 Info: cite was not loaded (OK!) on input line 12.
 Class revtex4 Info: multicol was not loaded (OK!) on input line 12.
- ABD: EveryShipout initializing macros
+
 (/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count121
+\scratchcounter=\count120
 \scratchdimen=\dimen150
 \scratchbox=\box51
-\nofMPsegments=\count122
-\nofMParguments=\count123
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count124
+\MPscratchCnt=\count123
 \MPscratchDim=\dimen151
-\MPnumerator=\count125
+\MPnumerator=\count124
 \everyMPtoPDFconversion=\toks33
-) (./covidplateaus.author.tex) (./covidplateaus.abs.tex)
-(./covidplateaus.title.tex)
+) (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros (./covidplateaus.author.tex)
+(./covidplateaus.abs.tex) (./covidplateaus.title.tex)
 Underfull \hbox (badness 7722) in paragraph at lines 26--26
 $[]$[]\OT1/cmr/m/n/8 Electronic address: $\OT1/cmtt/m/n/8 jsweitz @ gatech . ed
 u$\OT1/cmr/m/n/8 ; URL: $\OT1/cmtt/m/n/8 http : / /
  []
 
 (./covidplateaus.sign.tex) (./covidplateaus.body.tex
-<deaths/national_death.pdf, id=1, 867.24pt x 867.24pt>
-File: deaths/national_death.pdf Graphic file (type pdf)
+<deaths/national_deaths_metric_boot.pdf, id=4, 722.7pt x 505.89pt>
+File: deaths/national_deaths_metric_boot.pdf Graphic file (type pdf)
 
-<use deaths/national_death.pdf>
-Package pdftex.def Info: deaths/national_death.pdf used on input line 27.
-(pdftex.def)             Requested size: 458.99689pt x 458.99983pt.
- [1
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/upd
-map/pdftex.map}] [2 <./deaths/national_death.pdf>]
-<schematics/plateau_schematic.pdf, id=30, 641.39626pt x 274.02374pt>
+<use deaths/national_deaths_metric_boot.pdf>
+Package pdftex.def Info: deaths/national_deaths_metric_boot.pdf used on input l
+ine 27.
+(pdftex.def)             Requested size: 458.99689pt x 321.29832pt.
+ [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `fig.supp_plateaus' on page 2 undefined on input line 
+94.
+
+[2 <./deaths/national_deaths_metric_boot.pdf>]
+<schematics/plateau_schematic.pdf, id=46, 641.39626pt x 274.02374pt>
 File: schematics/plateau_schematic.pdf Graphic file (type pdf)
 
 <use schematics/plateau_schematic.pdf>
-Package pdftex.def Info: schematics/plateau_schematic.pdf used on input line 13
-5.
+Package pdftex.def Info: schematics/plateau_schematic.pdf used on input line 14
+6.
 (pdftex.def)             Requested size: 242.25311pt x 103.49455pt.
 
-<scripts/figseir_baseplat_k2_D_noname.pdf, id=31, 568.1225pt x 514.92375pt>
+<scripts/figseir_baseplat_k2_D_noname.pdf, id=47, 568.1225pt x 514.92375pt>
 File: scripts/figseir_baseplat_k2_D_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_baseplat_k2_D_noname.pdf>
 Package pdftex.def Info: scripts/figseir_baseplat_k2_D_noname.pdf used on input
- line 145.
+ line 156.
 (pdftex.def)             Requested size: 203.99689pt x 184.89311pt.
 
-<scripts/figseir_baseplat_k2_I_noname.pdf, id=32, 588.1975pt x 520.94624pt>
+<scripts/figseir_baseplat_k2_I_noname.pdf, id=48, 588.1975pt x 520.94624pt>
 File: scripts/figseir_baseplat_k2_I_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_baseplat_k2_I_noname.pdf>
 Package pdftex.def Info: scripts/figseir_baseplat_k2_I_noname.pdf used on input
- line 146.
+ line 157.
 (pdftex.def)             Requested size: 203.99689pt x 180.67258pt.
 
-<scripts/figseir_Speak_k2_noname.pdf, id=33, 566.115pt x 523.9575pt>
+<scripts/figseir_Speak_k2_noname.pdf, id=49, 566.115pt x 523.9575pt>
 File: scripts/figseir_Speak_k2_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Speak_k2_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Speak_k2_noname.pdf used on input line
- 161.
+ 172.
 (pdftex.def)             Requested size: 203.99689pt x 188.80045pt.
 
-<scripts/figseir_Susc_k2_noname.pdf, id=34, 562.1pt x 520.94624pt>
+<scripts/figseir_Susc_k2_noname.pdf, id=50, 562.1pt x 520.94624pt>
 File: scripts/figseir_Susc_k2_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Susc_k2_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Susc_k2_noname.pdf used on input line 
-162.
+173.
 (pdftex.def)             Requested size: 203.99689pt x 189.05876pt.
  [3 <./schematics/plateau_schematic.pdf> <./scripts/figseir_baseplat_k2_D_nonam
 e.pdf> <./scripts/figseir_baseplat_k2_I_noname.pdf>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 188.
+ on input line 207.
 
 [4 <./scripts/figseir_Speak_k2_noname.pdf> <./scripts/figseir_Susc_k2_noname.pd
-f>] <scripts/figseir_Hdel_k2_noname.pdf, id=81, 536.0025pt x 400.49625pt>
+f>] <scripts/figseir_Hdel_k2_noname.pdf, id=97, 536.0025pt x 400.49625pt>
 File: scripts/figseir_Hdel_k2_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k2_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hdel_k2_noname.pdf used on input line 
-288.
+299.
 (pdftex.def)             Requested size: 239.70062pt x 179.0972pt.
 
-<scripts/figseir_Hdel_k2D_noname.pdf, id=82, 556.0775pt x 376.40625pt>
+<scripts/figseir_Hdel_k2D_noname.pdf, id=98, 556.0775pt x 376.40625pt>
 File: scripts/figseir_Hdel_k2D_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k2D_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hdel_k2D_noname.pdf used on input line
- 289.
+ 300.
 (pdftex.def)             Requested size: 239.70062pt x 162.25357pt.
 
-<scripts/figseir_Hlong_k2D_noname.pdf, id=83, 556.0775pt x 376.40625pt>
+<scripts/figseir_Hlong_k2D_noname.pdf, id=99, 556.0775pt x 376.40625pt>
 File: scripts/figseir_Hlong_k2D_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hlong_k2D_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hlong_k2D_noname.pdf used on input lin
-e 303.
+e 314.
 (pdftex.def)             Requested size: 239.70062pt x 162.25357pt.
 
-<scripts/figseir_Hlong_k2Dtot_noname.pdf, id=84, 553.06625pt x 385.44pt>
+<scripts/figseir_Hlong_k2Dtot_noname.pdf, id=100, 553.06625pt x 385.44pt>
 File: scripts/figseir_Hlong_k2Dtot_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hlong_k2Dtot_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hlong_k2Dtot_noname.pdf used on input 
-line 304.
+line 315.
 (pdftex.def)             Requested size: 239.70062pt x 167.0475pt.
  [5 <./scripts/figseir_Hdel_k2_noname.pdf> <./scripts/figseir_Hdel_k2D_noname.p
-df>]
+df> <./scripts/figseir_Hlong_k2D_noname.pdf> <./scripts/figseir_Hlong_k2Dtot_no
+name.pdf>]
+<national_deaths_metric_phase_pca_grand.pdf, id=123, 578.16pt x 578.16pt>
+File: national_deaths_metric_phase_pca_grand.pdf Graphic file (type pdf)
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 380.
+<use national_deaths_metric_phase_pca_grand.pdf>
+Package pdftex.def Info: national_deaths_metric_phase_pca_grand.pdf used on inp
+ut line 428.
+(pdftex.def)             Requested size: 255.0pt x 254.9999pt.
+
+<figseir_phase2_noname.pdf, id=124, 544.0325pt x 378.41376pt>
+File: figseir_phase2_noname.pdf Graphic file (type pdf)
+
+<use figseir_phase2_noname.pdf>
+Package pdftex.def Info: figseir_phase2_noname.pdf used on input line 429.
+(pdftex.def)             Requested size: 165.74844pt x 115.29187pt.
+
+<figseir_phase2_statefix_noname.pdf, id=125, 541.02126pt x 372.39125pt>
+File: figseir_phase2_statefix_noname.pdf Graphic file (type pdf)
+
+<use figseir_phase2_statefix_noname.pdf>
+Package pdftex.def Info: figseir_phase2_statefix_noname.pdf used on input line 
+430.
+(pdftex.def)             Requested size: 165.74844pt x 114.08203pt.
+
+<figseir_phase2_state_noname.pdf, id=126, 541.02126pt x 372.39125pt>
+File: figseir_phase2_state_noname.pdf Graphic file (type pdf)
+
+<use figseir_phase2_state_noname.pdf>
+Package pdftex.def Info: figseir_phase2_state_noname.pdf used on input line 431
+.
+(pdftex.def)             Requested size: 165.74844pt x 114.08203pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--459
+[]\OT1/cmr/m/n/10 Epidemic mod-els with behav-ior sug-gest that
+ []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 381--390
+Underfull \hbox (badness 1990) in paragraph at lines 389--459
+\OT1/cmr/m/n/10 awareness-driven dis-tanc-ing under-lies the degree of
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 389--459
+\OT1/cmr/m/n/10 we find that aggre-gat-ed rates of mobil-i-ty typ-i-cal-ly
+ []
+
+[6]
+Underfull \hbox (badness 1275) in paragraph at lines 546--583
 \OT1/cmr/m/n/10 COVID-19, includ-ing slow declines and plateau-like
  []
 
-) (./covidplateaus.acknowledge.tex
+[7 <./deaths/national_deaths_metric_phase_pca_grand.pdf> <./scripts/figseir_pha
+se2_noname.pdf> <./scripts/figseir_phase2_statefix_noname.pdf> <./scripts/figse
+ir_phase2_state_noname.pdf>]) (./covidplateaus.acknowledge.tex
 Underfull \hbox (badness 2181) in paragraph at lines 1--6
 \OT1/cmr/bx/n/10 Data avail-abil-i-ty\OT1/cmr/m/n/10 : All sim-u-la-tion codes,
  fig-ures,
@@ -609,14 +697,6 @@ Underfull \hbox (badness 1033) in paragraph at lines 7--35
  []
 
 (./covidplateaus.biblio.tex (./covidplateaus.bbl
-Overfull \vbox (4.97572pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (4.97572pt too high) has occurred while \output is active []
-
-
-[6 <./covid19-git-plateaus/scripts/figseir_Hlong_k2D_noname.pdf> <./scripts/fig
-seir_Hlong_k2Dtot_noname.pdf>]
 Underfull \hbox (badness 3724) in paragraph at lines 16--21
  \OT1/cmr/m/n/9 health-care demand.  $\OT1/cmtt/m/n/9 https : / / www . imperia
 l . ac . uk /
@@ -644,7 +724,7 @@ Underfull \hbox (badness 5970) in paragraph at lines 35--42
  []
 
 )) (./covidplateaus.appendix.tex
-<scripts/figseir_Speak_k1_noname.pdf, id=111, 566.115pt x 540.0175pt>
+<scripts/figseir_Speak_k1_noname.pdf, id=170, 566.115pt x 540.0175pt>
 File: scripts/figseir_Speak_k1_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Speak_k1_noname.pdf>
@@ -652,7 +732,7 @@ Package pdftex.def Info: scripts/figseir_Speak_k1_noname.pdf used on input line
  6.
 (pdftex.def)             Requested size: 203.99689pt x 194.58742pt.
 
-<scripts/figseir_Susc_k1_noname.pdf, id=112, 562.1pt x 540.0175pt>
+<scripts/figseir_Susc_k1_noname.pdf, id=171, 562.1pt x 540.0175pt>
 File: scripts/figseir_Susc_k1_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Susc_k1_noname.pdf>
@@ -660,7 +740,7 @@ Package pdftex.def Info: scripts/figseir_Susc_k1_noname.pdf used on input line
 8.
 (pdftex.def)             Requested size: 203.99689pt x 195.97998pt.
 
-<scripts/figseir_Speak_k4_noname.pdf, id=113, 566.115pt x 540.0175pt>
+<scripts/figseir_Speak_k4_noname.pdf, id=172, 566.115pt x 540.0175pt>
 File: scripts/figseir_Speak_k4_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Speak_k4_noname.pdf>
@@ -668,7 +748,7 @@ Package pdftex.def Info: scripts/figseir_Speak_k4_noname.pdf used on input line
  9.
 (pdftex.def)             Requested size: 203.99689pt x 194.58742pt.
 
-<scripts/figseir_Susc_k4_noname.pdf, id=114, 562.1pt x 540.0175pt>
+<scripts/figseir_Susc_k4_noname.pdf, id=173, 562.1pt x 540.0175pt>
 File: scripts/figseir_Susc_k4_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Susc_k4_noname.pdf>
@@ -676,7 +756,7 @@ Package pdftex.def Info: scripts/figseir_Susc_k4_noname.pdf used on input line
 11.
 (pdftex.def)             Requested size: 203.99689pt x 195.97998pt.
 
-<scripts/figseir_Hdel_k1_noname.pdf, id=115, 536.0025pt x 401.5pt>
+<scripts/figseir_Hdel_k1_noname.pdf, id=174, 536.0025pt x 401.5pt>
 File: scripts/figseir_Hdel_k1_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k1_noname.pdf>
@@ -684,7 +764,7 @@ Package pdftex.def Info: scripts/figseir_Hdel_k1_noname.pdf used on input line
 28.
 (pdftex.def)             Requested size: 203.99689pt x 152.80438pt.
 
-<scripts/figseir_Hdel_k1D_noname.pdf, id=116, 556.0775pt x 401.5pt>
+<scripts/figseir_Hdel_k1D_noname.pdf, id=175, 556.0775pt x 401.5pt>
 File: scripts/figseir_Hdel_k1D_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k1D_noname.pdf>
@@ -692,7 +772,7 @@ Package pdftex.def Info: scripts/figseir_Hdel_k1D_noname.pdf used on input line
  30.
 (pdftex.def)             Requested size: 203.99689pt x 147.29063pt.
 
-<scripts/figseir_Hdel_k4_noname.pdf, id=117, 536.0025pt x 401.5pt>
+<scripts/figseir_Hdel_k4_noname.pdf, id=176, 536.0025pt x 401.5pt>
 File: scripts/figseir_Hdel_k4_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k4_noname.pdf>
@@ -700,52 +780,59 @@ Package pdftex.def Info: scripts/figseir_Hdel_k4_noname.pdf used on input line
 31.
 (pdftex.def)             Requested size: 203.99689pt x 152.80438pt.
 
-<scripts/figseir_Hdel_k4D_noname.pdf, id=118, 556.0775pt x 401.5pt>
+<scripts/figseir_Hdel_k4D_noname.pdf, id=177, 556.0775pt x 401.5pt>
 File: scripts/figseir_Hdel_k4D_noname.pdf Graphic file (type pdf)
 
 <use scripts/figseir_Hdel_k4D_noname.pdf>
 Package pdftex.def Info: scripts/figseir_Hdel_k4D_noname.pdf used on input line
  33.
 (pdftex.def)             Requested size: 203.99689pt x 147.29063pt.
-) [7] [8 <./scripts/figseir_Speak_k1_noname.pdf> <./scripts/figseir_Susc_k1_non
+) [8] [9 <./scripts/figseir_Speak_k1_noname.pdf> <./scripts/figseir_Susc_k1_non
 ame.pdf> <./scripts/figseir_Speak_k4_noname.pdf> <./scripts/figseir_Susc_k4_non
-ame.pdf>] [9 <./scripts/figseir_Hdel_k1_noname.pdf> <./scripts/figseir_Hdel_k1D
-_noname.pdf> <./scripts/figseir_Hdel_k4_noname.pdf> <./scripts/figseir_Hdel_k4D
-_noname.pdf>] (./covidplateaus.aux) ) 
+ame.pdf>] [10 <./scripts/figseir_Hdel_k1_noname.pdf> <./scripts/figseir_Hdel_k1
+D_noname.pdf> <./scripts/figseir_Hdel_k4_noname.pdf> <./scripts/figseir_Hdel_k4
+D_noname.pdf>] (./covidplateaus.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 11345 strings out of 493117
- 198787 string characters out of 6135433
- 282857 words of memory out of 5000000
- 14537 multiletter control sequences out of 15000+600000
- 9922 words of font info for 37 fonts, out of 8000000 for 9000
+ 11673 strings out of 493117
+ 205337 string characters out of 6135433
+ 292068 words of memory out of 5000000
+ 14832 multiletter control sequences out of 15000+600000
+ 10268 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,73p,563b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.
-pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pf
-b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on covidplateaus.pdf (9 pages, 1811927 bytes).
+ 57i,11n,73p,1344b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on covidplateaus.pdf (10 pages, 3557644 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
+ 306 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
