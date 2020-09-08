@@ -28,16 +28,18 @@ Farr's law as applied to the HIV epidemic).
 %\includegraphics[width=0.9\textwidth]{deaths/deaths.pdf}
 %\includegraphics[width=0.8\textwidth]{deaths/deaths.pdf}
 \caption{Plateaus and shoulder-like dynamics in 
-COVID-19 fatalities.  (A) Examples of locally estimated scatterplot smoothing (LOESS) of daily number of deaths for COVID-19 in four states, including
+COVID-19 fatalities.  
+(A) Examples of daily number of reported deaths for COVID-19 (black points and lines) and the corresponding locally estimated scatterplot smoothing (LOESS) curves (red lines) in four states, including
 two estimated to be the most plateau-like (Minnesota and North Carolina)
 and two estimated to be the most peak-like (Indiana and Maryland). 
-Daily number of deaths is averaged in log space, only including days with
-one or more reported deaths; US state level averages.
-(B) Smoothed daily number of reported deaths centered around the first
-fatality peak of the epidemic for 17 states. (C) Measured
-symmetry coefficient and confidence intervals. Methods and Supplementary
-Information contain detailed description of the LOESS smoothing in (A),
-peak identification in (B), and symmetry coefficient estimator in (C).
+Daily number of deaths is smoothed in log space, only including days with one or more reported deaths.
+We restrict our analysis to states in which the peak smoothed death is greater than 10 as of June 7, 2020 (resulting in 17 states in total).
+(B) Smoothed daily number of reported deaths  centered around the first peak time $t_P$ across 17 states.
+Smoothed death curves are plotted between $t_P - \Delta t$ and $t_P + \Delta t$, where $\Delta t$ is defined such that smoothed death at time $t_P - \Delta t$ corresponds to 10\% of the smoothed peak value.
+(C) Measured symmetry coefficient and confidence intervals.
+Symmetry coefficient is calculated by dividing the death value at time $t_P - \Delta t$ by the death value at time $t_P + \Delta t$. If the death curve is symmetric, the symmetry coefficient should equal 1.
+Confidence intervals are calculated by bootstrapping across the date of deaths for each individual 1000 times and recalculating the symmetry coefficient (after smoothing each bootstrap time series).
+LOESS smoothing is performed by using the \texttt{loess} function in \texttt{R}.
 \label{fig.plateaus_cases}}
 \end{center}
 \end{figure*}
@@ -79,7 +81,7 @@ school closings, and so on.
 As a result, the ICL model suggests that lifting of large-scale
 public health interventions could be followed by a second wave of cases.
 Yet, for a disease
-that is already the documented cause of more than XXXX deaths
+that is already the documented cause of more than 180,000 deaths
 in the United States alone, we posit that individuals
 are likely to continue to modify
 their behavior even after lockdowns are lifted.  
@@ -325,7 +327,7 @@ distancing alone.
 
 \subsection{Dynamical consequences of short-term and long-term awareness}
 Awareness can vary in duration, e.g., awareness
-of SARS-1 may prepare individuals to more
+of SARS-CoV-1 may prepare individuals to more
 readily adopt and retain
 social distancing measures~\citep{chen_2020social,leung_lancet2020}.  
 In previous
@@ -393,7 +395,7 @@ the degree of asymmetry surrounding peaks in fatalities.
 %quantitative and qualitative nature of awareness-driven distancing.
 To test this mechanistic link, we jointly analzed the dynamics of fatality
 rates and behavior, using mobility
-data obtained from \textbf{sources X and Y}
+data obtained from Google COVID-19 Community Mobility Reports (https://www.google.com/covid19/mobility/)
 as a proxy for behavior (see Methods for the
 aggregation of multiple mobility metrics via
 a Principal Component Analysis (PCA)).
@@ -414,7 +416,7 @@ the shape of dynamics are expected to be `reversible'
 (given short-term awareness, analogous to the dynamics
 in New York) or `counter-clockwise' (given long-term
 awareness that would lead to sustained declines in fatalities).
-Counter-clockwise shapes are not observed in any of the data sets we studied. 
+Counter-clockwise shapes are not observed in Washington state only. 
 %Given short-term awareness,
 %individuals distance as deaths increase (reducing mobility), driving down
 %deaths, which leads to an increase in mobility, albeit along
@@ -425,10 +427,10 @@ Counter-clockwise shapes are not observed in any of the data sets we studied.
 \begin{figure*}
 \begin{center}
 \mbox{\hspace{0.05\textwidth}}
-\includegraphics[width=0.5\textwidth]{national_deaths_metric_phase_pca_grand.pdf}\\
-\includegraphics[width=0.325\textwidth]{figseir_phase2_noname.pdf}
-\includegraphics[width=0.325\textwidth]{figseir_phase2_statefix_noname.pdf}
-\includegraphics[width=0.325\textwidth]{figseir_phase2_state_noname.pdf}
+\includegraphics[width=0.5\textwidth]{deaths/national_deaths_metric_phase_pca_grand.pdf}\\
+\includegraphics[width=0.325\textwidth]{scripts/figseir_phase2_noname.pdf}
+\includegraphics[width=0.325\textwidth]{scripts/figseir_phase2_statefix_noname.pdf}
+\includegraphics[width=0.325\textwidth]{scripts/figseir_phase2_state_noname.pdf}
 \caption{Dynamics of mobility and fatality for state-level
 data (top) and SEIR models (bottom panels).
 (Top) PCA projection of XXXX. FILL IN
@@ -581,6 +583,30 @@ makers structure intervention efforts appropriately to effectively
 communicate awareness campaigns that may aid in collective
 efforts to control the ongoing COVID-19 pandemic.
 
+
+\section{Methods}
+
+\subsection{Epidemiological data}
+
+Daily number of reported deaths as of June 7, 2020, is obtained from The COVID Tracking Project (covidtracking.com).
+
+\subsection{Mobility data}
+
+Mobility data as of June 12, 2020, are obtained from Google COVID-19 Community Mobility Reports (www.google.com/covid19/mobility/).
+The data set describes percent changes in mobility across six categories (grocery and pharmacy; parks; residential; retail and recreation; transit; and workplaces)
+compared to the median value from the 5‑week period Jan 3 – Feb 6, 2020.
+Raw mobility data are plotted in Supplementary Figure~\ref{fig.supp_mobility}.
+
+\subsection{Principal component analysis}
+
+We analyze mobility data using principal component analysis (PCA) in order to obtain an aggregated mobility proxy. 
+We exclude mobility measures for parks from the analysis due to their anomalous, noisy patterns (Supplementary Figure~\ref{fig.supp_mobility}).
+Before performing PCA, we first calculate the 7-day rolling average for each mobility measure in order to remove the effects of weekdays.
+Mobility measures are further centered to have zero mean and scaled to unit variance. We then perform a single PCA using a combined mobility data set across all 17 states (instead of performing independent PCAs for each state). 
+Estimated principal components are further smoothed using locally locally estimated scatterplot smoothing to draw a continuous-time phase plain.
+We focus on the first principal component, which explains 93\% of the total variance, in our phase plain analysis. 
+The first principal component is negatively correlated with all mobility measures, except for mobility in the residential area. 
+We inverted the sign of this principal component such that a decrease in the first principal component corresponds to the reduction in overall mobility.
 
 %\begin{figure}
 %\begin{center}

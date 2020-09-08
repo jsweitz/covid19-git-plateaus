@@ -85,12 +85,6 @@ phasedata_pca <- lapply(unique(mobility_US$region), function(x) {
 }) %>%
   bind_rows
 
-phasedata_pca2 <- phasedata_pca %>%
-  group_by(region) %>%
-  filter(
-    day <= dmax
-  )
-
 phasedata_pca3 <- phasedata_pca %>%
   group_by(region) %>%
   filter(
@@ -102,8 +96,8 @@ x_end <- phasedata_pca3 %>%
   filter(day==max(day))
 
 g1 <- ggplot(phasedata_pca3) +
-  geom_path(data=phasedata_pca2, aes(-pc1, deaths, group=region),
-            col="gray", alpha=0.5) +
+  # geom_path(data=phasedata_pca2, aes(-pc1, deaths, group=region, lty=region),
+  #           col="gray", alpha=0.5) +
   geom_path(aes(-pc1, deaths, group=region, col=metric, lty=region),
             arrow = arrow(length = unit(0.1, "inches"), type = "closed")) +
   geom_dl(data=x_end, aes(-pc1, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.1, vjust=1.2)) +
@@ -117,4 +111,7 @@ g1 <- ggplot(phasedata_pca3) +
     strip.background = element_blank()
   )
 
-ggsave("national_deaths_metric_phase_pca_grand.pdf", g1, width=8, height=8)
+tikz(file = "national_deaths_metric_phase_pca_grand.tex", width = 8, height = 8, standAlone = T)
+plot(g1)
+dev.off()
+tools::texi2dvi('national_deaths_metric_phase_pca_grand.tex', pdf = T, clean = T)
