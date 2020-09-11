@@ -1,7 +1,8 @@
 \section{Introduction}
-\jd{This will actually need a fair amount of work to explain how relevant simple, symmetric models still are (and aren't) [sad face]}
-\jd{Weitz, do you have a special script to insert illogical line breaks in the .tex?}
-\jd{Maybe less emphasis on Gaussian symmetry and more emphasis on the broader world of symmetric-like models, including SEIR.}
+
+\cmt{JD: This will actually need a fair amount of work to explain how relevant simple, symmetric models still are (and aren't) (sad face)}
+\cmt{JD: Weitz, do you have a special script to insert illogical line breaks in the .tex?}
+\cmt{JD: Maybe less emphasis on Gaussian symmetry and more emphasis on the broader world of symmetric-like models, including SEIR.}
 The spread of COVID-19 has elevated the importance of epidemiological
 models as a means to forecast both near- and long-term spread. 
 In the United States, the Institute for Health Metrics and Evaluation (IHME)
@@ -65,13 +66,14 @@ in a population with pre-existing circulation.
 But, even when herd immunity is reached, there will still be new cases 
 which then diminish over time, until the epidemic concludes.  
 A single-peak paradigm is
-only robust insofar as the disease has spread
+robust insofar as the disease has spread
 sufficiently in a population to reach and exceed `herd immunity'.
 The converse
 is also true  -- as long as 
 a population remains predominantly immunologically
 naive, then the risk of further infection has not passed. 
 
+\cmt{JD: This probably also needs updating.}
 The Imperial College of London (ICL) model~\citep{ferguson2020report} is
 one of the most influential of 
 epidemiogical models shaping public health responses to COVID-19. The ICL model is an
@@ -603,14 +605,13 @@ Raw mobility data are plotted in Supplementary Figure~\ref{fig.supp_mobility}.
 
 \subsection{Principal component analysis}
 
-We analyze mobility data using principal component analysis (PCA) in order to obtain an aggregated mobility proxy. 
-We exclude mobility measures for parks from the analysis due to their anomalous, noisy patterns (Supplementary Figure~\ref{fig.supp_mobility}).
-Before performing PCA, we first calculate the 7-day rolling average for each mobility measure in order to remove the effects of weekdays.
-Mobility measures are further centered to have zero mean and scaled to unit variance. We then perform a single PCA using a combined mobility data set across all 17 states (instead of performing independent PCAs for each state). 
-Estimated principal components are further smoothed using locally locally estimated scatterplot smoothing to draw a continuous-time phase plain.
-We focus on the first principal component, which explains 93\% of the total variance, in our phase plain analysis. 
-The first principal component is negatively correlated with all mobility measures, except for mobility in the residential area. 
-We inverted the sign of this principal component such that a decrease in the first principal component corresponds to the reduction in overall mobility.
+We used principal component analysis (PCA) on the mobility data to obtain a univariate index of mobility. 
+We exclude park visits from the analysis due to their anomalous, noisy patterns (Supplementary Figure~\ref{fig.supp_mobility}).
+Before performing PCA, we first calculate the 7-day rolling average for each mobility measure in order to remove the effects of weekly patterns.
+We combined mobility data from all 17 analyzed states, and standardized each measure (to zero mean and unit variance). 
+The first principal component explains 93\% of the total variance in this analysis, and the loading of the residential metric had a different sign from the other four mobility metrics. 
+We thus used this component as our index of mobility (setting the direction so that only the residential metric contributed negatively to the index).
+To draw phase planes, we further smoothed \cmt{JD: What? The index? The index and the incidence values?} using locally estimated scatterplot smoothing \cmt{JD: Explain briefly.}
 
 %\begin{figure}
 %\begin{center}
