@@ -37,8 +37,11 @@
 \usepackage{tcolorbox}
 \usepackage{dsfont}
 \usepackage{multirow}
-\usepackage{boxit}
+%% \usepackage{boxit}
+\def\boxit#1{\leavevmode\hbox{\vrule\vtop{\vbox{\kern.33333pt\hrule
+    \kern1pt\hbox{\kern1pt\vbox{#1}\kern1pt}}\kern1pt\hrule}\vrule}}
 
+\newcommand{\cmt}[1]{[[\textsl{#1}]]}
 \newcommand{\bv}{\begin{verbatim}}
 \newcommand{\ev}{\end{verbatim}}
 \def\d{\rm{d}}
