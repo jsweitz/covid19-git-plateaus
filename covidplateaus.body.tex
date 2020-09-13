@@ -605,13 +605,15 @@ Raw mobility data are plotted in Supplementary Figure~\ref{fig.supp_mobility}.
 
 \subsection{Principal component analysis}
 
-We used principal component analysis (PCA) on the mobility data to obtain a univariate index of mobility. 
+We use principal component analysis (PCA) on the mobility data to obtain a univariate index of mobility. 
 We exclude park visits from the analysis due to their anomalous, noisy patterns (Supplementary Figure~\ref{fig.supp_mobility}).
 Before performing PCA, we first calculate the 7-day rolling average for each mobility measure in order to remove the effects of weekly patterns.
 We combined mobility data from all 17 analyzed states, and standardized each measure (to zero mean and unit variance). 
 The first principal component explains 93\% of the total variance in this analysis, and the loading of the residential metric had a different sign from the other four mobility metrics. 
 We thus used this component as our index of mobility (setting the direction so that only the residential metric contributed negatively to the index).
-To draw phase planes, we further smoothed \cmt{JD: What? The index? The index and the incidence values?} using locally estimated scatterplot smoothing \cmt{JD: Explain briefly.}
+To draw phase planes, we further smoothed our mobility index and daily reported deaths using locally estimated scatterplot (LOESS) smoothing.
+Daily number of deaths is smoothed in log space, only including days with one or more reported deaths.
+LOESS smoothing is performed by using the \texttt{loess} function in \texttt{R}.
 
 %\begin{figure}
 %\begin{center}
