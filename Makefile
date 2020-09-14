@@ -12,6 +12,8 @@ vim_session:
 
 Ignore += deaths
 
+Sources += $(wildcard *.tex)
+
 covidplateaus.pdf: covidplateaus.tex covidplateaus.abs.tex covidplateaus.acknowledge.tex covidplateaus.appendix.tex covidplateaus.author.tex covidplateaus.biblio.tex covidplateaus.settings.tex covidplateaus.sign.tex covidplateaus.title.tex covidplateaus.body.tex
 
 ######################################################################

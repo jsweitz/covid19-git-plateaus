@@ -197,9 +197,9 @@ Uncontrolled epidemics in SEIR models have a single case peak, corresponding
 to the point where $\gamma I = \beta S I $ such that 
 the population obtains herd immunity when only a proportion
 $S=1/{\cal{R}}_0$ have yet to be infected.
-However, when individuals decrease transmission in relationship
-to awareness of the population impacts of the disease, $\delta(t)$,
-then the system can `peak' when levels of infected cases are
+However, in the model above individuals decrease transmission in response
+to awareness of the impacts of the disease, $\delta(t)$.
+In this case, the the system can peak when levels of infected cases are
 far from herd immunity, specifically when
 \begin{equation}
 \gamma I = \frac{\beta SI}{\left[1+\left(\delta/\delta_c\right)^{k}\right]}.
@@ -216,14 +216,12 @@ and the infection rate is
 \begin{equation}
 \dot{I}^{(q)} \approx \frac{\delta_c}{f_D}\left({\cal{R}}_0-1\right)^{1/k}.
 \end{equation}
-These early onset peak rates should arise not because
-of herd immunity but because of changes in behavior. 
+These quasi-equilibrium is maintained not because of herd immunity, but because of changes in behavior. 
 
 We evaluate this hypothesis in
 Figure~\ref{fig.ID_day} for $k=1$, $k=2$, and $k=4$
-given disease dynamics with $\beta=0.5$ /day, $\mu=1/2$ /day, $\gamma=1/6$
-/day,
-$f_D=0.01$, $N=10^7$, and $N\delta_c=50$ /day.  
+given disease dynamics with $\beta=0.5$/day, $\mu=1/2$/day, $\gamma=1/6$/day,
+$f_D=0.01$, $N=10^7$, and $N\delta_c=50$/day.  
 As is evident, the rise and decline from peaks are not symmetric. Instead,
 incorporating
 awareness leads to dynamics where incidence decreases very slowly after a peak.
@@ -233,7 +231,7 @@ Post-peak, shoulders and plateaus emerge because of the balance
 between relaxation of awareness-based
 distancing (which leads to increases in cases and deaths) and an 
 increase in awareness in response to increases in cases and deaths.  
-We note that as $k$ increases, 
+As the steepness of response $k$ increases, 
 individuals become less sensitive to fatality rates
 where $\delta < \delta_c$ and more sensitive to fatality rates where $\delta > \delta_c$.  
 This leads to sharper dynamics. In addition, 
@@ -243,20 +241,13 @@ is driven by fatalities which are offset with respect to new infections.
 \subsection{Short-term awareness, long-term plateaus, and oscillations}
 Initial analysis of an SEIR model with short-term 
 awareness of population-level severity suggests a generic outcome: 
-fatalities will increases
-exponentially before plateauing near to a level $\delta_c$.
-Figure~\ref{fig.generic} shows
-the results of dynamics given $\delta_c$ values over a range 
-equivalent to 5 to 500 deaths/day given a population of $10^7$
-for $k=2$ (we note that results for $k=1$ and $k=4$ lead to similar
-findings, see Figure~\ref{fig.generic_k1-4}).
-When $\delta_c$ is small (compared to $(\gamma f_D)$,
-fatalities can be sustained at near-constant levels for a long time.
+fatalities will first increase exponentially before before slowing to plateau at a level near $\delta_c$.
+Figure~\ref{fig.generic} shows dynamics for values of $\delta_c$ ranging 
+from to 5 to 500 deaths/day in a population of $10^7$
+(here $k=2$; results for $k=1$ or $k=4$ are similar, see Figure~\ref{fig.generic_k1-4}).
+When $\delta_c$ is small (compared to $(\gamma f_D)$, fatalities can be sustained at near-constant levels for a long time.
 When $\delta_c$ is higher then the decline of cases and fatalities due to susceptible depletion is relatively fast.
-Hence, even given significant variation
-in the critical daily fatality rates,
-the population remains largely susceptible even as
-sustained fatalities continue for a period far greater than
+However, over a wide range of assumptions about critical daily fatality rates $\delta_c$, the population remains largely susceptible even as sustained fatalities continue for a period far greater than
 the time it took to reach the plateau.
 %We also observe that as $k$ increases, then fatalities may overshoot
 %the plateau. Overshoots arise because individuals initiate protective measures
@@ -292,7 +283,7 @@ case of a SEIR model with additional classes before
 fatalities. Hence,
 we anticipate that dynamics should converge to $\delta=\delta^{(q)}$
 at early times. However, increased delays between cases and
-fatalities could lead to oscillations in both.  Indeed, this
+fatalities could lead to oscillations.  Indeed, this
 is what we find via examination of models in which
 $T_H$ ranges from 7 to 35 days, with increasing magnitude of
 oscillations as $T_H$ increases (see Figure~\ref{fig.oscillate} 
@@ -332,7 +323,7 @@ distancing alone.
 
 \subsection{Dynamical consequences of short-term and long-term awareness}
 Awareness can vary in duration, e.g., awareness
-of SARS-CoV-1 may prepare individuals to more
+of SARS-CoV-2 may prepare individuals to more
 readily adopt and retain
 social distancing measures~\citep{chen_2020social,leung_lancet2020}.  
 In previous
@@ -398,7 +389,7 @@ awareness-driven distancing underlies
 the degree of asymmetry surrounding peaks in fatalities.
 %robust to variation in assumptions on the 
 %quantitative and qualitative nature of awareness-driven distancing.
-To test this mechanistic link, we jointly analzed the dynamics of fatality
+To test this mechanistic link, we jointly analyzed the dynamics of fatality
 rates and behavior, using mobility
 data obtained from Google COVID-19 Community Mobility Reports (https://www.google.com/covid19/mobility/)
 as a proxy for behavior (see Methods for the
@@ -408,11 +399,10 @@ Notably, we find that aggregated rates of mobility
 typically began to \emph{increase} before
 the local peak in fatality was reached (Figure~\ref{fig.phase_real_theory}A).  
 This rebound in mobility rates
-implies a collective response akin to opening up too early.
+implies that real populations are opening up faster than our simple model could predict.
 For example, in the case of North Carolina, mobility increased even as fatality
-rates were increasing. Whereas, the state of New York exhibited reversible
-dynamics in the phase plane, implying that decreases in mobility were
-tightly linked to fatality rates.
+rates were increasing. 
+In contrast, the state of New York showed changes in mobility that were tightly linked to fatality rates.
 %%Mobility increases while deaths increase
 %is the opposite of model predictions given short- or
 %long-term awareness.
@@ -444,7 +434,7 @@ Phase planes are drawn between time $t_P - \Delta t$ and $t_P + \Delta t$ (see \
 Dynamics of effective behavior and death rates
 in a SEIR model with short- and long-term awareness. 
 Curves denote different assumptions regarding long-term awareness,
-in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+in each case $\beta=0.5$, $\mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
 with $k=2$, $\gamma_H=1/21$, and $f_D=0.01$.  The short-term awareness
 corresponds go $N\delta_c=50$ deaths/day. Thin lines denote
 full dynamics over 400 days; thick lines denote the dynamics
@@ -452,7 +442,7 @@ near the case fatality peak.
 (C) Dynamics of effective behavior and death rates
 in a SEIR model with awareness and fatigue. The three
 different curves denote different assumptions regarding long-term awareness,
-in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+in each case $\beta=0.5$, $\mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
 with $k=2$, $\gamma_H=1/21$, $f_D=0.01$, and $\epsilon=1/7$.  
 The short-term awareness
 corresponds go $N\delta_c=50$ deaths/day. 
@@ -621,7 +611,7 @@ LOESS smoothing is performed by using the \texttt{loess} function in \texttt{R}.
 %\caption{Dynamics of effective behavior and death rates
 %in a SEIR model with short- and long-term awareness. The four
 %curves denote different assumptions regarding long-term awareness,
-%in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+%in each case $\beta=0.5$, $\mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
 %with $k=2$, $\gamma_H=1/21$, and $f_D=0.01$.  The short-term awareness
 %corresponds go $N\delta_c=50$ deaths/day. Thin lines denote
 %full dynamics over 400 days; thick lines denote the dynamics
@@ -639,7 +629,7 @@ LOESS smoothing is performed by using the \texttt{loess} function in \texttt{R}.
 %Dynamics of effective behavior and death rates
 %in a SEIR model with awareness and fatigue. The three
 %different curves denote different assumptions regarding long-term awareness,
-%in each case $\beta=0.5$, $mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
+%in each case $\beta=0.5$, $\mu=0.5$, $\gamma=1/6$, such that ${\cal{R}}_0=3$,
 %with $k=2$, $\gamma_H=1/21$, $f_D=0.01$, and $\epsilon=1/7$.  
 %The short-term awareness
 %corresponds go $N\delta_c=50$ deaths/day. (A) The force
