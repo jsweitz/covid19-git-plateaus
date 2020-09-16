@@ -384,12 +384,10 @@ change~\citep{funk2009spread,funk2010modelling}.
 %rises to the peak followed by but shallow or shoulder-like declines.
 %\textbf{INSERT description of findings, reference Figure...
 %For example, in Louisiana... in contrast ....}
-Epidemic models with behavior suggest that 
-awareness-driven distancing underlies 
-the degree of asymmetry surrounding peaks in fatalities.
-%robust to variation in assumptions on the 
-%quantitative and qualitative nature of awareness-driven distancing.
-To test this mechanistic link, we jointly analyzed the dynamics of fatality
+These models suggest that 
+awareness-driven distancing can drive
+asymmetric epidemic peaks.
+To test this hypothesis mechanistically, we jointly analyzed the dynamics of fatality
 rates and behavior, using mobility
 data obtained from Google COVID-19 Community Mobility Reports (https://www.google.com/covid19/mobility/)
 as a proxy for behavior (see Methods for the
@@ -400,18 +398,15 @@ typically began to \emph{increase} before
 the local peak in fatality was reached (Figure~\ref{fig.phase_real_theory}A).  
 This rebound in mobility rates
 implies that real populations are opening up faster than our simple model could predict.
-For example, in the case of North Carolina, mobility increased even as fatality
-rates were increasing. 
-In contrast, the state of New York showed changes in mobility that were tightly linked to fatality rates.
 %%Mobility increases while deaths increase
 %is the opposite of model predictions given short- or
 %long-term awareness.
-As shown in Figure~\ref{fig.phase_real_theory}B,
-the shape of dynamics are expected to be `reversible' 
-(given short-term awareness, analogous to the dynamics
-in New York) or `counter-clockwise' (given long-term
-awareness that would lead to sustained declines in fatalities).
-Counter-clockwise shapes are not observed in Washington state only. 
+Awareness-driven models, shown in Figure~\ref{fig.phase_real_theory}B,
+generally show `counter-clockwise' dynamics, with risk behavior increasing up to the peak, and slowly increasing soon after.
+The asymmetry here is driven by long-term awareness. 
+Models with short-term awareness but no long-term awareness exhibit a tight link between fatality and behavior (``reversible'' behavior, like the top curve in  Figure~\ref{fig.phase_real_theory}B. 
+
+In contrast, the real data (Figure~\ref{fig.phase_real_theory}A) show mostly clockwise dynamics, with NY state a nearly reversible (but still clockwise) pattern, and only Washington state showing the expected counter-clockwise pattern.
 %Given short-term awareness,
 %individuals distance as deaths increase (reducing mobility), driving down
 %deaths, which leads to an increase in mobility, albeit along
@@ -455,13 +450,11 @@ $g(D)=1/\left(1+(D/D_c)^k\right)$.
 \end{center}
 \end{figure*}
 
-We hypothesize that
+We hypothesized that
 a combination of awareness-driven distancing and fatigue
-can lead to clockwise like dynamics; implying
-that changes in behavior are not necessarily 
-monotonically related to near-term or long-term fatalities.
-Consider the following model of awareness-driven
-distancing including fatigue:
+could lead to clockwise dynamics: if people become fatigued with distancing behavior, then risk could rise even as deaths were rising.
+
+We developed the following model as a proof of concept: the fatigue is driven directly by deaths, which is surely simplistic.
 \begin{eqnarray}
 \dot{S} &=& -\frac{\beta SI}{g(D)}\\
 \dot{E} &=& \frac{\beta SI}{g(D)}-\mu E\\
