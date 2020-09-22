@@ -116,6 +116,29 @@ awareness shifts from short- to long-term.
 
 
 \section{Results and Discussion}
+
+\begin{table}[!h]
+\begin{tabular}{l|p{3cm}|l}
+\hline
+Notation & Description & Values/Ranges\\
+\hline
+$\beta$ & Transmission rate & 1/2/day \\
+$1/\mu$ & Mean latent period & 2 days \\
+$1/\gamma$ & Mean infectious period & 6 days \\
+$1/\gamma_H$ & Mean time in a hospital stay before a fatality & 7--28 days\\
+$f_D$ & infection fataility probability & 0.01 \\
+$N$ & Population size & $10^7$ \\
+$N\delta_c$ & Half-saturation constant for short-term awareness & 5--500 deaths/day \\
+$ND_c$ & Half-saturation constant for long-term awareness & 2,500--10,000 deaths \\
+$k$ & sharpness of change in the force of infection & 7--28 days \\
+$\epsilon$ & Time scale of behavior change & 1/7/days \\
+\hline
+\end{tabular}
+\caption{
+Parameter descriptions and values/ranges used for simulations. Transmission rate is chosen to match $\mathcal{R}_0 = 3$.
+}
+\end{table}
+
 \subsection{SEIR Model with Short-Term Awareness of Risk}
 Consider an SEIR like model
 \begin{eqnarray}
@@ -285,7 +308,7 @@ we anticipate that dynamics should converge to $\delta=\delta^{(q)}$
 at early times. However, increased delays between cases and
 fatalities could lead to oscillations.  Indeed, this
 is what we find via examination of models in which
-$T_H$ ranges from 7 to 35 days, with increasing magnitude of
+$T_H$ ranges from 7 to 28 days, with increasing magnitude of
 oscillations as $T_H$ increases (see Figure~\ref{fig.oscillate} 
 for $k=2$ with qualitatively similar results for $k=1$ and
 $k=4$ shown in Figure~\ref{fig.oscillate_k1-4}).
