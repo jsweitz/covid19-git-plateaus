@@ -24,7 +24,7 @@ outputs/covidplateaus.pdf: covidplateaus.pdf
 
 ### Makestuff
 
-Sources += Makefile
+Sources += Makefile .gitignore
 
 ## Sources += content.mk
 ## include content.mk
