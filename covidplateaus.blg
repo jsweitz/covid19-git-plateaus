@@ -1,91 +1,91 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: covidplateaus.aux
 The style file: pnas.bst
-Database file #1: covidplateaus.bib.bib
-I was expecting a `,' or a `}'---line 245 of file covidplateaus.bib.bib
+Database file #1: covidplateaus.bib
+I was expecting a `,' or a `}'---line 245 of file covidplateaus.bib
  :   
  :   url = {https://doi.org/10.1016/S1473-3099(20)30141-9},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 309 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 309 of file covidplateaus.bib
  :   
  :   volume = {579},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 589 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 589 of file covidplateaus.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 982 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 982 of file covidplateaus.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1021 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1021 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1030 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1030 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1039 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1039 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1631 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 1631 of file covidplateaus.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2024 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2024 of file covidplateaus.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2063 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2063 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2072 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2072 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2081 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 2081 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I'm ignoring kissler_medrxiv2020's extra "journal" field
---line 2421 of file covidplateaus.bib.bib
-I was expecting a `,' or a `}'---line 2731 of file covidplateaus.bib.bib
+--line 2421 of file covidplateaus.bib
+I was expecting a `,' or a `}'---line 2731 of file covidplateaus.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3124 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3124 of file covidplateaus.bib
  : 
  : number = {{N/A}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3163 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3163 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3172 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3172 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3181 of file covidplateaus.bib.bib
+I was expecting a `,' or a `}'---line 3181 of file covidplateaus.bib
  : 
  : journal = {PLOS Currents Outbreaks}
 (Error may have been on previous line)

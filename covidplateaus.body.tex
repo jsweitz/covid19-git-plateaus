@@ -1,8 +1,4 @@
 \section{Introduction}
-
-\cmt{JD: This will actually need a fair amount of work to explain how relevant simple, symmetric models still are (and aren't) (sad face)}
-\cmt{JD: Weitz, do you have a special script to insert illogical line breaks in the .tex?}
-\cmt{JD: Maybe less emphasis on Gaussian symmetry and more emphasis on the broader world of symmetric-like models, including SEIR.}
 The spread of COVID-19 has elevated the importance of epidemiological
 models as a means to forecast both near- and long-term spread. 
 In the United States, the Institute for Health Metrics and Evaluation (IHME)
@@ -14,13 +10,13 @@ hospital bed capacity, ICU beds, and ventilators between and within
 states. Predicting the projected strains on underlying
 health resources is critical to supporting planning efforts.
 However such projections require
-an epidemic `forecast'.  The IHME's epidemic forecast
-differs from conventional
-epidemic models in a significant way -- IHME assumes
+an epidemic `forecast'.  Early versions of IHME's epidemic forecast
+differed from conventional
+epidemic models in a significant way -- IHME assumed
 that the cumulative deaths in the COVID-19 epidemic 
-follow a symmetric, Gaussian-like trajectory. 
+followed a symmetric, Gaussian-like trajectory. 
 For example, the 
-IHME model predicts that if the peak is 2 weeks away then in 4 weeks
+IHME model predictedthat if the peak is 2 weeks away then in 4 weeks
 cases will return to the level of the present, and continue
 to diminish rapidly.  But, epidemics need not have one symmetric peak -- 
 the archaic Farr's Law of Epidemics notwithstanding
@@ -73,20 +69,19 @@ is also true  -- as long as
 a population remains predominantly immunologically
 naive, then the risk of further infection has not passed. 
 
-\cmt{JD: This probably also needs updating.}
-The Imperial College of London (ICL) model~\citep{ferguson2020report} is
-one of the most influential of 
-epidemiogical models shaping public health responses to COVID-19. The ICL model is an
-example of a `conventional' epidemic model
-that shows the benefits of  early intervention steps in reducing
+In contrast to the IHME model,
+the Imperial College of London (ICL) model~\citep{ferguson2020report} 
+used a conventional state-driven epidemic model
+to show the benefits of  early intervention steps in reducing
 transmission and preserving health system resources vs.~a `herd immunity' strategy.  
-The ICL model assumes that
+The ICL model assumed that
 transmission is reduced because of externalities, like lockdowns,
 school closings, and so on.  
-As a result, the ICL model suggests that lifting of large-scale
+As a result, early predictions of the ICL model suggested that lifting of large-scale
 public health interventions could be followed by a second wave of cases.
+This has turned out to be the case, in some jurisdictions.
 Yet, for a disease
-that is already the documented cause of more than 180,000 deaths
+that is already the documented cause of more than 200,000 deaths
 in the United States alone, we posit that individuals
 are likely to continue to modify
 their behavior even after lockdowns are lifted.  
@@ -95,10 +90,12 @@ are not as high as potential maximums in the event that
 COVID-19 had spread unhindered in the population~\citep{ferguson2020report}. 
 Moreover, rather than a peak and symmetric decline, there is evidence 
 %at both national
-of asymmetric plateaus and shoulder like
-behavior for daily fatality rates within US-states
-(Figure~\ref{fig.plateaus_cases}, full state-level data in Supplementary
-Figure~\ref{fig.supp_plateaus}).   
+of asymmetric plateaus and shoulder-like
+behavior for daily fatality rates within the spring-summer
+trajectory of the pandemic in US-states
+(Figure~\ref{fig.plateaus_cases}; full state-level data in Supplementary
+Figure~\ref{fig.supp_plateaus}).  These early plateaus have
+been followed, in many cases, with resurgence of cases and fatalities.  
 
 In this manuscript we use a nonlinear model of epidemiological dynamics to
 ask the question: what is the anticipated
@@ -112,8 +109,12 @@ in death rates compared to models without accounting for behavior,
 leading to plateaus, shoulders,
 and lag-driven oscillations in death rates. We also show that dynamics
 can be driven from persistent dynamics to elimination when
-awareness shifts from short- to long-term.
-
+awareness shifts from short- to long-term. Notably, we find
+that despite model predictions, that empirical dataset reveal
+mobility increased even as fatalities were increasing. This
+evidence reveals the potential role for fatigue and long-term
+changes in behavior beyond those linked to mobility (e.g., mask-wearing)
+in structuring the shape of Covid-19 trajectories.
 
 \section{Results and Discussion}
 
@@ -122,7 +123,7 @@ awareness shifts from short- to long-term.
 \hline
 Notation & Description & Values/Ranges\\
 \hline
-$\beta$ & Transmission rate & 1/2/day \\
+$\beta$ & Transmission rate & 1/2 days$^{-1}$ \\
 $1/\mu$ & Mean latent period & 2 days \\
 $1/\gamma$ & Mean infectious period & 6 days \\
 $1/\gamma_H$ & Mean time in a hospital stay before a fatality & 7--28 days\\
@@ -131,7 +132,7 @@ $N$ & Population size & $10^7$ \\
 $N\delta_c$ & Half-saturation constant for short-term awareness & 5--500 deaths/day \\
 $ND_c$ & Half-saturation constant for long-term awareness & 2,500--10,000 deaths \\
 $k$ & sharpness of change in the force of infection & 1--4 \\
-$\epsilon$ & Time scale of behavior change & 1/7/days \\
+$\epsilon$ & Time scale of behavior change & 1/7 days$^{-1}$\\
 \hline
 \end{tabular}
 \caption{
@@ -437,6 +438,24 @@ In contrast, the real data (Figure~\ref{fig.phase_real_theory}A) show mostly clo
 %Yet, with long-term awareness, then given sufficient deaths, behavior
 %is driven down and remains low, as individual behavior is shaped
 %by the cumulative deaths (unlike any observed trajectory). 
+We hypothesized that
+a combination of awareness-driven distancing and fatigue
+could lead to clockwise dynamics: if people become fatigued with distancing behavior, then risk could rise even as deaths were rising.
+We developed the following model as a proof of concept in which
+the fatigue is driven directly by deaths (though alternatives
+could also be explored linked to cases, hospitalizations, deaths 
+and/or a combination):
+\begin{eqnarray}
+\dot{S} &=& -\beta g(D) SI\\
+\dot{E} &=& beta g(D) SI-\mu E\\
+\dot{I} &=& \mu E-\gamma I \\
+\dot{R} &=& (1-f_D)\gamma I\\
+\dot{H} &=& f_D\gamma I - \gamma_H H\\
+\dot{D} &=& \gamma_H H \\
+\dot{\beta} &=&\frac{\epsilon}{2}\left[\frac{\left(\frac{\hat{\beta}}{1+\left(\delta/\delta_c\right)^{k}}-\beta\right)}{1+\left(D/D_c\right)^k}+\left(\hat{\beta}-\beta\right)\right] \label{eq.fatigue}
+\end{eqnarray}
+
+
 \begin{figure*}
 \begin{center}
 \mbox{\hspace{0.05\textwidth}}
@@ -473,21 +492,9 @@ $g(D)=1/\left(1+(D/D_c)^k\right)$.
 \end{center}
 \end{figure*}
 
-We hypothesized that
-a combination of awareness-driven distancing and fatigue
-could lead to clockwise dynamics: if people become fatigued with distancing behavior, then risk could rise even as deaths were rising.
 
-We developed the following model as a proof of concept: the fatigue is driven directly by deaths, which is surely simplistic.
-\begin{eqnarray}
-\dot{S} &=& -\frac{\beta SI}{g(D)}\\
-\dot{E} &=& \frac{\beta SI}{g(D)}-\mu E\\
-\dot{I} &=& \mu E-\gamma I \\
-\dot{R} &=& (1-f_D)\gamma I\\
-\dot{H} &=& f_D\gamma I - \gamma_H H\\
-\dot{D} &=& \gamma_H H \\
-\dot{\beta} &=&\frac{\epsilon}{2}\left[\frac{\left(\frac{\hat{\beta}}{1+\left(\delta/\delta_c\right)^{k}}-\beta\right)}{1+\left(D/D_c\right)^k}+\left(\hat{\beta}-\beta\right)\right] \label{eq.fatigue}
-\end{eqnarray}
-Here the force of infection is related to the
+In this model with fatigue,
+the force of infection is related to the
 mobility denoted by $\beta(t)$ (which dictates
 the number of interactions per unit time) modulated by
 a reduction in risk per infection $g(D)$.
@@ -503,7 +510,7 @@ mobility returns to a baseline $\hat{\beta}$ once $D\gg D_c$.
 We consider two models, corresponding to
 $g(D)=1$ such that the force of infection depends on mobility alone,
 and 
-$g(D)=\left(1+(D/D_c)^k\right)$
+$g(D)=1/\left(1+(D/D_c)^k\right)$
 corresponding to sustained changes in the risk of infection
 per contact (e.g., due to mask wearing, contact-less
 interactions, use of PPE, etc.). 
@@ -519,7 +526,7 @@ akin to levels expected in the absence of behavior, and eventually
 levels of infection that are stopped by herd immunity, rather than by 
 awareness (see Figure~\ref{fig.phase_real_theory}C).  
 In contrast, if there is sustained behavior change
-such that $g(D)$ decreases with increasing cumulative deaths
+such that $g(D)$ increases with increasing cumulative deaths
 then there is a single peak that forms a clockwise loop; with
 the peak close to, but after the minimum in behavior (Figure~\ref{fig.phase_real_theory}D); as observed in nearly all state-level data sets.
 %This analysis reveals a complex interplay between short-term awareness,
@@ -545,7 +552,7 @@ that mobility increased before fatalities peak; consistent
 with models in which awareness-driven distancing
 is limited by fatigue.  Notably we find that
 if mobility increases but the risk of infection per interaction
-decreases due to systemtic changes in behavior, then models
+decreases due to systemic changes in behavior, then models
 suggest `clockwise' dynamics between behavior and fatality 
 as found in nearly all state-level datasets analyzed here.
 Awareness-driven
@@ -595,7 +602,6 @@ makers structure intervention efforts appropriately to effectively
 communicate awareness campaigns that may aid in collective
 efforts to control the ongoing COVID-19 pandemic.
 
-
 \section{Methods}
 
 \subsection{Epidemiological data}
@@ -606,7 +612,7 @@ Daily number of reported deaths as of June 7, 2020, is obtained from The COVID T
 
 Mobility data as of June 12, 2020, are obtained from Google COVID-19 Community Mobility Reports (www.google.com/covid19/mobility/).
 The data set describes percent changes in mobility across six categories (grocery and pharmacy; parks; residential; retail and recreation; transit; and workplaces)
-compared to the median value from the 5‑week period Jan 3 – Feb 6, 2020.
+compared to the median value from the 5--week period Jan 3--Feb 6, 2020.
 Raw mobility data are plotted in Supplementary Figure~\ref{fig.supp_mobility}.
 
 \subsection{Principal component analysis}
