@@ -17,8 +17,16 @@ Sources += $(wildcard *.tex)
 covidplateaus.pdf: covidplateaus.tex covidplateaus.abs.tex covidplateaus.acknowledge.tex covidplateaus.appendix.tex covidplateaus.author.tex covidplateaus.biblio.tex covidplateaus.settings.tex covidplateaus.sign.tex covidplateaus.title.tex covidplateaus.body.tex
 
 outputs/covidplateaus.pdf: covidplateaus.pdf
-	cp $< $@
+	$(copy)
 	git add $@
+
+######################################################################
+
+## Diffs
+
+## Does not work because of Weitz Balkanization ☹
+## covidplateaus.ld.pdf: covidplateaus.tex
+covidplateaus.ld.tex: covidplateaus.tex.4cdd8fc05.oldfile
 
 ######################################################################
 

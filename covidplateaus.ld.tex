@@ -1,0 +1,73 @@
+%DIF 1c1
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL covidplateaus.tex.4cdd8fc05.oldfile   Mon Sep 28 11:17:01 2020
+%DIF ADD covidplateaus.tex                     Sun Sep 27 15:52:08 2020
+%DIF < \documentclass[pre,twocolumn,byrevtex,superscriptaddress]{revtex4}
+%DIF -------
+\documentclass[pre,pdftex,twocolumn,byrevtex,superscriptaddress]{revtex4} %DIF > 
+%DIF -------
+
+% for full names in referenes
+\bibliographystyle{pnas}
+
+\input{covidplateaus.settings.tex}
+\setboolean{twocolswitch}{true}
+\setboolean{revtexswitch}{true}
+
+%%%%%%%%% author(s), address(es) plus abstract
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\title{
+  \input{covidplateaus.title.tex}
+}
+
+\input{covidplateaus.author.tex}
+
+\date{\today}
+
+\begin{abstract}
+  \input{covidplateaus.abs.tex}  
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%% end of author(s), address(es) plus abstract
+
+\input{covidplateaus.sign.tex}
+
+\input{covidplateaus.body.tex}
+
+\input{covidplateaus.acknowledge.tex}
+
+\input{covidplateaus.biblio}
+
+\DIFdelbegin %DIFDELCMD < \appendix
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \clearpage
+%DIF >  \appendix
+\DIFaddend 
+
+\input{covidplateaus.appendix.tex}
+
+\end{document}
+
