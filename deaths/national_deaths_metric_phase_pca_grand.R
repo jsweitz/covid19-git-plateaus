@@ -98,17 +98,20 @@ x_end <- phasedata_pca3 %>%
 g1 <- ggplot(phasedata_pca3) +
   # geom_path(data=phasedata_pca2, aes(-pc1, deaths, group=region, lty=region),
   #           col="gray", alpha=0.5) +
+  annotate("text", x=-4, y=700, label="(A)") +
   geom_path(aes(-pc1, deaths, group=region, col=metric, lty=region),
             arrow = arrow(length = unit(0.1, "inches"), type = "closed")) +
   geom_dl(data=x_end, aes(-pc1, deaths, label=region, col=metric), method=list("last.bumpup", hjust=-0.1, vjust=1.2)) +
-  scale_x_continuous("Smoothed mobility principal component 1") +
+  scale_x_continuous("Smoothed mobility principal component 1", limits=c(-4, 2.5)) +
   scale_y_log10("Smoothed daily number of reported deaths") +
   scale_color_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_fill_gradientn("Symmetry\ncoefficient", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a")) +
   scale_linetype_manual(values=c(1:9, 1:9), guide=FALSE) +
   theme(
     panel.grid = element_blank(),
-    strip.background = element_blank()
+    strip.background = element_blank(),
+    legend.key.height = unit(1, "cm"),
+    axis.title = element_text(size=14)
   )
 
 tikz(file = "national_deaths_metric_phase_pca_grand.tex", width = 8, height = 8, standAlone = T)

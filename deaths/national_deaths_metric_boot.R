@@ -82,7 +82,7 @@ us_death_filter_plot <- us_death %>%
   )
 
 g1 <- ggplot(us_death_filter_plot) +
-  geom_text(x=-Inf, y=Inf, aes(label=region), hjust=-0.1, vjust=1.1) +
+  geom_text(data=summarize(group_by(us_death_filter_plot, region), region2=unique(region)), x=-Inf, y=Inf, aes(label=region2), hjust=-0.1, vjust=1.1) +
   geom_point(aes(date, deaths)) +
   geom_line(aes(date, deaths)) +
   geom_smooth(aes(date, deaths), se=FALSE, col="red", lwd=1.5) +
