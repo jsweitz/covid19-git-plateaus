@@ -1,5 +1,6 @@
 library(dplyr)
 library(ggplot2); theme_set(theme_bw())
+library(tikzDevice)
 
 death <- read.csv("daily.csv") %>%
   mutate(
@@ -11,7 +12,7 @@ death <- read.csv("daily.csv") %>%
   filter(!(state %in% c("AS", "DC", "FM", "GU", "MH", "MP", "PW", "PR", "VI")))
 
 g1 <- ggplot(death) +
-  geom_text(x=-Inf, y=Inf, aes(label=state), hjust=-0.1, vjust=1.1) +
+  geom_text(data=summarize(group_by(death, state), state2=unique(state)), x=-Inf, y=Inf, aes(label=state2), hjust=-0.1, vjust=1.1) +
   geom_point(aes(date, deathIncrease)) +
   geom_line(aes(date, deathIncrease)) +
   geom_smooth(aes(date, deathIncrease), se=FALSE, col="red", lwd=1.5) +
