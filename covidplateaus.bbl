@@ -107,6 +107,65 @@ Leung K, Wu JT, Liu D, Leung GM
   modelling impact assessment}.
 \newblock \emph{The Lancet} 395:1382 -- 1393.
 
+\bibitem{adam_2020clustering}
+Adam D, {et~al.}
+\newblock (2020) Clustering and superspreading potential of severe acute
+  respiratory syndrome coronavirus 2 (sars-cov-2) infections in hong kong.
+\newblock \emph{Research Square}.
+
+\bibitem{althouse_2020stochasticity}
+Althouse BM, {et~al.}
+\newblock (2020) Stochasticity and heterogeneity in the transmission dynamics
+  of sars-cov-2.
+\newblock \emph{arXiv preprint arXiv:2005.13689}.
+
+\bibitem{lau_pnas2020}
+Lau MSY, {et~al.}
+\newblock (2020) Characterizing superspreading events and age-specific
+  infectiousness of sars-cov-2 transmission in georgia, usa.
+\newblock \emph{Proceedings of the National Academy of Sciences}
+  117:22430--22435
+\newblock \url{https://www.pnas.org/content/117/36/22430.full.pdf}.
+
+\bibitem{liu_lancet2020}
+Liu Y, Eggo RM, Kucharski AJ
+\newblock (2020) Secondary attack rate and superspreading events for
+  sars-cov-2.
+\newblock \emph{The Lancet} 395:e47.
+
+\bibitem{frieden_eid2020}
+Frieden TR, Lee CT
+\newblock (2020) Identifying and interrupting superspreading
+  events-implications for control of severe acute respiratory syndrome
+  coronavirus 2.
+\newblock \emph{Emerg Infect Dis} 26:1059--1066.
+
+\bibitem{kain_2020}
+Kain MP, Childs ML, Becker AD, Mordecai EA
+\newblock (2020) Chopping the tail: how preventing superspreading can help to
+  maintain covid-19 control.
+\newblock \emph{medRxiv}
+\newblock
+  \url{https://www.medrxiv.org/content/early/2020/07/03/2020.06.30.20143115.full.pdf}.
+
+\bibitem{weinberger_2020estimation}
+Weinberger DM, {et~al.}
+\newblock (2020) Estimation of excess deaths associated with the covid-19
+  pandemic in the united states, march to may 2020.
+\newblock \emph{JAMA Internal Medicine}.
+
+\bibitem{meyerowitz_2020}
+Meyerowitz-Katz G, Merone L
+\newblock (2020) A systematic review and meta-analysis of published research
+  data on covid-19 infection-fatality rates.
+\newblock \emph{medRxiv}.
+
+\bibitem{flaxman_2020}
+Flaxman S, {et~al.}
+\newblock (2020) {Estimating the number of infections and the impact of
+  nonpharmaceutical interventions on COVID-19 in 11 European countries}.
+\newblock \emph{Nature} 584:257--261.
+
 \bibitem{west_nat2020}
 West R, Michie S, Rubin GJ, Aml{\^o}t R
 \newblock (2020) {Applying principles of behaviour change to reduce SARS-CoV-2
