@@ -137,6 +137,7 @@ $\epsilon$ & Time scale of behavior change & 1/7 days$^{-1}$\\
 \end{tabular}
 \caption{
 Parameter descriptions and values/ranges used for simulations. Transmission rate is chosen to match $\mathcal{R}_0 = 3$.
+\label{tab.params}
 }
 \end{table}
 
@@ -167,7 +168,9 @@ The awareness-based distancing is controlled by
 the death rate $\delta\equiv \dot{D}$,
 the half-saturation constant ($\delta_c>0$), and
 the sharpness of change in the force of infection ($k\geq 1$)
-(see Figure~\ref{fig.schematic} for a schematic).
+(see Figure~\ref{fig.schematic} for a schematic and
+Table~\ref{tab.params} for a list of all parameters used
+in models).
 Since $\delta$ is proportional to $I$, this model is closely related to a recently proposed awareness-based distancing model~\citep{eksin2019systematic}
 and to an independently derived feedback SIR model~\citep{franco2020feedback}.
 Note that the present
@@ -383,8 +386,8 @@ long-term awareness drives dynamics towards rapid declines
 after reaching a peak. This decline arises because
 $D$ monotonically increases;
 increasing fatalities beyond $D_c$ leads to rapid suppression
-of transmission.  However, when $\delta_c$ rather than
-$D_c$ drives dynamics, then shoulders and plateaus can re-emerge.
+of transmission.  However, when short-term, rather than long-term,
+awareness drives dynamics, then shoulders and plateaus can re-emerge.
 In reality, we expect that individual
 behavior is shaped by short- and long-term awareness of risks, including
 the potential for fatigue and `decay' of long-term behavior
@@ -408,16 +411,18 @@ change~\citep{funk2009spread,funk2010modelling}.
 %rises to the peak followed by but shallow or shoulder-like declines.
 %\textbf{INSERT description of findings, reference Figure...
 %For example, in Louisiana... in contrast ....}
-These models suggest that 
-awareness-driven distancing can drive
-asymmetric epidemic peaks.
+The models developed here suggest that 
+awareness-driven distancing can lead to
+asymmetric epidemic peaks even in the absence
+of susceptible depletion.
 To test this hypothesis mechanistically, we jointly analyzed the dynamics of fatality
 rates and behavior, using mobility
 data obtained from Google COVID-19 Community Mobility Reports (https://www.google.com/covid19/mobility/)
 as a proxy for behavior (see Methods for the
 aggregation of multiple mobility metrics via
 a Principal Component Analysis (PCA)).
-Notably, we find that aggregated rates of mobility 
+Notably, we find that in the bulk of states
+examined aggregated rates of mobility 
 typically began to \emph{increase} before
 the local peak in fatality was reached (Figure~\ref{fig.phase_real_theory}A).  
 This rebound in mobility rates
@@ -432,7 +437,10 @@ Models with long-term awareness exhibit counter-clockwise dynamics
 as risky behavior remains at low levels even as fatalities decrease; 
 the asymmetry here is driven by the extent of long-term awareness. 
 
-In contrast, the real data (Figure~\ref{fig.phase_real_theory}A) show mostly clockwise dynamics, with NY state a nearly reversible (but still clockwise) pattern, and only Washington state showing the counter-clockwise pattern predicted by the simple model.
+In contrast, the real data (Figure~\ref{fig.phase_real_theory}A) exhibit
+predominantly clockwise dynamics; exceptions include New York which
+has a nearly reversible (but still clockwise) pattern and Washington which
+has a counter-clockwise pattern anticipated by the awareness model.
 %Given short-term awareness,
 %individuals distance as deaths increase (reducing mobility), driving down
 %deaths, which leads to an increase in mobility, albeit along
@@ -444,7 +452,7 @@ We hypothesized that
 a combination of awareness-driven distancing and fatigue
 could lead to clockwise dynamics: if people become fatigued with distancing behavior, then risk could rise even as deaths were rising.
 We developed the following model as a proof of concept in which
-the fatigue is driven directly by deaths (though alternatives
+fatigue is driven directly by deaths (though alternatives
 could also be explored linked to cases, hospitalizations, deaths 
 and/or a combination):
 \begin{eqnarray}
@@ -528,7 +536,7 @@ akin to levels expected in the absence of behavior, and eventually
 levels of infection that are stopped by herd immunity, rather than by 
 awareness (see Figure~\ref{fig.phase_real_theory}C).  
 In contrast, if there is sustained behavior change
-such that $g(D)$ increases with increasing cumulative deaths
+such that $g(D)$ decreases with increasing cumulative deaths
 then there is a single peak that forms a clockwise loop; with
 the peak close to, but after the minimum in behavior (Figure~\ref{fig.phase_real_theory}D); as observed in nearly all state-level data sets.
 %This analysis reveals a complex interplay between short-term awareness,
@@ -540,14 +548,15 @@ We have developed and analyzed
 a series of models that assume awareness of disease-induced death can 
 reduce transmission, and shown that such awareness-driven feedback
 can lead
-to highly asymmetric epidemic curves.  These
-curves can exhibit extended periods of near-constant
-cases even as the majority of the population remains susceptible.
+to highly asymmetric epidemic curves.  Resulting fatality 
+time series can exhibit extended periods of near-constant
+levels even as the majority of the population remains susceptible.
 Hence: passing a `peak' need not imply
 the rapid decline of risk.  
 In these conditions, if individuals are unable
 to sustain social
-distancing policies, or begin to tolerate higher death rates, then cases 
+distancing policies, or begin to tolerate higher death rates, then cases
+and fatalities 
 could increase (similar results have also been proposed in a recent, independently derived feedback SIR model~\citep{franco2020feedback}). 
 Indeed, detailed analysis of mobility and fatalities suggest
 that mobility increased before fatalities peaked with the 
@@ -562,14 +571,14 @@ In moving from concept to intervention, it will be critical to address problems 
 First, epidemic outbreaks include stochasticity of multiple kinds.  
 Fluctuations could arise endogenously via process noise (especially at low levels of disease) or exogenously via time-varying parameters, Moreover, given the evidence for clustered transmission and super-spreading events \citep{adam_2020clustering,althouse_2020stochasticity,lau_pnas2020,liu_lancet2020}, extensions of the present model framework should explicitly account for awareness-driven behavior associated with
 risky gatherings \citep{frieden_eid2020,kain_2020}.
-Next, the link between severity and behavior change is depends on reporting of disease outcomes.
+Next, the link between severity and behavior change depends on reporting of disease outcomes.
 Biases may arise due to under-reporting of fatalities, particularly
 amidst intense outbreaks~\citep{weinberger_2020estimation}.
 Awareness may also vary with community age structure and with other factors that influence the infection fatality rate and hence the link between total cases and fatalities~\citep{meyerowitz_2020}. 
 Such biases could lead to systematic changes in awareness-driven responses.
 Finally, we recognize that estimating the influence of awareness-driven behavior change is non-trivial, given fundamental problems of identifiability.  
 Nonetheless, it is important to consider the effects of behavior changes. 
-Otherwise, reductions in cases (and fatalities) will necessarily be attributed to exogeneous factors (e.g., an influential analysis of the impact of non-pharmaceutical interventions on Covid-19 in Europe highlighted the fact that many analyses do not account for changes in behavior~\citep{flaxman_2020}).
+Otherwise, reductions in cases (and fatalities) will necessarily be attributed to exogeneous factors (e.g., influential analyses of the impact of non-pharmaceutical interventions on Covid-19 in Europe do not account for changes in behavior~\citep{flaxman_2020}).
 Disentangling the impact of entangled interventions will require efforts to link model predictions with measurements of behavior, awareness, and disease dynamics.
 
 Although the models here are intentionally simple,
