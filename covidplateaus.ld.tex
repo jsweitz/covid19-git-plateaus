@@ -1,7 +1,7 @@
 %DIF 1c1
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL covidplateaus.tex.4cdd8fc05.oldfile   Mon Sep 28 11:17:01 2020
-%DIF ADD covidplateaus.tex                     Thu Oct  1 21:49:34 2020
+%DIF ADD covidplateaus.tex                     Fri Oct  2 14:48:27 2020
 %DIF < \documentclass[pre,twocolumn,byrevtex,superscriptaddress]{revtex4}
 %DIF -------
 \documentclass[pre,pdftex,twocolumn,byrevtex,superscriptaddress]{revtex4} %DIF > 
@@ -53,19 +53,21 @@
 
 %%%%%%%%% end of author(s), address(es) plus abstract
 
-\input{covidplateaus.sign.tex}
+\DIFdelbegin %DIFDELCMD < \input{covidplateaus.sign.tex}
+%DIFDELCMD < %%%
+\DIFdelend %DIF > % \input{covidplateaus.sign.tex}
 
 \input{covidplateaus.body.tex}
 
 \input{covidplateaus.acknowledge.tex}
 
 \input{covidplateaus.biblio}
+\DIFaddbegin 
 
-\DIFdelbegin %DIFDELCMD < \appendix
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \clearpage
-%DIF >  \appendix
+\clearpage
 \DIFaddend 
+
+\appendix
 
 \input{covidplateaus.appendix.tex}
 

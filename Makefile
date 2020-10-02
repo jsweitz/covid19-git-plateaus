@@ -20,6 +20,11 @@ outputs/covidplateaus.pdf: covidplateaus.pdf
 	$(copy)
 	git add $@
 
+## Temporarily suppress .sign.tex
+outputs/preprint.pdf: covidplateaus.pdf
+	$(copy)
+	git add $@
+
 ######################################################################
 
 ## Diffs
