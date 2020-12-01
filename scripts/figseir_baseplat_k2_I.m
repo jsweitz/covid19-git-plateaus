@@ -59,7 +59,10 @@ for i=1:3,
   pars.awareness=pars.krange(i);
   tmph=plot(t,pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness)*ones(size(t))/pars.frac_D,'k--');
   set(tmph,'linewidth',3);
-  tmpt=text(20,500+pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness)/pars.frac_D,sprintf('$\\dot{I}^{(q)}_{k=%d}$',pars.awareness));
+% Notation error - removed
+% tmpt=text(20,500+pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness)/pars.frac_D,sprintf('$\\dot{I}^{(q)}_{k=%d}$',pars.awareness));
+% Correct notation
+  tmpt=text(20,500+pars.N*pars.Dcrit*(pars.R0-1)^(1/pars.awareness)/pars.frac_D,sprintf('$i^{(q)}_{k=%d}$',pars.awareness));
   set(tmpt,'interpreter','latex','fontsize',18);
 end
   xlabel('Time, days','fontsize',20,'verticalalignment','top','interpreter','latex');
